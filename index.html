@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="EnsetScan Vision — offline-first plant disease diagnosis for Enset, Coffee, and Maize. Runs entirely in your browser." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="EnsetScan" />
+  <link rel="icon" href="icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <meta name="theme-color" content="#1b5e20" />
+  <title>EnsetScan Vision — Offline Plant Disease Diagnosis</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- ============ SIDEBAR NAVIGATION ============ -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true"><svg class="icon icon-lg"><use href="#i-leaf"/></svg></span>
+        <div class="brand-text">
+          <h1>EnsetScan</h1>
+          <p class="tagline">Vision</p>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home" type="button">
+          <span class="nav-icon"><svg class="icon"><use href="#i-camera"/></svg></span><span class="nav-label">New Scan</span>
+        </button>
+        <button class="nav-item" data-view="dashboard" type="button">
+          <span class="nav-icon"><svg class="icon"><use href="#i-dashboard"/></svg></span><span class="nav-label">Disease Dashboard</span>
+        </button>
+        <button class="nav-item" data-view="history" type="button">
+          <span class="nav-icon"><svg class="icon"><use href="#i-history"/></svg></span><span class="nav-label">Scan History</span>
+        </button>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <!-- ============ HEADER ============ -->
+      <header class="app-header">
+        <h2 id="viewTitle" class="view-title">Diagnose Crop</h2>
+        <div class="header-actions" role="group" aria-label="Language selection">
+          <button id="langEnBtn" class="btn btn-lang active" type="button" aria-label="English">
+            <span>English</span>
+          </button>
+          <button id="langAmBtn" class="btn btn-lang" type="button" aria-label="አማርኛ">
+            <span>አማርኛ</span>
+          </button>
+          <button id="installBtn" class="btn btn-install-header" type="button" hidden aria-label="Install app">
+            <svg class="icon"><use href="#i-download"/></svg> <span>Install App</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="app-main">
+        <!-- ============ HOME VIEW (Scan) ============ -->
+        <section class="view" id="view-home">
+          <section class="hero">
+            <h2 id="heroTitle">Diagnose your crops in seconds</h2>
+            <p id="heroBody">
+              Snap or upload a photo of a leaf from <strong>Enset</strong>, <strong>Coffee</strong>, or
+              <strong>Maize</strong>. EnsetScan Vision runs a machine-learning model entirely on your
+              device — no internet, no data cost, no upload.
+            </p>
+            <div class="crop-badges" aria-label="Supported crops">
+              <span class="badge"><svg class="icon icon-sm"><use href="#i-plant"/></svg> Enset</span>
+              <span class="badge"><svg class="icon icon-sm"><use href="#i-coffee"/></svg> Coffee</span>
+              <span class="badge"><svg class="icon icon-sm"><use href="#i-corn"/></svg> Maize</span>
+            </div>
+          </section>
+
+          <section class="install-banner" id="installBanner">
+            <div class="install-banner-icon">
+              <svg class="icon icon-xl"><use href="#i-download"/></svg>
+            </div>
+            <div class="install-banner-text">
+              <h3 id="installBannerTitle">Get the EnsetScan App</h3>
+              <p id="installBannerBody">Install on your phone for fast, offline access — no internet needed.</p>
+            </div>
+            <button id="installBannerBtn" class="btn btn-install-banner" type="button">
+              <svg class="icon"><use href="#i-download"/></svg> <span id="installBannerBtnText">Install App</span>
+            </button>
+          </section>
+
+          <section class="start-scan" id="startScan">
+            <div class="start-scan-content">
+              <span class="start-scan-icon"><svg class="icon icon-xl"><use href="#i-leaf"/></svg></span>
+              <h3 id="startScanTitle">Ready to diagnose?</h3>
+              <p id="startScanBody">Take a photo or pick one from your gallery to get started.</p>
+              <button id="startScanBtn" class="btn btn-primary btn-lg" type="button">
+                <svg class="icon"><use href="#i-camera"/></svg> <span id="startScanBtnText">Start Scan</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="camera-card" id="cameraCard" hidden>
+            <div class="camera-frame" id="cameraFrame">
+              <video id="cameraVideo" autoplay playsinline muted></video>
+              <div class="reticle" id="reticle" aria-hidden="true">
+                <svg class="reticle-svg" viewBox="0 0 200 200" aria-hidden="true">
+                  <path class="reticle-leaf" d="M100 30 C60 60 45 110 30 170 C70 160 120 160 170 170 C155 110 140 60 100 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                  <path class="reticle-vein" d="M100 30 L100 170" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/>
+                </svg>
+              </div>
+              <div class="camera-status" id="cameraStatus">
+                <span class="status-chip" id="lightChip"><svg class="icon icon-sm"><use href="#i-light"/></svg> <span id="lightChipText">Checking light…</span></span>
+                <span class="status-chip" id="stabilityChip"><svg class="icon icon-sm"><use href="#i-steady"/></svg> <span id="stabilityChipText">Hold camera steady</span></span>
+              </div>
+              <div class="camera-error" id="cameraError" hidden>
+                <svg class="icon icon-lg"><use href="#i-camera-off"/></svg>
+                <p id="cameraErrorText">Camera unavailable — use the gallery instead.</p>
+              </div>
+            </div>
+            <div class="camera-actions">
+              <button id="captureBtn" class="btn btn-primary btn-capture" type="button" disabled><svg class="icon"><use href="#i-shutter"/></svg> <span id="captureBtnText">Capture Leaf</span></button>
+              <button id="galleryBtn" class="btn btn-outline" type="button"><svg class="icon"><use href="#i-gallery"/></svg> <span id="galleryBtnText">Choose from Gallery</span></button>
+            </div>
+            <input type="file" id="photoInput" accept="image/*" hidden />
+            <p class="privacy-note" id="privacyNote"><svg class="icon icon-sm"><use href="#i-lock"/></svg> Your photo is processed in temporary memory and never saved or uploaded.</p>
+          </section>
+
+          <section class="preview-card" id="previewCard" hidden>
+            <div class="preview-frame">
+              <img id="previewImg" alt="Selected leaf preview" />
+            </div>
+            <div class="preview-actions">
+              <button id="analyzeBtn" class="btn btn-primary" type="button"><svg class="icon"><use href="#i-search"/></svg> <span id="analyzeBtnText">Analyze Leaf</span></button>
+              <button id="retakeBtn" class="btn btn-outline" type="button"><svg class="icon"><use href="#i-refresh"/></svg> <span id="retakeBtnText">Choose Another</span></button>
+            </div>
+          </section>
+
+          <section class="loading-card" id="loadingCard" hidden>
+            <div class="skeleton-scan" aria-hidden="true">
+              <div class="skeleton-leaf"></div><div class="skeleton-line skeleton-line-title"></div><div class="skeleton-line skeleton-line-sub"></div><div class="skeleton-bar"></div><div class="skeleton-block"></div><div class="skeleton-block"></div>
+            </div>
+            <p id="loadingText">Analyzing leaf…</p>
+          </section>
+
+          <section class="result-card" id="resultCard" hidden>
+            <div class="result-header">
+              <span class="result-icon" id="resultIcon" aria-hidden="true"></span>
+              <div>
+                <h2 id="resultTitle">Diagnostic Result</h2>
+                <p class="result-subtitle" id="resultSubtitle"></p>
+              </div>
+            </div>
+            <div class="confidence-block">
+              <div class="confidence-row"><span id="confidenceLabel">Confidence</span><strong id="confidenceValue">—</strong></div>
+              <div class="confidence-bar"><div class="confidence-fill" id="confidenceFill"></div></div>
+            </div>
+            <div class="detail-block"><h3 id="visualMatchTitle"><svg class="icon icon-sm"><use href="#i-search"/></svg> Visual Match</h3><p id="visualMatch"></p></div>
+            <div class="detail-block"><h3 id="farmerActionTitle"><svg class="icon icon-sm"><use href="#i-lightbulb"/></svg> Recommended Farmer Action</h3><ol id="adviceList"></ol></div>
+            <div class="result-actions"><button id="newScanBtn" class="btn btn-primary" type="button"><svg class="icon"><use href="#i-leaf"/></svg> <span id="newScanBtnText">New Scan</span></button></div>
+          </section>
+        </section>
+
+        <!-- ============ DASHBOARD VIEW ============ -->
+        <section class="view" id="view-dashboard" hidden>
+          <div class="dash-tabs" role="tablist">
+            <button class="dash-tab active" data-tab="threats" type="button"><svg class="icon icon-sm"><use href="#i-warning"/></svg> Threats</button>
+            <button class="dash-tab" data-tab="remedies" type="button"><svg class="icon icon-sm"><use href="#i-remedy"/></svg> Remedies</button>
+            <button class="dash-tab" data-tab="seasons" type="button"><svg class="icon icon-sm"><use href="#i-seasonality"/></svg> Seasons</button>
+            <button class="dash-tab" data-tab="varieties" type="button"><svg class="icon icon-sm"><use href="#i-plant"/></svg> Varieties</button>
+          </div>
+          <div class="dash-body" id="dashBody"></div>
+        </section>
+
+        <!-- ============ HISTORY VIEW ============ -->
+        <section class="view" id="view-history" hidden>
+          <div class="history-toolbar">
+            <button class="btn btn-outline" id="clearHistoryBtn" type="button"><svg class="icon icon-sm"><use href="#i-trash"/></svg> <span id="clearHistoryBtnText">Clear History</span></button>
+          </div>
+          <p class="history-empty" id="historyEmpty">No scans recorded yet.</p>
+          <ul class="history-list" id="historyList"></ul>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <div class="footer-stats">
+          <span id="scanCount">Scans done: 0</span>
+          <span id="lastScan">Last scan: —</span>
+          <span id="engineBadge" class="engine-badge" title="Diagnosis engine"><svg class="icon icon-sm"><use href="#i-gear"/></svg> <span id="engineBadgeText">Engine: Heuristic</span></span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============ PHOTO SOURCE CHOOSER (Bottom Sheet Modal) ============ -->
+  <div class="chooser-overlay" id="chooser" hidden>
+    <div class="chooser-sheet">
+      <div class="chooser-handle"></div>
+      <div class="chooser-title" id="chooserTitle">
+        <svg class="icon icon-sm"><use href="#i-camera"/></svg> Add a leaf photo
+      </div>
+      <div class="chooser-options">
+        <button class="chooser-btn" id="chooserCameraBtn" type="button">
+          <span class="chooser-btn-icon"><svg class="icon icon-lg"><use href="#i-camera"/></svg></span>
+          <span id="chooserCameraText">Take Photo</span>
+        </button>
+        <button class="chooser-btn" id="chooserGalleryBtn" type="button">
+          <span class="chooser-btn-icon"><svg class="icon icon-lg"><use href="#i-gallery"/></svg></span>
+          <span id="chooserGalleryText">Choose from Gallery</span>
+        </button>
+        <button class="chooser-cancel" id="chooserCancelBtn" type="button">✕ Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

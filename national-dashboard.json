@@ -1,0 +1,1585 @@
+{
+  "version": "3.0.0",
+  "updated": "2026-08-15",
+  "title": "National Threat & Indigenous Remedy Dashboard",
+  "title_am": "ብሔራዊ ስጋት እና ባህላዊ መፍትሄ ዳሽቦርድ",
+  "threats": [
+    {
+      "crop": "Enset (False Banana)",
+      "crop_am": "እንሰት",
+      "icon": "🌱",
+      "diseases": "Enset Bacterial Wilt",
+      "diseases_am": "የእንሰት ባክቴሪያ ዊልት",
+      "impact": "Threatens food security for over 20 million people; destroys up to 100% of infected plants.",
+      "impact_am": "ከ20 ሚሊዮን በላይ ሰዎችን የምግብ ዋስትና ያሰጋል፤ እስከ 100% የተያዙ ተክሎችን ያጠፋል።",
+      "svg": "enset-wilt"
+    },
+    {
+      "crop": "Coffee (Cash Crop)",
+      "crop_am": "ቡና",
+      "icon": "☕",
+      "diseases": "Coffee Berry Disease (CBD) & Coffee Leaf Rust (CLR)",
+      "diseases_am": "የቡና ፍሬ በሽታ (CBD) እና የቡና ቅጠል ዝገት (CLR)",
+      "impact": "Causes 27%–80% loss in bean yield across major coffee-producing regions.",
+      "impact_am": "በዋና የቡና አምራች አካባቢዎች ከ27%–80% የቡና ፍሬ ምርት ኪሳራ ያስከትላል።",
+      "svg": "coffee-rust"
+    },
+    {
+      "crop": "Wheat (Major Cereal)",
+      "crop_am": "ስንዴ",
+      "icon": "🌾",
+      "diseases": "Stem Rust, Yellow Rust & Septoria",
+      "diseases_am": "የግንድ ዝገት፣ ቢጫ ዝገት እና ሴፕቶሪያ",
+      "impact": "Capable of causing total harvest loss across high-altitude wheat belts during cool, moist seasons.",
+      "impact_am": "በቀዝቃዛ እና እርጥብ ወቅት በከፍታ የስንዴ ቀጠናዎች ሙሉ የመኸር ኪሳራ ሊያስከትል ይችላል።",
+      "svg": "wheat-rust"
+    },
+    {
+      "crop": "Maize (Staple Grain)",
+      "crop_am": "በቆሎ",
+      "icon": "🌽",
+      "diseases": "Maize Lethal Necrosis (MLN) & Leaf Blights",
+      "diseases_am": "የበቆሎ ገዳይ ኔክሮሲስ (MLN) እና ቅጠል በሽታዎች",
+      "impact": "Rapidly spreading viral complex causing 50%–100% grain yield failure.",
+      "impact_am": "በፍጥነት የሚስፋፋ የቫይረስ ውስብስብ ከ50%–100% የእህል ምርት ውድቀት ያስከትላል።",
+      "svg": "maize-mln"
+    },
+    {
+      "crop": "Teff (National Staple)",
+      "crop_am": "ጤፍ",
+      "icon": "🌾",
+      "diseases": "Teff Rust & Damping-Off",
+      "diseases_am": "የጤፍ ዝገት እና የችግኝ መበስበስ",
+      "impact": "Reduces teff grain yield by 10%–35% in high-rainfall highland areas.",
+      "impact_am": "ከፍተኛ ዝናብ ባለባቸው ደጋማ አካባቢዎች የጤፍ እህል ምርትን ከ10%–35% ይቀንሳል።",
+      "svg": "seedling-blight"
+    },
+    {
+      "crop": "Faba Bean / Chickpea (Pulses)",
+      "crop_am": "ባቄላ / ሽምብራ",
+      "icon": "🫘",
+      "diseases": "Faba Bean Gall, Chocolate Spot & Ascochyta Blight",
+      "diseases_am": "የባቄላ ጋል፣ ቾኮሌት ነጠብጣብ እና አስኮኪታ በሽታ",
+      "impact": "Severe loss in young crop establishment and soil nitrogen balance.",
+      "impact_am": "በወጣት ሰብል መመስረት እና በአፈር ናይትሮጅን ሚዛን ላይ ከባድ ኪሳራ።",
+      "svg": "seedling-blight"
+    },
+    {
+      "crop": "Barley (Major Highland Cereal)",
+      "crop_am": "ገብስ",
+      "icon": "🌾",
+      "diseases": "Scald & Net Blotch",
+      "diseases_am": "ስካልድ እና ኔት ብሎች",
+      "impact": "20–45% yield loss in the moist highlands where barley is a staple.",
+      "impact_am": "ገብስ ዋና ምግብ በሆነባቸው እርጥብ ደጋማ አካባቢዎች 20–45% የምርት ኪሳራ።",
+      "svg": "wheat-rust"
+    },
+    {
+      "crop": "Potato (Cash & Food Crop)",
+      "crop_am": "ድንች",
+      "icon": "🥔",
+      "diseases": "Potato Late Blight (Phytophthora infestans)",
+      "diseases_am": "የድንች ዘግናኝ በሽታ (Phytophthora infestans)",
+      "impact": "Can destroy entire fields in 2–3 weeks under cool, wet conditions.",
+      "impact_am": "በቀዝቃዛ እና እርጥብ ሁኔታ በ2–3 ሳምንታት ውስጥ ሙሉ እርሻዎችን ሊያጠፋ ይችላል።",
+      "svg": "seedling-blight"
+    }
+  ],
+  "remedies": [
+    {
+      "name": "Wood Ash & Garlic Mixture Spray",
+      "name_am": "የእንጨት አመድ እና ነጭ ሽንኩርት መርጫ",
+      "icon": "🧄",
+      "targets": "Fungal leaf blights, rusts, mildews, and early-stage seedling diseases.",
+      "targets_am": "የፈንገስ ቅጠል በሽታዎች፣ ዝገቶች፣ ሻጋታ እና የመጀመሪያ ደረጃ የችግኝ በሽታዎች።",
+      "mechanism": "Wood ash alters leaf surface pH to inhibit fungal spore germination, while garlic acts as a natural antimicrobial agent.",
+      "mechanism_am": "የእንጨት አመድ የቅጠል ገጽ pH በመቀየር የፈንገስ ስፖሮ መብቀልን ይከላከላል፤ ነጭ ሽንኩርት እንደ ተፈጥሯዊ ፀረ-ማይክሮብ ይሰራል።"
+    },
+    {
+      "name": "Livestock Urine & Soap (Endod) Treatment",
+      "name_am": "የእንስሳት ሽንት እና ሳሙና (እንዶድ) ህክምና",
+      "icon": "🐄",
+      "targets": "Soil-borne seedling blight, root rot, and damping-off.",
+      "targets_am": "በአፈር የሚተላለፉ የችግኝ በሽታዎች፣ የስር መበስበስ እና የችግኝ ውድቀት።",
+      "mechanism": "Diluted cattle/ox urine contains urea and ammonia compounds that suppress soil pathogens and stimulate root growth.",
+      "mechanism_am": "የተቀላቀለ የከብት/በሬ ሽንት ዩሪያ እና አሞኒያ ውህዶችን ይይዛል፤ የአፈር በሽታ አምጪዎችን ያጭዳል እና የስር እድገትን ያነቃቃል።"
+    },
+    {
+      "name": "Tool Flaming (Macha Sanitation)",
+      "name_am": "የመሳሪያ እሳት ማጽዳት (ማቻ ንጽህና)",
+      "icon": "🔪",
+      "targets": "Enset Bacterial Wilt and all tool-spread bacterial/fungal diseases.",
+      "targets_am": "የእንሰት ባክቴሪያ ዊልት እና በመሳሪያ የሚተላለፉ ሁሉም በሽታዎች።",
+      "mechanism": "Heat-sterilizing harvesting knives in open fire destroys bacterial slime and fungal spores between plants, cutting transmission rates by over 35%.",
+      "mechanism_am": "የመከር ቢላዎችን በእሳት ማጽዳት በተክሎች መካከል ያለውን የባክቴሪያ ፈሳሽ እና የፈንገስ ስፖሮችን ያጠፋል፤ የስርጭት መጠንን ከ35% በላይ ይቀንሳል።"
+    },
+    {
+      "name": "Deep Pit Isolation & Burial",
+      "name_am": "ጥልቅ ጉድጓድ መነጠል እና መቅበር",
+      "icon": "🕳️",
+      "targets": "Systemic bacterial infections, wilts, and soil-borne fungi.",
+      "targets_am": "የስርዓት ባክቴሪያ ኢንፌክሽኖች፣ ዊልቶች እና በአፈር የሚተላለፉ ፈንገሶች።",
+      "mechanism": "Digging out infected plants and burying them under 50+ cm of soil starves soil-borne pathogens and prevents spore transmission by wind or rain.",
+      "mechanism_am": "የተያዙ ተክሎችን ቆፍረው ከ50+ ሳ.ሜ አፈር ስር መቅበር የአፈር በሽታ አምጪዎችን ያራባል እና በነፋስ/ዝናብ ስርጭትን ይከላከላል።"
+    },
+    {
+      "name": "Intercropping & Shade Management",
+      "name_am": "የተቀላቀለ ተከላ እና የጥላ አስተዳደር",
+      "icon": "🌳",
+      "targets": "Coffee Berry Disease, Leaf Rust, Bean Rust, and maize leaf blights.",
+      "targets_am": "የቡና ፍሬ በሽታ፣ ቅጠል ዝገት፣ የባቄላ ዝገት እና የበቆሎ ቅጠል በሽታዎች።",
+      "mechanism": "Selectively pruning dense canopies and intercropping with legumes increases airflow and sunlight, lowering leaf humidity needed for spores to thrive.",
+      "mechanism_am": "ጥቅጥቅ ያለውን ጥላ በመቁረጥ እና ከጥራጥሬ ጋር በመቀላቀል የአየር ዝውውር እና የፀሀይ ብርሀን ይጨምራል፤ ለስፖሮ አስፈላጊውን የቅጠል እርጥበት ይቀንሳል።"
+    },
+    {
+      "name": "Bordeaux Mixture (Copper + Lime)",
+      "name_am": "ቦርዶ ቅልቅል (መዳብ + ኖራ)",
+      "icon": "🧪",
+      "targets": "Potato Late Blight, Coffee Leaf Rust, and Septoria of wheat.",
+      "targets_am": "የድንች ዘግናኝ በሽታ፣ የቡና ቅጠል ዝገት እና የስንዴ ሴፕቶሪያ።",
+      "mechanism": "A simple mix of copper sulfate and slaked lime coats leaves with a protective fungicide film — one of the oldest and most effective home sprays.",
+      "mechanism_am": "የመዳብ ሰልፌት እና የኖራ ቀላል ቅልቅል በቅጠሎች ላይ የመከላከያ ፈንገስ መድሃኒት ሽፋን ይፈጥራል — እጅግ ጥንታዊ እና ውጤታማ የቤት መርጫ ነው።"
+    }
+  ],
+  "seasons": [
+    {
+      "name": "Belg (Short Rains)",
+      "name_am": "በልግ (አጭር ዝናብ)",
+      "months": "Feb – May",
+      "months_am": "የካቲት – ግንቦት",
+      "peak": "Seedling blights, damping-off, early rusts, Ascochyta blight of chickpea.",
+      "peak_am": "የችግኝ በሽታዎች፣ የችግኝ መበስበስ፣ ቀደምት ዝገቶች፣ የሽምብራ አስኮኪታ በሽታ።",
+      "active": false
+    },
+    {
+      "name": "Kiremt (Heavy Rains)",
+      "name_am": "ክረምት (ከባድ ዝናብ)",
+      "months": "Jun – Sep",
+      "months_am": "ሰኔ – መስከረም",
+      "peak": "Enset Bacterial Wilt, Coffee Leaf Rust, Potato Late Blight, Wheat Rust, Maize Leaf Blights, Faba Bean Chocolate Spot.",
+      "peak_am": "የእንሰት ባክቴሪያ ዊልት፣ የቡና ቅጠል ዝገት፣ የድንች ዘግናኝ በሽታ፣ የስንዴ ዝገት፣ የበቆሎ ቅጠል በሽታዎች፣ የባቄላ ቾኮሌት ነጠብጣብ።",
+      "active": true
+    },
+    {
+      "name": "Bega (Dry Season)",
+      "name_am": "በጋ (ደረቅ ወቅት)",
+      "months": "Oct – Jan",
+      "months_am": "ጥቅምት – ጥር",
+      "peak": "Mealybugs, aphids, soil-borne nematodes, and storage rots.",
+      "peak_am": "ሜሊባግ፣ አፊድ፣ የአፈር ኔማቶድ እና የማከማቻ መበስበስ።",
+      "active": false
+    }
+  ],
+  "hotspots": [
+    {
+      "region": "SNNP / Gurage highlands",
+      "region_am": "ደቡብ/ጉራጌ ደጋማ",
+      "threat": "Root-knot nematodes, Enset Bacterial Wilt, and mealybugs (acidic soils).",
+      "threat_am": "የስር ኖት ኔማቶድ፣ የእንሰት ባክቴሪያ ዊልት እና ሜሊባግ (አሲዳማ አፈር)።"
+    },
+    {
+      "region": "Oromia / Amhara moist highlands",
+      "region_am": "ኦሮሚያ/አማራ እርጥብ ደጋማ",
+      "threat": "Wheat Stem & Yellow Rust, Septoria, and Barley Scald.",
+      "threat_am": "የስንዴ ግንድ እና ቢጫ ዝገት፣ ሴፕቶሪያ እና የገብስ ስካልድ።"
+    },
+    {
+      "region": "Southern coffee belts",
+      "region_am": "ደቡባዊ የቡና ቀጠናዎች",
+      "threat": "Coffee Berry Disease, Leaf Rust, and Coffee Wilt Disease.",
+      "threat_am": "የቡና ፍሬ በሽታ፣ ቅጠል ዝገት እና የቡና ዊልት በሽታ።"
+    },
+    {
+      "region": "Highland potato zones (Amhara, SNNP, Oromia)",
+      "region_am": "የደጋማ ድንች ቀጠናዎች (አማራ፣ ደቡብ፣ ኦሮሚያ)",
+      "threat": "Potato Late Blight during the Kiremt rains.",
+      "threat_am": "በክረምት ዝናብ ወቅት የድንች ዘግናኝ በሽታ።"
+    },
+    {
+      "region": "Moist maize belts (Benishangul-Gumuz, Gambela)",
+      "region_am": "እርጥብ የበቆሎ ቀጠናዎች (ቤንሻንጉል-ጉሙዝ፣ ጋምቤላ)",
+      "threat": "Maize Lethal Necrosis and leaf blights.",
+      "threat_am": "የበቆሎ ገዳይ ኔክሮሲስ እና ቅጠል በሽታዎች።"
+    },
+    {
+      "region": "Wet teff-growing highlands (Shewa, Gojjam)",
+      "region_am": "እርጥብ የጤፍ ደጋማ አካባቢዎች (ሸዋ፣ ጎጃም)",
+      "threat": "Teff Rust and seedling damping-off.",
+      "threat_am": "የጤፍ ዝገት እና የችግኝ መበስበስ።"
+    }
+  ],
+  "varieties": [
+    {
+      "crop": "Enset",
+      "crop_am": "እንሰት",
+      "resistant": [
+        "Lemat",
+        "Beshute",
+        "Yiregiye"
+      ],
+      "resistant_am": [
+        "ለማት",
+        "በሹቴ",
+        "ይረጊዬ"
+      ],
+      "susceptible": [
+        "Ageremremat"
+      ],
+      "susceptible_am": [
+        "አገረምረማት"
+      ]
+    },
+    {
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "resistant": [
+        "Gu-18",
+        "Gu-1",
+        "Gu-4"
+      ],
+      "resistant_am": [
+        "Gu-18",
+        "Gu-1",
+        "Gu-4"
+      ],
+      "susceptible": [],
+      "susceptible_am": []
+    },
+    {
+      "crop": "Wheat",
+      "crop_am": "ስንዴ",
+      "resistant": [
+        "Digalu",
+        "Kubsa",
+        "Hidase"
+      ],
+      "resistant_am": [
+        "ድጋሉ",
+        "ኩብሳ",
+        "ህዳሴ"
+      ],
+      "susceptible": [
+        "Local stem-rust susceptible lines"
+      ],
+      "susceptible_am": [
+        "ለግንድ ዝገት ተጋላጭ የአካባቢ ዝርያዎች"
+      ]
+    },
+    {
+      "crop": "Teff",
+      "crop_am": "ጤፍ",
+      "resistant": [
+        "Quncho (DZ-Cr-387)",
+        "Tseday"
+      ],
+      "resistant_am": [
+        "ቁንጮ (DZ-Cr-387)",
+        "ፀደይ"
+      ],
+      "susceptible": [],
+      "susceptible_am": []
+    },
+    {
+      "crop": "Barley",
+      "crop_am": "ገብስ",
+      "resistant": [
+        "HB-1533",
+        "Traveller"
+      ],
+      "resistant_am": [
+        "HB-1533",
+        "ትራቨለር"
+      ],
+      "susceptible": [],
+      "susceptible_am": []
+    },
+    {
+      "crop": "Potato",
+      "crop_am": "ድንች",
+      "resistant": [
+        "Belete",
+        "Gudenie",
+        "Jalene"
+      ],
+      "resistant_am": [
+        "በለጠ",
+        "ጉደኒ",
+        "ጃለኔ"
+      ],
+      "susceptible": [
+        "Local late-blight susceptible varieties"
+      ],
+      "susceptible_am": [
+        "ለዘግናኝ በሽታ ተጋላጭ የአካባቢ ዝርያዎች"
+      ]
+    }
+  ],
+  "diseases": [
+    {
+      "id": "enset-bw",
+      "crop": "Enset",
+      "crop_am": "እንሰት",
+      "name": "Enset Bacterial Wilt",
+      "name_am": "የእንሰት ባክቴሪያ ዊልት",
+      "pathogen": "Xanthomonas campestris pv. musacearum",
+      "icon": "⚠️",
+      "risk": "Critical",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Chegino",
+        "Janfa",
+        "Quaqusa"
+      ],
+      "local_names_am": [
+        "ቸጊኖ",
+        "ጃንፋ",
+        "ቋቁሳ"
+      ],
+      "symptoms": [
+        "Yellowing and wilting of the central heart leaf",
+        "Drooping petioles and premature leaf death",
+        "Yellow bacterial slime oozing from cut pseudostem",
+        "Rapid whole-plant collapse within weeks"
+      ],
+      "symptoms_am": [
+        "የመሃል ቅጠል መገርጠት እና መደረቅ",
+        "የቅጠል ግንድ መደፈር እና ያለጊዜው የቅጠል ሞት",
+        "ግንዱ ሲቆረጥ ቢጫ የባክቴሪያ ፈሳሽ መውጣት",
+        "በሳምንታት ውስጥ ሙሉ የተክል ውድቀት"
+      ],
+      "transmission": "Infected planting material, contaminated cutting tools (Macha knives), and soil movement.",
+      "transmission_am": "የተያዘ የመትከያ ቁሳቁስ፣ የተበከሉ መቁረጫ መሳሪያዎች (ማቻ) እና የአፈር እንቅስቃሴ።",
+      "season": "Rainy season (June–September), high soil moisture.",
+      "season_am": "የዝናብ ወቅት (ሰኔ–መስከረም)፣ ከፍተኛ የአፈር እርጥበት።",
+      "impact": "Threatens food security for over 20 million people; destroys up to 100% of infected plants.",
+      "impact_am": "ከ20 ሚሊዮን በላይ ሰዎችን የምግብ ዋስትና ያሰጋል፤ እስከ 100% የተያዙ ተክሎችን ያጠፋል።",
+      "prevention": [
+        "Flame-sterilize or bleach all cutting knives between plants",
+        "Plant only certified disease-free suckers",
+        "Avoid moving soil from infected gardens",
+        "Space mats widely to reduce tool contact"
+      ],
+      "prevention_am": [
+        "በተክሎች መካከል ሁሉንም መቁረጫ ቢላዎች በእሳት ወይም ብሊች ያጽዱ",
+        "የተረጋገጡ ከበሽታ ነጻ ችግኞችን ብቻ ይትከሉ",
+        "ከተያዙ አትክልቶች አፈር ከማንቀሳቀስ ይቆጠቡ",
+        "የመሳሪያ ግንኙነትን ለመቀነስ እንሰቶችን በስፋት ያስቀምጡ"
+      ],
+      "treatment": [
+        "Uproot and bury infected plants in a deep pit (50+ cm) off-site",
+        "Apply wood ash around healthy plant bases as a barrier",
+        "Leave the infected hole open to sunlight for 6–12 months",
+        "Do not replant Enset in the same hole for a full year"
+      ],
+      "treatment_am": [
+        "የተያዙ ተክሎችን ቆፍረው ከእርሻ ርቆ በጥልቅ ጉድጓድ (50+ ሳ.ሜ) ይቅበሩ",
+        "በጤናማ ተክሎች ስር የእንጨት አመድ እንደ መከላከያ ይረጩ",
+        "የተያዘውን ጉድጓድ ለ6–12 ወራት ለፀሀይ ይክፈቱ",
+        "ለአንድ ዓመት ሙሉ በተመሳሳይ ጉድጓድ እንሰት አይትከሉ"
+      ],
+      "traditional_remedy": "Tool flaming (Macha sanitation) cuts transmission by over 35%; wood ash dries and deters the bacteria.",
+      "traditional_remedy_am": "የመሳሪያ እሳት ማጽዳት (ማቻ ንጽህና) ስርጭትን ከ35% በላይ ይቀንሳል፤ የእንጨት አመድ ባክቴሪያውን ያደርቃል እና ይከላከላል።",
+      "svg": "enset-wilt"
+    },
+    {
+      "id": "coffee-cbd",
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Berry Disease (CBD)",
+      "name_am": "የቡና ፍሬ በሽታ (CBD)",
+      "pathogen": "Colletotrichum kahawae",
+      "icon": "☕",
+      "risk": "High",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "CBD",
+        "Berry rot"
+      ],
+      "local_names_am": [
+        "CBD",
+        "የፍሬ መበስበስ"
+      ],
+      "symptoms": [
+        "Dark sunken lesions on green berries",
+        "Berries turn black and rot before ripening",
+        "Leaf spots may also appear",
+        "Severe berry drop in wet seasons"
+      ],
+      "symptoms_am": [
+        "በአረንጓዴ ፍሬዎች ላይ ጠቆር ያሉ የተጠመቁ ቁስሎች",
+        "ፍሬዎች ከመብሰላቸው በፊት ጥቁር ሆነው ይበሰብሳሉ",
+        "የቅጠል ነጠብጣቦችም ሊታዩ ይችላሉ",
+        "በዝናባማ ወቅት ከባድ የፍሬ መርገፍ"
+      ],
+      "transmission": "Rain splash from infected berries on the tree; spread during main rains.",
+      "transmission_am": "በዛፉ ላይ ካሉ የተያዙ ፍሬዎች በዝናብ መርጨት፤ በዋና ዝናብ ወቅት ይስፋፋል።",
+      "season": "Main rainy season (May–August) when berries are green.",
+      "season_am": "ዋና የዝናብ ወቅት (ግንቦት–ነሀሴ) ፍሬዎቹ አረንጓዴ ሲሆኑ።",
+      "impact": "Causes 27%–80% loss in bean yield across major coffee-producing regions.",
+      "impact_am": "በዋና የቡና አምራች አካባቢዎች ከ27%–80% የቡና ፍሬ ምርት ኪሳራ ያስከትላል።",
+      "prevention": [
+        "Plant resistant accessions Gu-18, Gu-1, Gu-4",
+        "Prune for good airflow and keep branches off the ground",
+        "Remove and destroy infected berries early",
+        "Thin dense Enset shade above coffee trees"
+      ],
+      "prevention_am": [
+        "ተከላካይ ዝርያዎችን Gu-18፣ Gu-1፣ Gu-4 ይትከሉ",
+        "ለጥሩ የአየር ዝውውር ይቁረጡ እና ቅርንጫፎችን ከመሬት ያርቁ",
+        "የተያዙ ፍሬዎችን ቀደም ብለው ያስወግዱ እና ያጥፉ",
+        "ከቡና ዛፎች በላይ ያለውን ጥቅጥቅ የእንሰት ጥላ ያቅልሉ"
+      ],
+      "treatment": [
+        "Strip and burn all mummified berries during pruning",
+        "Pick berries early and often; hand removal is cheapest",
+        "Apply copper-based organic fungicide before main rains",
+        "Improve air circulation around the canopy"
+      ],
+      "treatment_am": [
+        "በመቁረጥ ወቅት የደረቁ ፍሬዎችን ሁሉ ቀልቀው ያቃጥሉ",
+        "ፍሬዎችን ቀድመው እና በተደጋጋሚ ይልቀሙ፤ በእጅ ማስወገድ በጣም ርካሹ ነው",
+        "ከዋናው ዝናብ በፊት የመዳብ ፈንገስ መርጫ ይረጩ",
+        "በጥላው ዙሪያ የአየር ዝውውርን ያሻሽሉ"
+      ],
+      "traditional_remedy": "Intercropping & shade management — pruning dense Enset canopies lowers leaf humidity needed for spores.",
+      "traditional_remedy_am": "የተቀላቀለ ተከላ እና የጥላ አስተዳደር — ጥቅጥቅ የእንሰት ጥላን መቁረጥ ለስፖሮ አስፈላጊውን የቅጠል እርጥበት ይቀንሳል።",
+      "svg": "coffee-rust"
+    },
+    {
+      "id": "coffee-clr",
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Leaf Rust (CLR)",
+      "name_am": "የቡና ቅጠል ዝገት (CLR)",
+      "pathogen": "Hemileia vastatrix",
+      "icon": "🟠",
+      "risk": "High",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Ziget",
+        "Coffee rust"
+      ],
+      "local_names_am": [
+        "ዝገት",
+        "የቡና ዝገት"
+      ],
+      "symptoms": [
+        "Bright orange-yellow powdery pustules on leaf underside",
+        "Yellow spots on upper leaf surface",
+        "Premature leaf drop and defoliation",
+        "Reduced photosynthesis and berry yield"
+      ],
+      "symptoms_am": [
+        "በቅጠል ስር ደማቅ ብርቱካናማ-ቢጫ የዱቄት እባጮች",
+        "በቅጠል ላይኛው ገጽ ቢጫ ነጠብጣቦች",
+        "ያለጊዜው የቅጠል መርገፍ",
+        "የፎቶሲንተሲስ እና የፍሬ ምርት መቀነስ"
+      ],
+      "transmission": "Wind-borne spores; spread by rain splash between trees.",
+      "transmission_am": "በነፋስ የሚተላለፉ ስፖሮች፤ በዝናብ ከዛፍ ወደ ዛፍ ይተላለፋል።",
+      "season": "Late rainy to early dry season (August–November).",
+      "season_am": "ከዝናብ መጨረሻ እስከ ደረቅ ወቅት መጀመሪያ (ነሀሴ–ህዳር)።",
+      "impact": "Causes 30–50% yield loss if uncontrolled.",
+      "impact_am": "ካልተቆጣጠሩት 30–50% የምርት ኪሳራ።",
+      "prevention": [
+        "Prune overlapping canopy shade to increase airflow",
+        "Keep coffee rows airy by spacing trees well",
+        "Harvest and remove fallen leaves from under trees",
+        "Plant a maize/banana windbreak around the field"
+      ],
+      "prevention_am": [
+        "የአየር ዝውውርን ለማሳደግ የተደራረበ ጥላን ይቁረጡ",
+        "የቡና ዛፎችን በስፋት በማስቀመጥ አየር እንዲያገኙ ያድርጉ",
+        "ከዛፎች ስር የወደቁ ቅጠሎችን ይሰብስቡ እና ያስወግዱ",
+        "በእርሻው ዙሪያ የበቆሎ/ሙዝ የነፋስ መከላከያ ይትከሉ"
+      ],
+      "treatment": [
+        "Pick off and burn the very first rusted leaves",
+        "Apply copper-based organic fungicide before main rains",
+        "Prune lower infected foliage close to the soil",
+        "Improve sunlight penetration through the canopy"
+      ],
+      "treatment_am": [
+        "የመጀመሪያዎቹን የተያዙ ቅጠሎች ቀልጠው ያቃጥሉ",
+        "ከዋናው ዝናብ በፊት የመዳብ ፈንገስ መርጫ ይረጩ",
+        "ከአፈር ገጽ አጠገብ ያሉ የታችኛውን የተያዙ ቅጠሎችን ይቁረጡ",
+        "በጥላው ውስጥ የፀሀይ ብርሀን ይጨምሩ"
+      ],
+      "traditional_remedy": "Wood ash dusting on damp leaves slows spore germination; shade pruning lowers humidity.",
+      "traditional_remedy_am": "በእርጥብ ቅጠሎች ላይ የእንጨት አመድ መርጨት የስፖሮ መብቀልን ይቀንሳል፤ የጥላ መቁረጥ እርጥበትን ይቀንሳል።",
+      "svg": "coffee-rust"
+    },
+    {
+      "id": "coffee-wilt",
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Wilt Disease",
+      "name_am": "የቡና ዊልት በሽታ",
+      "pathogen": "Gibberella xylarioides",
+      "icon": "🔴",
+      "risk": "Critical",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "CLD",
+        "Coffee wilt"
+      ],
+      "local_names_am": [
+        "CLD",
+        "የቡና ዊልት"
+      ],
+      "symptoms": [
+        "Sudden wilting and yellowing of branches",
+        "Dark blue-black streaks inside the wood",
+        "Premature leaf drop and dieback",
+        "Progressive death of the whole tree"
+      ],
+      "symptoms_am": [
+        "ድንገተኛ መደረቅ እና የቅርንጫፎች መገርጠት",
+        "በእንጨቱ ውስጥ ጥቁር ሰማያዊ ጅራቶች",
+        "ያለጊዜው የቅጠል መርገፍ እና መድረቅ",
+        "የሙሉ ዛፍ ተራማጅ ሞት"
+      ],
+      "transmission": "Infected seedlings, contaminated pruning tools, and infested soil.",
+      "transmission_am": "የተያዙ ችግኞች፣ የተበከሉ የመቁረጫ መሳሪያዎች እና የተበከለ አፈር።",
+      "season": "Year-round; peaks after heavy rain or drought stress.",
+      "season_am": "ዓመቱን ሙሉ፤ ከከባድ ዝናብ ወይም ድርቅ ጫና በኋላ ይባሳል።",
+      "impact": "Plant death within months; whole farms can be affected if not rogued early.",
+      "impact_am": "በወራት ውስጥ የተክል ሞት፤ ቀደም ብሎ ካልተወገደ ሙሉ እርሻዎች ሊጠቁ ይችላሉ።",
+      "prevention": [
+        "Use only certified disease-free seedlings",
+        "Sterilize pruning tools between trees with flame or bleach",
+        "Avoid wounding trunks during weeding or shade work",
+        "Keep fields free of old infected stumps"
+      ],
+      "prevention_am": [
+        "የተረጋገጡ ከበሽታ ነጻ ችግኞችን ብቻ ይጠቀሙ",
+        "በዛፎች መካከል የመቁረጫ መሳሪያዎችን በእሳት ወይም ብሊች ያጸዱ",
+        "በአረም ማጽዳት ወይም በጥላ ስራ ወቅት ግንዶችን ከመቁሰል ይቆጠቡ",
+        "እርሻውን ከአሮጌ የተያዙ ጉቶዎች ነጻ ያድርጉ"
+      ],
+      "treatment": [
+        "Uproot and burn infected trees immediately",
+        "Leave the hole open to sunlight for the whole dry season",
+        "Do not replant coffee in the same hole for at least one year",
+        "Apply wood ash around healthy neighbouring trees as a barrier"
+      ],
+      "treatment_am": [
+        "የተያዙ ዛፎችን ወዲያውኑ ቆፍረው ያቃጥሉ",
+        "ጉድጓዱን ለደረቅ ወቅት ሙሉ ለፀሀይ ይክፈቱ",
+        "በተመሳሳይ ጉድጓድ ቢያንስ ለአንድ ዓመት ቡና አይትከሉ",
+        "በጤናማ አጎራባች ዛፎች ዙሪያ የእንጨት አመድ እንደ መከላከያ ይረጩ"
+      ],
+      "traditional_remedy": "Burn wilted stumps and keep the hole open to sunlight; flame or bleach tools between every tree.",
+      "traditional_remedy_am": "የደረቁ ጉቶዎችን ያቃጥሉ እና ጉድጓዱን ለፀሀይ ይክፈቱ፤ መሳሪያዎችን በእሳት ወይም ብሊች ያጸዱ።",
+      "svg": "coffee-rust"
+    },
+    {
+      "id": "wheat-rust",
+      "crop": "Wheat",
+      "crop_am": "ስንዴ",
+      "name": "Wheat Stem & Yellow Rust",
+      "name_am": "የስንዴ ግንድ እና ቢጫ ዝገት",
+      "pathogen": "Puccinia graminis & Puccinia striiformis",
+      "icon": "🌾",
+      "risk": "High",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Stem rust",
+        "Yellow rust"
+      ],
+      "local_names_am": [
+        "የግንድ ዝገት",
+        "ቢጫ ዝገት"
+      ],
+      "symptoms": [
+        "Bright yellow linear pustules along leaf veins (yellow rust)",
+        "Dark reddish-brown pustules on stems (stem rust)",
+        "Premature drying of the plant",
+        "Grain shriveling and yield loss"
+      ],
+      "symptoms_am": [
+        "በቅጠል ስሮች ላይ ደማቅ ቢጫ ቀጥታ እባጮች (ቢጫ ዝገት)",
+        "በግንድ ላይ ጠቆር ቡናማ-ቀይ እባጮች (የግንድ ዝገት)",
+        "የተክሉ ያለጊዜው መድረቅ",
+        "የእህል መኮማተር እና የምርት ኪሳራ"
+      ],
+      "transmission": "Wind-borne spores over long distances; spread in cool, moist periods.",
+      "transmission_am": "በነፋስ ለረጅም ርቀት የሚተላለፉ ስፖሮች፤ በቀዝቃዛ እና እርጥብ ጊዜ ይስፋፋል።",
+      "season": "Cool, moist periods in high-altitude wheat belts.",
+      "season_am": "በከፍታ የስንዴ ቀጠናዎች ቀዝቃዛ እና እርጥብ ጊዜያት።",
+      "impact": "Capable of causing total harvest loss across high-altitude wheat belts.",
+      "impact_am": "በከፍታ የስንዴ ቀጠናዎች ሙሉ የመኸር ኪሳራ ሊያስከትል ይችላል።",
+      "prevention": [
+        "Plant early so wheat matures before cool, moist rust conditions peak",
+        "Use resistant varieties such as Digalu, Kubsa, Hidase",
+        "Rotate wheat with non-cereal crops",
+        "Remove volunteer wheat plants that carry spores"
+      ],
+      "prevention_am": [
+        "ሰብሉ ከቀዝቃዛ እርጥብ ወቅት በፊት እንዲበስል ቀድመው ይትከሉ",
+        "እንደ ድጋሉ፣ ኩብሳ፣ ህዳሴ ያሉ ተከላካይ ዝርያዎችን ይጠቀሙ",
+        "ስንዴን ከእህል ካልሆኑ ሰብሎች ጋር ይቀያይሩ",
+        "ስፖሮችን የሚሸከሙ የፈቃደኛ ስንዴ ተክሎችን ያስወግዱ"
+      ],
+      "treatment": [
+        "Remove and bury the first rusted leaves deep off-site",
+        "Apply sulfur-based organic fungicide early",
+        "Improve field drainage and airflow",
+        "Harvest early if rust is severe"
+      ],
+      "treatment_am": [
+        "የመጀመሪያዎቹን የተያዙ ቅጠሎች አስወግደው በጥልቅ ይቅበሩ",
+        "ቀደም ብለው የሰልፈር ፈንገስ መርጫ ይረጩ",
+        "የእርሻ የውሃ ፍሳሽ እና የአየር ዝውውርን ያሻሽሉ",
+        "ዝገቱ ከባድ ከሆነ ቀድመው ይሰብስቡ"
+      ],
+      "traditional_remedy": "Early planting lets the crop mature before the cool, moist rust season; remove and bury first rusted leaves.",
+      "traditional_remedy_am": "ቀድመው መትከል ሰብሉ ከቀዝቃዛ እርጥብ ወቅት በፊት እንዲበስል ያደርጋል፤ የመጀመሪያዎቹን የተያዙ ቅጠሎች አስወግደው ይቅበሩ።",
+      "svg": "wheat-rust"
+    },
+    {
+      "id": "wheat-septoria",
+      "crop": "Wheat",
+      "crop_am": "ስንዴ",
+      "name": "Wheat Septoria Leaf Blotch",
+      "name_am": "የስንዴ ሴፕቶሪያ ቅጠል ብሎች",
+      "pathogen": "Septoria tritici",
+      "icon": "🟤",
+      "risk": "Moderate",
+      "risk_am": "መካከለኛ",
+      "local_names": [
+        "Septoria leaf spot"
+      ],
+      "local_names_am": [
+        "የሴፕቶሪያ ቅጠል ነጠብጣብ"
+      ],
+      "symptoms": [
+        "Irregular yellow-brown blotches on lower leaves first",
+        "Small dark fruiting bodies within dead lesions",
+        "Disease moves upward in wet weather",
+        "Premature leaf death and shriveled grain"
+      ],
+      "symptoms_am": [
+        "በመጀመሪያ በታችኛው ቅጠሎች ላይ ቢጫ-ቡናማ ነጠብጣቦች",
+        "በሞቱ ቁስሎች ውስጥ ጥቁር የእጽዋት አካላት",
+        "በእርጥብ የአየር ሁኔታ በሽታው ወደ ላይ ይወጣል",
+        "ያለጊዜው የቅጠል ሞት እና የተኮመጠ እህል"
+      ],
+      "transmission": "Rain splash and plant debris carrying spores from the previous season.",
+      "transmission_am": "በዝናብ መርጨት እና ካለፈው ወቅት ቅሪት የሚተላለፉ ስፖሮች።",
+      "season": "Cool, wet periods during tillering to heading.",
+      "season_am": "ከቀንበጥ እስከ ማብቀል ድረስ ቀዝቃዛ እና እርጥብ ጊዜያት።",
+      "impact": "10–30% grain yield reduction in moist highland wheat.",
+      "impact_am": "በእርጥብ ደጋማ ስንዴ 10–30% የእህል ምርት መቀነስ።",
+      "prevention": [
+        "Bury or remove last season's wheat stubble",
+        "Rotate wheat with pulses (faba bean, chickpea)",
+        "Avoid dense planting to improve airflow",
+        "Use tolerant varieties where available"
+      ],
+      "prevention_am": [
+        "የአለፈውን ወቅት የስንዴ ቅሪት ይቅበሩ ወይም ያስወግዱ",
+        "ስንዴን ከጥራጥሬ (ባቄላ፣ ሽምብራ) ጋር ይቀያይሩ",
+        "የአየር ዝውውርን ለማሻሻል ጥቅጥቅ መትከልን ያስወግዱ",
+        "በሚገኝበት ቦታ ተከላካይ ዝርያዎችን ይጠቀሙ"
+      ],
+      "treatment": [
+        "Spray Bordeaux mixture (copper + lime) early in the season",
+        "Remove heavily infected lower leaves and bury them",
+        "Improve drainage in waterlogged field patches",
+        "Harvest and dry grain promptly to stop further shrinking"
+      ],
+      "treatment_am": [
+        "በወቅቱ መጀመሪያ ቦርዶ ቅልቅል (መዳብ + ኖራ) ይረጩ",
+        "በጣም የተያዙ የታችኛውን ቅጠሎች አስወግደው ይቅበሩ",
+        "የውሃ መቆርቆር ባለባቸው የእርሻ ቦታዎች ፍሳሽን ያሻሽሉ",
+        "ተጨማሪ መኮማተርን ለማስቆም በፍጥነት ይሰብስቡ እና ያድርቁ"
+      ],
+      "traditional_remedy": "Bury old wheat stubble deeply and rotate with faba bean — removes the spores that carry the disease.",
+      "traditional_remedy_am": "የአሮጌ የስንዴ ቅሪትን በጥልቅ ይቅበሩ እና ከባቄላ ጋር ይቀያይሩ — በሽታውን የሚሸከሙ ስፖሮችን ያስወግዳል።",
+      "svg": "wheat-rust"
+    },
+    {
+      "id": "maize-mln",
+      "crop": "Maize",
+      "crop_am": "በቆሎ",
+      "name": "Maize Lethal Necrosis (MLN)",
+      "name_am": "የበቆሎ ገዳይ ኔክሮሲስ (MLN)",
+      "pathogen": "Maize chlorotic mottle virus (MCMV) complex",
+      "icon": "🌽",
+      "risk": "Critical",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "MLN",
+        "Lethal necrosis"
+      ],
+      "local_names_am": [
+        "MLN",
+        "ገዳይ ኔክሮሲስ"
+      ],
+      "symptoms": [
+        "Yellowing and necrosis of leaves with severe stunting",
+        "Dead heart and plant death before harvest",
+        "Rapid spread through the field",
+        "Malformed or missing ears"
+      ],
+      "symptoms_am": [
+        "የቅጠሎች መገርጠት እና ኔክሮሲስ ከከባድ ድውየት ጋር",
+        "የልብ መሞት እና ከመኸር በፊት የተክል ሞት",
+        "በእርሻው ውስጥ ፈጣን ስርጭት",
+        "የተበላሹ ወይም የጎደሉ እሸቶች"
+      ],
+      "transmission": "Thrips, aphids, beetles, and infected seed.",
+      "transmission_am": "ትሪፕስ፣ አፊድ፣ ጥንዚዛ እና የተያዘ ዘር።",
+      "season": "Warm season; spreads rapidly with insect vectors.",
+      "season_am": "ሞቃት ወቅት፤ ከነፍሳት ተሸካሚዎች ጋር በፍጥነት ይተላለፋል።",
+      "impact": "Rapidly spreading viral complex causing 50%–100% grain yield failure.",
+      "impact_am": "በፍጥነት የሚስፋፋ የቫይረስ ውስብስብ ከ50%–100% የእህል ምርት ውድቀት ያስከትላል።",
+      "prevention": [
+        "Rogue and destroy infected plants immediately",
+        "Control insect vectors (thrips, aphids, beetles)",
+        "Rotate with non-cereal crops and use certified seed",
+        "Control weeds that host the insect vectors"
+      ],
+      "prevention_am": [
+        "የተያዙ ተክሎችን ወዲያውኑ ቆፍረው ያጥፉ",
+        "ነፍሳትን (ትሪፕስ፣ አፊድ፣ ጥንዚዛ) ይቆጣጠሩ",
+        "ከእህል ሰብሎች ጋር ይቀያይሩ እና የተረጋገጠ ዘር ይጠቀሙ",
+        "ነፍሳትን የሚያስተናግዱ አረሞችን ይቆጣጠሩ"
+      ],
+      "treatment": [
+        "Pull out and destroy any sick plant immediately",
+        "Plant early so the crop matures before insect pressure peaks",
+        "Apply botanical soap spray to control vectors",
+        "Rotate with beans next season"
+      ],
+      "treatment_am": [
+        "የታመመ ተክል ሲያዩ ወዲያውኑ ቆፍረው ያጥፉ",
+        "ሰብሉ ከነፍሳት ጫና በፊት እንዲበስል ቀድመው ይትከሉ",
+        "ተሸካሚዎችን ለመቆጣጠር የተፈጥሮ ሳሙና መርጫ ይረጩ",
+        "በሚቀጥለው ወቅት ከባቄላ ጋር ይቀያይሩ"
+      ],
+      "traditional_remedy": "Early planting and immediate roguing of sick plants; botanical soap spray controls insect vectors.",
+      "traditional_remedy_am": "ቀድመው መትከል እና የታመሙ ተክሎችን ወዲያውኑ መንቀል፤ የተፈጥሮ ሳሙና መርጫ ነፍሳትን ይቆጣጠራል።",
+      "svg": "maize-mln"
+    },
+    {
+      "id": "maize-nclb",
+      "crop": "Maize",
+      "crop_am": "በቆሎ",
+      "name": "Northern Corn Leaf Blight",
+      "name_am": "የሰሜን በቆሎ ቅጠል በሽታ",
+      "pathogen": "Exserohilum turcicum",
+      "icon": "🟠",
+      "risk": "High",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Turcicum blight"
+      ],
+      "local_names_am": [
+        "ቱርሲከም ብላይት"
+      ],
+      "symptoms": [
+        "Large, long, cigar-shaped grayish-tan lesions",
+        "Lesions run parallel along the leaf blade",
+        "Leaves die back from the tips",
+        "Severe damage in cool, humid highlands"
+      ],
+      "symptoms_am": [
+        "ትላልቅ ሲጋራ ቅርጽ ያላቸው ግራጫ-ቡናማ ቁስሎች",
+        "ቁስሎቹ በቅጠሉ ላይ ትይዩ ሆነው ይሄዳሉ",
+        "ቅጠሎች ከጫፍ ይደርቃሉ",
+        "በቀዝቃዛ እርጥበታማ ደጋማ አካባቢዎች ከባድ ጉዳት"
+      ],
+      "transmission": "Airborne fungus spores; carried over in last season's crop residue.",
+      "transmission_am": "በአየር የሚተላለፉ ፈንገስ ስፖሮች፤ ካለፈው ወቅት ቅሪት ይተላለፋል።",
+      "season": "Cool, humid periods (July–September).",
+      "season_am": "ቀዝቃዛና እርጥበታማ ጊዜያት (ሀምሌ–መስከረም)።",
+      "impact": "20–40% grain loss in susceptible varieties.",
+      "impact_am": "በተጋላጭ ዝርያዎች 20–40% የእህል ኪሳራ።",
+      "prevention": [
+        "Rotate crops with legumes (haricot beans or peas)",
+        "Burn or compost all maize stalks after harvest",
+        "Plant certified resistant hybrid seed",
+        "Space plants to keep air moving through the canopy"
+      ],
+      "prevention_am": [
+        "ከጥራጥሬ ሰብሎች (ባቄላ ወይም አተር) ጋር ይቀያይሩ",
+        "ከመኸር በኋላ ሁሉንም የበቆሎ ግንዶች ያቃጥሉ ወይም ያበስብሉ",
+        "የተረጋገጡ ተከላካይ ድብል ዘሮችን ይትከሉ",
+        "ተክሎችን በስፋት በማስቀመጥ አየር እንዲያገኙ ያድርጉ"
+      ],
+      "treatment": [
+        "Remove and burn heavily infected lower leaves",
+        "Apply copper-based organic fungicide early",
+        "Interplant maize with beans to shade the soil",
+        "Never plant the same plot two seasons in a row"
+      ],
+      "treatment_am": [
+        "በጣም የተያዙ የታችኛውን ቅጠሎች አስወግደው ያቃጥሉ",
+        "ቀደም ብለው የመዳብ ፈንገስ መርጫ ይረጩ",
+        "አፈርን ለመከለል በቆሎን ከባቄላ ጋር ይቀላቅሉ",
+        "በተመሳሳይ መሬት ሁለት ወቅት በተከታታይ አይትከሉ"
+      ],
+      "traditional_remedy": "Interplant maize with beans — the beans shade the soil and reduce leaf wetness that feeds the fungus.",
+      "traditional_remedy_am": "በቆሎን ከባቄላ ጋር መቀላቀል — ባቄላ አፈርን ይከልላል እና ፈንገሱን የሚመግብ የቅጠል እርጥበትን ይቀንሳል።",
+      "svg": "maize-mln"
+    },
+    {
+      "id": "maize-gls",
+      "crop": "Maize",
+      "crop_am": "በቆሎ",
+      "name": "Maize Gray Leaf Spot",
+      "name_am": "የበቆሎ ግራጫ ቅጠል ነጠብጣብ",
+      "pathogen": "Cercospora zeae-maydis",
+      "icon": "🟡",
+      "risk": "Moderate",
+      "risk_am": "መካከለኛ",
+      "local_names": [
+        "Gray leaf spot"
+      ],
+      "local_names_am": [
+        "የግራጫ ቅጠል ነጠብጣብ"
+      ],
+      "symptoms": [
+        "Narrow rectangular tan/gray lesions",
+        "Lesions bounded tightly by parallel leaf veins",
+        "Yellow halo around older lesions",
+        "Leaves dry up from the lower part upward"
+      ],
+      "symptoms_am": [
+        "ጠባብ አራት ማዕዘን ቅርጽ ያላቸው ቡናማ/ግራጫ ቁስሎች",
+        "በትይዩ ቅጠል ስሮች የታሰሩ ቁስሎች",
+        "በአሮጌ ቁስሎች ዙሪያ ቢጫ ቀለበት",
+        "ቅጠሎች ከታች ወደ ላይ ይደርቃሉ"
+      ],
+      "transmission": "Crop residue and wind-borne spores.",
+      "transmission_am": "የሰብል ቅሪት እና በነፋስ የሚተላለፉ ስፖሮች።",
+      "season": "Humid, warm months after the canopy closes.",
+      "season_am": "ጥላው ከተዘጋ በኋላ እርጥበታማ እና ሞቃት ወራት።",
+      "impact": "15–35% grain loss in dense, humid plantings.",
+      "impact_am": "በጥቅጥቅ እርጥበታማ ተከላዎች 15–35% የእህል ኪሳራ።",
+      "prevention": [
+        "Clear post-harvest crop residue completely",
+        "Maintain proper row spacing to avoid trapped humidity",
+        "Avoid continuous maize monocropping",
+        "Use resistant hybrids where available"
+      ],
+      "prevention_am": [
+        "ከመኸር በኋላ ቅሪትን ሙሉ በሙሉ ያጽዱ",
+        "እርጥበት እንዳይታሰር ትክክለኛ የረድፍ ክፍተት ይጠብቁ",
+        "ተከታታይ የበቆሎ ሞኖክሮፕ ያስወግዱ",
+        "በሚገኝበት ቦታ ተከላካይ ድብልዎችን ይጠቀሙ"
+      ],
+      "treatment": [
+        "Thin crowded plants so sunlight reaches every leaf",
+        "Rotate with beans or leave the plot fallow one season",
+        "Improve airflow by removing lower infected leaves",
+        "Apply copper fungicide only in severe outbreaks"
+      ],
+      "treatment_am": [
+        "የተጨናነቁ ተክሎችን በማቅለል ፀሀይ እያንዳንዱን ቅጠል እንዲደርስ ያድርጉ",
+        "ከባቄላ ጋር ይቀያይሩ ወይም ለአንድ ወቅት መሬቱን አርፍ ያድርጉ",
+        "የታችኛውን የተያዙ ቅጠሎች በማስወገድ የአየር ዝውውርን ያሻሽሉ",
+        "የመዳብ ፈንገስ መርጫን በከባድ ወረርሽኝ ብቻ ይጠቀሙ"
+      ],
+      "traditional_remedy": "Leave the plot fallow one season and plant haricot beans instead — breaks the disease cycle.",
+      "traditional_remedy_am": "ለአንድ ወቅት መሬቱን አርፍ ያድርጉ እና በምትኩ ባቄላ ይትከሉ — የበሽታውን ዑደት ይሰብራል።",
+      "svg": "seedling-blight"
+    },
+    {
+      "id": "teff-rust",
+      "crop": "Teff",
+      "crop_am": "ጤፍ",
+      "name": "Teff Rust",
+      "name_am": "የጤፍ ዝገት",
+      "pathogen": "Uromyces eragrostidis",
+      "icon": "🌾",
+      "risk": "Moderate",
+      "risk_am": "መካከለኛ",
+      "local_names": [
+        "Teff rust",
+        "Yefef zin"
+      ],
+      "local_names_am": [
+        "የጤፍ ዝገት",
+        "የፈፍ ዝን"
+      ],
+      "symptoms": [
+        "Small reddish-brown powdery pustules on leaves",
+        "Yellowing of leaves around pustules",
+        "Early leaf death in heavy infections",
+        "Reduced grain filling and yield"
+      ],
+      "symptoms_am": [
+        "በቅጠሎች ላይ ትናንሽ ቡናማ-ቀይ የዱቄት እባጮች",
+        "በእባጮቹ ዙሪያ የቅጠል መገርጠት",
+        "ከባድ በሆነ ጊዜ የቅጠል መሞት",
+        "የእህል መሙላት እና ምርት መቀነስ"
+      ],
+      "transmission": "Wind-borne spores; favoured by heavy rain and high humidity.",
+      "transmission_am": "በነፋስ የሚተላለፉ ስፖሮች፤ በከባድ ዝናብ እና ከፍተኛ እርጥበት ይባሳል።",
+      "season": "Kiremt rains in wet highland teff areas.",
+      "season_am": "በእርጥብ ደጋማ የጤፍ አካባቢዎች የክረምት ዝናብ።",
+      "impact": "10–35% grain yield reduction in high-rainfall areas.",
+      "impact_am": "ከፍተኛ ዝናብ ባለባቸው አካባቢዎች 10–35% የእህል ምርት መቀነስ።",
+      "prevention": [
+        "Plant improved varieties like Quncho (DZ-Cr-387)",
+        "Avoid very dense sowing in wet areas",
+        "Rotate teff with pulses or oilseeds",
+        "Remove volunteer teff plants between seasons"
+      ],
+      "prevention_am": [
+        "እንደ ቁንጮ (DZ-Cr-387) ያሉ የተሻሻሉ ዝርያዎችን ይትከሉ",
+        "በእርጥብ አካባቢዎች በጣም ጥቅጥቅ መዝራትን ያስወግዱ",
+        "ጤፍን ከጥራጥሬ ወይም የዘይት ሰብሎች ጋር ይቀያይሩ",
+        "በወቅቶች መካከል የፈቃደኛ የጤፍ ተክሎችን ያስወግዱ"
+      ],
+      "treatment": [
+        "Apply sulfur dust early when pustules first appear",
+        "Remove and burn heavily infected patches",
+        "Harvest early if the infection is severe",
+        "Keep the field free of weeds that harbour rust"
+      ],
+      "treatment_am": [
+        "እባጮቹ ሲታዩ ቀድመው የሰልፈር ዱቄት ይረጩ",
+        "በጣም የተያዙ ቦታዎችን አስወግደው ያቃጥሉ",
+        "ኢንፌክሽኑ ከባድ ከሆነ ቀድመው ይሰብስቡ",
+        "ዝገትን የሚያስተናግዱ አረሞችን ከእርሻ ያጽዱ"
+      ],
+      "traditional_remedy": "Dust dry wood ash over dew-covered teff early in the morning — it slows spore germination without cost.",
+      "traditional_remedy_am": "በማለዳ ጤዛ ባለበት ጤፍ ላይ ደረቅ የእንጨት አመድ ይረጩ — ያለ ወጪ የስፖሮ መብቀልን ይቀንሳል።",
+      "svg": "wheat-rust"
+    },
+    {
+      "id": "teff-damping",
+      "crop": "Teff",
+      "crop_am": "ጤፍ",
+      "name": "Teff Damping-Off",
+      "name_am": "የጤፍ የችግኝ መበስበስ",
+      "pathogen": "Soil-borne fungi (Pythium, Rhizoctonia)",
+      "icon": "🌱",
+      "risk": "Moderate",
+      "risk_am": "መካከለኛ",
+      "local_names": [
+        "Damping-off",
+        "Seedling blight"
+      ],
+      "local_names_am": [
+        "የችግኝ መበስበስ",
+        "የችግኝ በሽታ"
+      ],
+      "symptoms": [
+        "Seedlings collapse and rot at the soil line",
+        "Poor emergence and gaps in rows",
+        "White/gray mold on young stems",
+        "Wet, waterlogged patches worst affected"
+      ],
+      "symptoms_am": [
+        "ችግኞች በአፈር መስመር ላይ ወድቀው ይበሰብሳሉ",
+        "ደካማ ብቅ ማለት እና በረድፎች ውስጥ ክፍተቶች",
+        "በወጣት ግንዶች ላይ ነጭ/ግራጫ ሻጋታ",
+        "የውሃ መቆርቆር ባለባቸው ቦታዎች የባሰ ነው"
+      ],
+      "transmission": "Soil-borne fungi and contaminated seed; spread by water and soil movement.",
+      "transmission_am": "በአፈር የሚተላለፉ ፈንገሶች እና የተበከለ ዘር፤ በውሃ እና በአፈር እንቅስቃሴ ይስፋፋል።",
+      "season": "Belg and early Kiremt when soils are wet.",
+      "season_am": "በልግ እና ቀደምት ክረምት አፈሩ እርጥብ ሲሆን።",
+      "impact": "Severe loss in young crop establishment; forces replanting.",
+      "impact_am": "በወጣት ሰብል መመስረት ላይ ከባድ ኪሳራ፤ እንደገና መዝራት ያስገድዳል።",
+      "prevention": [
+        "Use certified disease-free seed",
+        "Improve soil drainage in low-lying fields",
+        "Avoid over-watering young seedlings",
+        "Sow at recommended depth — not too deep"
+      ],
+      "prevention_am": [
+        "የተረጋገጡ ከበሽታ ነጻ ዘሮችን ይጠቀሙ",
+        "በዝቅተኛ ቦታዎች የአፈር ፍሳሽን ያሻሽሉ",
+        "ወጣት ችግኞችን ከመጠን በላይ ከማጠጣት ይቆጠቡ",
+        "በሚመከር ጥልቀት ይዝሩ — በጣም ጥልቅ አይድረጉ"
+      ],
+      "treatment": [
+        "Apply diluted livestock urine & soap (Endod) to suppress soil pathogens",
+        "Remove and bury infected seedlings deep off-site",
+        "Raise and level beds for better drainage",
+        "Reseed promptly in healthy, well-drained soil"
+      ],
+      "treatment_am": [
+        "የአፈር በሽታ አምጪዎችን ለመግደል የተቀላቀለ የእንስሳት ሽንት እና ሳሙና (እንዶድ) ይጠቀሙ",
+        "የተያዙ ችግኞችን አስወግደው በጥልቅ ይቅበሩ",
+        "ለተሻለ የውሃ ፍሳሽ የችግኝ ቦታዎችን ከፍ ያድርጉ",
+        "በጤናማና ፍሳሽ ባለው አፈር በፍጥነት ይዝሩ"
+      ],
+      "traditional_remedy": "Livestock urine & Endod soap treatment suppresses soil pathogens; deep burial of infected seedlings.",
+      "traditional_remedy_am": "የእንስሳት ሽንት እና እንዶድ ሳሙና ህክምና የአፈር በሽታ አምጪዎችን ይገድላል፤ የተያዙ ችግኞችን በጥልቅ መቅበር።",
+      "svg": "seedling-blight"
+    },
+    {
+      "id": "faba-gall",
+      "crop": "Faba Bean",
+      "crop_am": "ባቄላ",
+      "name": "Faba Bean Gall",
+      "name_am": "የባቄላ ጋል",
+      "pathogen": "Olpidium viciae",
+      "icon": "🟤",
+      "risk": "High",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Bean gall",
+        "Kitat"
+      ],
+      "local_names_am": [
+        "የባቄላ ጋል",
+        "ቂጣት"
+      ],
+      "symptoms": [
+        "White to cream galls on leaves and stems",
+        "Deformed and twisted young leaves",
+        "Severe stunting and leaf fall",
+        "Crop failure in extreme infections"
+      ],
+      "symptoms_am": [
+        "በቅጠሎች እና ግንዶች ላይ ነጭ እባጮች",
+        "የተበላሹ እና የተጣመሙ ወጣት ቅጠሎች",
+        "ከባድ ድውየት እና የቅጠል መርገፍ",
+        "በከባድ ሁኔታ የሰብል ውድቀት"
+      ],
+      "transmission": "Soil-borne resting spores; spread by rain splash and contaminated tools.",
+      "transmission_am": "በአፈር የሚገኙ ስፖሮች፤ በዝናብ መርጨት እና በተበከሉ መሳሪያዎች ይተላለፋል።",
+      "season": "Cool, wet seasons in the highlands (Kiremt).",
+      "season_am": "በደጋማ አካባቢዎች ቀዝቃዛ እርጥብ ወቅቶች (ክረምት)።",
+      "impact": "Up to 100% pod loss in severely infected highland fields.",
+      "impact_am": "በከባድ በሽታ በደጋማ እርሻዎች እስከ 100% የፍሬ ኪሳራ።",
+      "prevention": [
+        "Plant tolerant varieties and early-maturing types",
+        "Avoid sowing faba bean on the same land every year",
+        "Rogue infected plants early and burn them",
+        "Improve drainage in wet fields"
+      ],
+      "prevention_am": [
+        "ተከላካይ እና ቀደም ብለው የሚበስሉ ዝርያዎችን ይትከሉ",
+        "በተመሳሳይ መሬት በየዓመቱ ባቄላ ከመዝራት ይቆጠቡ",
+        "የተያዙ ተክሎችን ቀደም ብለው ቆፍረው ያቃጥሉ",
+        "በእርጥብ እርሻዎች የውሃ ፍሳሽን ያሻሽሉ"
+      ],
+      "treatment": [
+        "Uproot and burn all galled plants immediately",
+        "Do not plant faba bean on the same plot for 2–3 years",
+        "Apply wood ash around remaining healthy plants",
+        "Rotate with cereals (wheat, barley) or chickpea"
+      ],
+      "treatment_am": [
+        "የተያዙ ተክሎችን በሙሉ ቆፍረው ያቃጥሉ",
+        "ለ2–3 ዓመታት በተመሳሳይ መሬት ባቄላ አይዝሩ",
+        "በቀሪ ጤናማ ተክሎች ዙሪያ የእንጨት አመድ ይረጩ",
+        "ከእህል (ስንዴ፣ ገብስ) ወይም ሽምብራ ጋር ይቀያይሩ"
+      ],
+      "traditional_remedy": "Uprooting and burning galled plants plus long rotation off faba bean is the most reliable cure.",
+      "traditional_remedy_am": "የተያዙ ተክሎችን መንቀል እና ማቃጠል ከባቄላ ረጅም ሽክርክሪት ጋር በጣም አስተማማኝ መድሃኒት ነው።",
+      "svg": "seedling-blight"
+    },
+    {
+      "id": "faba-chocolate",
+      "crop": "Faba Bean",
+      "crop_am": "ባቄላ",
+      "name": "Faba Bean Chocolate Spot",
+      "name_am": "የባቄላ ቾኮሌት ነጠብጣብ",
+      "pathogen": "Botrytis fabae",
+      "icon": "🟤",
+      "risk": "High",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Chocolate spot",
+        "Hamus"
+      ],
+      "local_names_am": [
+        "የቾኮሌት ነጠብጣብ",
+        "ሐሙስ"
+      ],
+      "symptoms": [
+        "Small reddish-brown chocolate-coloured spots on leaves",
+        "Spots enlarge and merge into large dead areas",
+        "Stems and pods also infected",
+        "Severe defoliation in wet weather"
+      ],
+      "symptoms_am": [
+        "በቅጠሎች ላይ ትናንሽ ቀይ-ቡናማ ቾኮሌት ቀለም ያላቸው ነጠብጣቦች",
+        "ነጠብጣቦቹ እየሰፉ ወደ ትላልቅ የሞቱ ቦታዎች ይቀላቀላሉ",
+        "ግንዶች እና ፍሬዎችም ይያዛሉ",
+        "በእርጥብ የአየር ሁኔታ ከባድ የቅጠል መርገፍ"
+      ],
+      "transmission": "Airborne spores and infected crop debris; spread by rain splash.",
+      "transmission_am": "በአየር የሚተላለፉ ስፖሮች እና የተበከለ የሰብል ቅሪት፤ በዝናብ መርጨት ይስፋፋል።",
+      "season": "Cool, wet Kiremt season with prolonged leaf wetness.",
+      "season_am": "ቀዝቃዛ እርጥብ የክረምት ወቅት በረዥም የቅጠል እርጥበት።",
+      "impact": "30–50% yield loss in wet seasons if uncontrolled.",
+      "impact_am": "ካልተቆጣጠሩት በእርጥብ ወቅት 30–50% የምርት ኪሳራ።",
+      "prevention": [
+        "Plant resistant varieties where available",
+        "Avoid dense sowing in wet, foggy highlands",
+        "Rotate faba bean with non-legume crops",
+        "Remove crop debris after harvest"
+      ],
+      "prevention_am": [
+        "በሚገኝበት ቦታ ተከላካይ ዝርያዎችን ይትከሉ",
+        "በእርጥብ ጭጋጋማ ደጋማ አካባቢዎች ጥቅጥቅ መዝራትን ያስወግዱ",
+        "ባቄላን ከጥራጥሬ ካልሆኑ ሰብሎች ጋር ይቀያይሩ",
+        "ከመኸር በኋላ የሰብል ቅሪትን ያስወግዱ"
+      ],
+      "treatment": [
+        "Spray early with Bordeaux mixture (copper + lime)",
+        "Remove and burn the most infected lower leaves",
+        "Improve air circulation by wider row spacing",
+        "Harvest and thresh promptly to save healthy pods"
+      ],
+      "treatment_am": [
+        "ቀድመው ቦርዶ ቅልቅል (መዳብ + ኖራ) ይረጩ",
+        "በጣም የተያዙ የታችኛውን ቅጠሎች አስወግደው ያቃጥሉ",
+        "በሰፊ የረድፍ ክፍተት የአየር ዝውውርን ያሻሽሉ",
+        "ጤናማ ፍሬዎችን ለማዳን በፍጥነት ይሰብስቡ እና ያልቁ"
+      ],
+      "traditional_remedy": "Early copper-lime spraying combined with removing infected lower leaves controls chocolate spot cheaply.",
+      "traditional_remedy_am": "ቀደም ብሎ የመዳብ-ኖራ መርጫ ከተያዙ የታችኛው ቅጠሎች መወገድ ጋር የቾኮሌት ነጠብጣብን በርካሽ ይቆጣጠራል።",
+      "svg": "seedling-blight"
+    },
+    {
+      "id": "chick-ascochyta",
+      "crop": "Chickpea",
+      "crop_am": "ሽምብራ",
+      "name": "Chickpea Ascochyta Blight",
+      "name_am": "የሽምብራ አስኮኪታ በሽታ",
+      "pathogen": "Ascochyta rabiei",
+      "icon": "🟤",
+      "risk": "High",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Ascochyta blight"
+      ],
+      "local_names_am": [
+        "የአስኮኪታ በሽታ"
+      ],
+      "symptoms": [
+        "Circular tan-brown lesions with dark borders on leaves",
+        "Dark sunken cankers on stems",
+        "Lesions on pods with black fruiting bodies",
+        "Stem breakage and plant death"
+      ],
+      "symptoms_am": [
+        "በቅጠሎች ላይ ጥቁር ድንበር ያላቸው ክብ ቡናማ ቁስሎች",
+        "በግንዶች ላይ ጠቆር ያሉ የተጠመቁ ቁስሎች",
+        "በፍሬዎች ላይ ጥቁር አካላት ያሉባቸው ቁስሎች",
+        "የግንድ መሰበር እና የተክል ሞት"
+      ],
+      "transmission": "Infected seed and crop debris; spread by rain splash.",
+      "transmission_am": "የተያዘ ዘር እና የሰብል ቅሪት፤ በዝናብ መርጨት ይስፋፋል።",
+      "season": "Cool, wet periods during flowering and podding.",
+      "season_am": "በአበባ እና ፍሬ ወቅት ቀዝቃዛ እርጥብ ጊዜያት።",
+      "impact": "20–50% yield loss; severe in wet seasons.",
+      "impact_am": "20–50% የምርት ኪሳራ፤ በእርጥብ ወቅት ከባድ ነው።",
+      "prevention": [
+        "Use certified disease-free seed",
+        "Rotate chickpea with cereals for at least 2 years",
+        "Bury or remove old chickpea debris",
+        "Avoid dense sowing in wet areas"
+      ],
+      "prevention_am": [
+        "የተረጋገጡ ከበሽታ ነጻ ዘሮችን ይጠቀሙ",
+        "ሽምብራን ቢያንስ ለ2 ዓመታት ከእህል ሰብሎች ጋር ይቀያይሩ",
+        "የአሮጌ የሽምብራ ቅሪትን ይቅበሩ ወይም ያስወግዱ",
+        "በእርጥብ አካባቢዎች ጥቅጥቅ መዝራትን ያስወግዱ"
+      ],
+      "treatment": [
+        "Rogue and burn infected plants early",
+        "Spray copper-based organic fungicide at flowering",
+        "Harvest early-sown plots before rain peaks",
+        "Do not save seed from infected fields"
+      ],
+      "treatment_am": [
+        "የተያዙ ተክሎችን ቀደም ብለው ቆፍረው ያቃጥሉ",
+        "በአበባ ወቅት የመዳብ ፈንገስ መርጫ ይረጩ",
+        "ከዝናብ መጨመር በፊት ቀድመው የተዘሩ ቦታዎችን ይሰብስቡ",
+        "ከተያዙ እርሻዎች ዘር አያስቀምጡ"
+      ],
+      "traditional_remedy": "Clean seed plus rotation with cereals for two years is the cheapest reliable cure.",
+      "traditional_remedy_am": "ንጹህ ዘር ከሁለት አመት የእህል ሽክርክሪት ጋር በጣም ርካሽ አስተማማኝ መፍትሄ ነው።",
+      "svg": "seedling-blight"
+    },
+    {
+      "id": "chick-wilt",
+      "crop": "Chickpea",
+      "crop_am": "ሽምብራ",
+      "name": "Chickpea Fusarium Wilt",
+      "name_am": "የሽምብራ ፉሳሪየም ዊልት",
+      "pathogen": "Fusarium oxysporum f. sp. ciceris",
+      "icon": "🟡",
+      "risk": "Moderate",
+      "risk_am": "መካከለኛ",
+      "local_names": [
+        "Wilt"
+      ],
+      "local_names_am": [
+        "ዊልት"
+      ],
+      "symptoms": [
+        "Yellowing and drooping of lower leaves",
+        "Wilting of branches on one side of the plant",
+        "Browning inside the stem/root",
+        "Sudden plant collapse in warm weather"
+      ],
+      "symptoms_am": [
+        "የታችኛው ቅጠሎች መገርጠት እና መደፈር",
+        "በአንድ ወገን የቅርንጫፎች መደረቅ",
+        "በግንድ/ስር ውስጥ ቡናማ መቀለም",
+        "በሞቃት የአየር ሁኔታ ድንገተኛ ውድቀት"
+      ],
+      "transmission": "Soil-borne fungus; persists in soil for several years.",
+      "transmission_am": "በአፈር የሚገኝ ፈንገስ፤ ለብዙ ዓመታት በአፈር ውስጥ ይኖራል።",
+      "season": "Warm, dry spells; stress makes plants more susceptible.",
+      "season_am": "ሞቃት ደረቅ ጊዜያት፤ ጭንቀት ተክሎችን የበለጠ ተጋላጭ ያደርጋል።",
+      "impact": "10–30% yield loss; worse in continuous chickpea fields.",
+      "impact_am": "10–30% የምርት ኪሳራ፤ ተከታታይ ሽምብራ በሚዘራባቸው እርሻዎች የባሰ ነው።",
+      "prevention": [
+        "Rotate chickpea with cereals for 3–4 years",
+        "Use wilt-tolerant varieties",
+        "Improve drainage in heavy soils",
+        "Avoid moving soil from infected fields"
+      ],
+      "prevention_am": [
+        "ሽምብራን ለ3–4 ዓመታት ከእህል ሰብሎች ጋር ይቀያይሩ",
+        "ዊልትን የሚቋቋሙ ዝርያዎችን ይጠቀሙ",
+        "በከባድ አፈር ውስጥ የውሃ ፍሳሽን ያሻሽሉ",
+        "ከተያዙ እርሻዎች አፈር ከማንቀሳቀስ ይቆጠቡ"
+      ],
+      "treatment": [
+        "Uproot and burn wilted plants immediately",
+        "Apply compost/manure to boost plant vigour",
+        "Do not plant chickpea on the same plot for 3–4 years",
+        "Plant early so flowering finishes before stress peaks"
+      ],
+      "treatment_am": [
+        "የደረቁ ተክሎችን ወዲያውኑ ቆፍረው ያቃጥሉ",
+        "የተክሉን ጥንካሬ ለማሳደግ ማዳበሪያ ይጠቀሙ",
+        "ለ3–4 ዓመታት በተመሳሳይ መሬት ሽምብራ አይዝሩ",
+        "አበባው ከጭንቀት በፊት እንዲጠናቀቅ ቀድመው ይዝሩ"
+      ],
+      "traditional_remedy": "Long rotation away from chickpea plus uprooting wilted plants is the only reliable cure.",
+      "traditional_remedy_am": "ከሽምብራ ረጅም ሽክርክሪት ከደረቁ ተክሎች መንቀል ጋር ብቸኛው አስተማማኝ መድሃኒት ነው።",
+      "svg": "seedling-blight"
+    },
+    {
+      "id": "barley-scald",
+      "crop": "Barley",
+      "crop_am": "ገብስ",
+      "name": "Barley Scald",
+      "name_am": "የገብስ ስካልድ",
+      "pathogen": "Rhynchosporium secalis",
+      "icon": "🟤",
+      "risk": "High",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Scald"
+      ],
+      "local_names_am": [
+        "ስካልድ"
+      ],
+      "symptoms": [
+        "Water-soaked oval lesions with brown margins",
+        "Lesions turn pale gray-tan in the centre",
+        "Lesions merge and kill whole leaves",
+        "Reduced grain size and yield"
+      ],
+      "symptoms_am": [
+        "ቡናማ ድንበር ያላቸው እርጥብ ኦቫል ቁስሎች",
+        "ቁስሎቹ መሃል ላይ ግራጫ-ቡናማ ይሆናሉ",
+        "ቁስሎቹ ተቀላቅለው ሙሉ ቅጠሎችን ይገድላሉ",
+        "የእህል መጠን እና ምርት መቀነስ"
+      ],
+      "transmission": "Crop residue and infected seed; spread by rain splash.",
+      "transmission_am": "የሰብል ቅሪት እና የተያዘ ዘር፤ በዝናብ መርጨት ይስፋፋል።",
+      "season": "Cool, wet seasons in the highlands.",
+      "season_am": "በደጋማ አካባቢዎች ቀዝቃዛ እርጥብ ወቅቶች።",
+      "impact": "20–45% yield loss in moist highland barley.",
+      "impact_am": "በእርጥብ ደጋማ ገብስ 20–45% የምርት ኪሳራ።",
+      "prevention": [
+        "Bury or remove barley stubble after harvest",
+        "Use certified or clean saved seed",
+        "Rotate barley with pulses or oilseeds",
+        "Avoid dense sowing in wet areas"
+      ],
+      "prevention_am": [
+        "ከመኸር በኋላ የገብስ ቅሪትን ይቅበሩ ወይም ያስወግዱ",
+        "የተረጋገጠ ወይም ንጹህ የተቀመጠ ዘር ይጠቀሙ",
+        "ገብስን ከጥራጥሬ ወይም የዘይት ሰብሎች ጋር ይቀያይሩ",
+        "በእርጥብ አካባቢዎች ጥቅጥቅ መዝራትን ያስወግዱ"
+      ],
+      "treatment": [
+        "Spray Bordeaux mixture (copper + lime) early",
+        "Remove infected lower leaves and bury them",
+        "Improve field drainage",
+        "Harvest and store grain dry"
+      ],
+      "treatment_am": [
+        "ቀድመው ቦርዶ ቅልቅል (መዳብ + ኖራ) ይረጩ",
+        "የተያዙ የታችኛው ቅጠሎችን አስወግደው ይቅበሩ",
+        "የእርሻ የውሃ ፍሳሽን ያሻሽሉ",
+        "እህሉን ደረቅ አድርገው ይሰብስቡ እና ያከማቹ"
+      ],
+      "traditional_remedy": "Burying barley stubble deeply and rotating with pulses removes the spores that cause scald.",
+      "traditional_remedy_am": "የገብስ ቅሪትን በጥልቅ መቅበር እና ከጥራጥሬ ጋር መቀያየር ስካልድን የሚያመጡ ስፖሮችን ያስወግዳል።",
+      "svg": "wheat-rust"
+    },
+    {
+      "id": "barley-netblotch",
+      "crop": "Barley",
+      "crop_am": "ገብስ",
+      "name": "Barley Net Blotch",
+      "name_am": "የገብስ ኔት ብሎች",
+      "pathogen": "Pyrenophora teres",
+      "icon": "🟡",
+      "risk": "Moderate",
+      "risk_am": "መካከለኛ",
+      "local_names": [
+        "Net blotch"
+      ],
+      "local_names_am": [
+        "ኔት ብሎች"
+      ],
+      "symptoms": [
+        "Long brown lesions with a net-like pattern",
+        "Yellow halos around lesions",
+        "Lesions run lengthwise along leaves",
+        "Premature leaf death and shriveled grain"
+      ],
+      "symptoms_am": [
+        "የመረብ ቅርጽ ያላቸው ረዥም ቡናማ ቁስሎች",
+        "በቁስሎች ዙሪያ ቢጫ ቀለበቶች",
+        "ቁስሎቹ በቅጠሉ ላይ በርዝመት ይሄዳሉ",
+        "ያለጊዜው የቅጠል ሞት እና የተኮመጠ እህል"
+      ],
+      "transmission": "Crop residue and seed-borne spores; spread by rain.",
+      "transmission_am": "የሰብል ቅሪት እና በዘር የሚተላለፉ ስፖሮች፤ በዝናብ ይስፋፋል።",
+      "season": "Cool, wet periods in highland barley fields.",
+      "season_am": "በደጋማ የገብስ እርሻዎች ቀዝቃዛ እርጥብ ጊዜያት።",
+      "impact": "15–35% yield loss when the disease spreads early.",
+      "impact_am": "በሽታው ቀደም ብሎ ሲስፋፋ 15–35% የምርት ኪሳራ።",
+      "prevention": [
+        "Use resistant varieties such as HB-1533",
+        "Rotate barley with non-cereal crops",
+        "Bury old barley residue after harvest",
+        "Use clean certified seed"
+      ],
+      "prevention_am": [
+        "እንደ HB-1533 ያሉ ተከላካይ ዝርያዎችን ይጠቀሙ",
+        "ገብስን ከእህል ካልሆኑ ሰብሎች ጋር ይቀያይሩ",
+        "ከመኸር በኋላ የአሮጌ የገብስ ቅሪትን ይቅበሩ",
+        "ንጹህ የተረጋገጠ ዘር ይጠቀሙ"
+      ],
+      "treatment": [
+        "Spray early with copper-based organic fungicide",
+        "Remove and bury infected lower leaves",
+        "Improve soil drainage in low spots",
+        "Harvest promptly and dry grain well"
+      ],
+      "treatment_am": [
+        "ቀድመው የመዳብ ፈንገስ መርጫ ይረጩ",
+        "የተያዙ የታችኛው ቅጠሎችን አስወግደው ይቅበሩ",
+        "በዝቅተኛ ቦታዎች የአፈር ፍሳሽን ያሻሽሉ",
+        "በፍጥነት ይሰብስቡ እና እህሉን በደንብ ያድርቁ"
+      ],
+      "traditional_remedy": "Plant resistant barley varieties and rotate with faba bean to starve the fungus.",
+      "traditional_remedy_am": "ተከላካይ የገብስ ዝርያዎችን ይትከሉ እና ከባቄላ ጋር ይቀያይሩ ፈንገሱን ለማራብ።",
+      "svg": "wheat-rust"
+    },
+    {
+      "id": "sorghum-anthracnose",
+      "crop": "Sorghum",
+      "crop_am": "ማሽላ",
+      "name": "Sorghum Anthracnose",
+      "name_am": "የማሽላ አንትራክኖዝ",
+      "pathogen": "Colletotrichum sublineolum",
+      "icon": "🌾",
+      "risk": "Moderate",
+      "risk_am": "መካከለኛ",
+      "local_names": [
+        "Anthracnose",
+        "Leaf blight"
+      ],
+      "local_names_am": [
+        "አንትራክኖዝ",
+        "የቅጠል በሽታ"
+      ],
+      "symptoms": [
+        "Small red to brown circular lesions on leaves",
+        "Lesions have distinct darker margins",
+        "Elliptical cankers on stems",
+        "Grain becomes discolored and shriveled"
+      ],
+      "symptoms_am": [
+        "በቅጠሎች ላይ ትናንሽ ቀይ እስከ ቡናማ ክብ ቁስሎች",
+        "ቁስሎቹ ግልጽ ጥቁር ድንበር አላቸው",
+        "በግንዶች ላይ ኦቫል ቁስሎች",
+        "እህሉ ቀለም ይቀይራል እና ይኮማተራል"
+      ],
+      "transmission": "Infected seed and crop residue; spread by rain splash and wind.",
+      "transmission_am": "የተያዘ ዘር እና የሰብል ቅሪት፤ በዝናብ መርጨት እና ነፋስ ይስፋፋል።",
+      "season": "Warm, humid periods in wetter sorghum belts.",
+      "season_am": "እርጥብ በሆኑ የማሽላ ቀጠናዎች ሞቃት እርጥበታማ ጊዜያት።",
+      "impact": "10–30% yield loss in susceptible varieties.",
+      "impact_am": "በተጋላጭ ዝርያዎች 10–30% የምርት ኪሳራ።",
+      "prevention": [
+        "Plant resistant hybrids where available",
+        "Burn or bury sorghum stubble after harvest",
+        "Rotate sorghum with legumes",
+        "Use clean certified seed"
+      ],
+      "prevention_am": [
+        "በሚገኝበት ቦታ ተከላካይ ድብልዎችን ይትከሉ",
+        "ከመኸር በኋላ የማሽላ ቅሪትን ያቃጥሉ ወይም ይቅበሩ",
+        "ማሽላን ከጥራጥሬ ጋር ይቀያይሩ",
+        "ንጹህ የተረጋገጠ ዘር ይጠቀሙ"
+      ],
+      "treatment": [
+        "Remove and burn heavily infected leaves",
+        "Spray copper-based organic fungicide early",
+        "Improve air circulation by thinning crowded rows",
+        "Harvest early if infection is severe"
+      ],
+      "treatment_am": [
+        "በጣም የተያዙ ቅጠሎችን አስወግደው ያቃጥሉ",
+        "ቀድመው የመዳብ ፈንገስ መርጫ ይረጩ",
+        "የተጨናነቁ ረድፎችን በማቅለል የአየር ዝውውርን ያሻሽሉ",
+        "ኢንፌክሽኑ ከባድ ከሆነ ቀድመው ይሰብስቡ"
+      ],
+      "traditional_remedy": "Burning sorghum stubble after harvest and rotating with beans removes the source of new infections.",
+      "traditional_remedy_am": "ከመኸር በኋላ የማሽላ ቅሪትን ማቃጠል እና ከባቄላ ጋር መቀያየር አዲስ ኢንፌክሽን ምንጭን ያስወግዳል።",
+      "svg": "seedling-blight"
+    },
+    {
+      "id": "potato-late-blight",
+      "crop": "Potato",
+      "crop_am": "ድንች",
+      "name": "Potato Late Blight",
+      "name_am": "የድንች ዘግናኝ በሽታ",
+      "pathogen": "Phytophthora infestans",
+      "icon": "🥔",
+      "risk": "Critical",
+      "risk_am": "ከፍተኛ",
+      "local_names": [
+        "Late blight",
+        "Dengay"
+      ],
+      "local_names_am": [
+        "ዘግናኝ በሽታ",
+        "ድንጋይ"
+      ],
+      "symptoms": [
+        "Water-soaked dark green/brown spots on leaves",
+        "White cottony mold on leaf undersides in moist weather",
+        "Dark lesions on stems",
+        "Tubers rot in the ground or in storage"
+      ],
+      "symptoms_am": [
+        "በቅጠሎች ላይ እርጥብ ጠቆር ያሉ አረንጓዴ/ቡናማ ነጠብጣቦች",
+        "በእርጥብ የአየር ሁኔታ በቅጠል ስር ነጭ የጥጥ ሻጋታ",
+        "በግንዶች ላይ ጠቆር ያሉ ቁስሎች",
+        "ሀረጎች በመሬት ወይም በማከማቻ ውስጥ ይበሰብሳሉ"
+      ],
+      "transmission": "Infected seed tubers and airborne spores; spread fast in cool, wet weather.",
+      "transmission_am": "የተያዙ የዘር ሀረጎች እና በአየር የሚተላለፉ ስፖሮች፤ በቀዝቃዛ እርጥብ የአየር ሁኔታ በፍጥነት ይስፋፋል።",
+      "season": "Cool, wet Kiremt season; can appear any time with fog and rain.",
+      "season_am": "ቀዝቃዛ እርጥብ የክረምት ወቅት፤ በጭጋግ እና ዝናብ በማንኛውም ጊዜ ሊታይ ይችላል።",
+      "impact": "Can destroy entire fields in 2–3 weeks; tubers rot in storage.",
+      "impact_am": "በ2–3 ሳምንታት ውስጥ ሙሉ እርሻዎችን ሊያጠፋ ይችላል፤ ሀረጎች በማከማቻ ይበሰብሳሉ።",
+      "prevention": [
+        "Plant certified disease-free seed tubers",
+        "Use resistant varieties like Belete and Gudenie",
+        "Remove volunteer potatoes and old cull piles",
+        "Avoid overhead watering in the evening"
+      ],
+      "prevention_am": [
+        "የተረጋገጡ ከበሽታ ነጻ የዘር ሀረጎችን ይትከሉ",
+        "እንደ በለጠ እና ጉደኒ ያሉ ተከላካይ ዝርያዎችን ይጠቀሙ",
+        "የፈቃደኛ ድንች እና የቆሻሻ ክምር ያስወግዱ",
+        "በማምሻ ሰዓት ከላይ ውሃ ማጠጣትን ያስወግዱ"
+      ],
+      "treatment": [
+        "Spray Bordeaux mixture (copper + lime) at the first sign",
+        "Cut and remove blighted foliage; bury it deep off-site",
+        "Harvest tubers only after the vines have fully died",
+        "Store only clean, dry, unbruised tubers in a cool airy place"
+      ],
+      "treatment_am": [
+        "በመጀመሪያ ምልክት ቦርዶ ቅልቅል (መዳብ + ኖራ) ይረጩ",
+        "የተያዘውን ቅጠል ቆርጠው ያስወግዱ፤ ከእርሻ ርቆ በጥልቅ ይቅበሩ",
+        "ሀረጎችን የሚሰብስቡት የድንች ገመድ ሙሉ በሙሉ ከሞተ በኋላ ብቻ ነው",
+        "ንጹህ ደረቅ ያልተጎዱ ሀረጎችን በቀዝቃዛ አየር ቦታ ብቻ ያከማቹ"
+      ],
+      "traditional_remedy": "Copper-lime (Bordeaux) spray plus removing blighted foliage and storing only dry, clean tubers.",
+      "traditional_remedy_am": "የመዳብ-ኖራ (ቦርዶ) መርጫ እና የተያዘውን ቅጠል ማስወገድ እንዲሁም ደረቅ ንጹህ ሀረጎችን ብቻ ማከማቸት።",
+      "svg": "seedling-blight"
+    },
+    {
+      "id": "bean-rust",
+      "crop": "Haricot Bean",
+      "crop_am": "ሀሪኮት ባቄላ",
+      "name": "Common Bean Rust",
+      "name_am": "የባቄላ ዝገት",
+      "pathogen": "Uromyces appendiculatus",
+      "icon": "🟠",
+      "risk": "Moderate",
+      "risk_am": "መካከለኛ",
+      "local_names": [
+        "Bean rust"
+      ],
+      "local_names_am": [
+        "የባቄላ ዝገት"
+      ],
+      "symptoms": [
+        "Small reddish-brown powdery pustules on leaf undersides",
+        "Yellow halos around pustules",
+        "Heavily infected leaves turn yellow and drop",
+        "Reduced pod filling and yield"
+      ],
+      "symptoms_am": [
+        "በቅጠል ስር ትናንሽ ቀይ-ቡናማ የዱቄት እባጮች",
+        "በእባጮቹ ዙሪያ ቢጫ ቀለበቶች",
+        "በጣም የተያዙ ቅጠሎች ቢጫ ሆነው ይረግፋሉ",
+        "የፍሬ መሙላት እና ምርት መቀነስ"
+      ],
+      "transmission": "Airborne spores; spread by wind and rain splash.",
+      "transmission_am": "በአየር የሚተላለፉ ስፖሮች፤ በነፋስ እና ዝናብ መርጨት ይስፋፋል።",
+      "season": "Warm, humid periods; dew and fog prolong infection.",
+      "season_am": "ሞቃት እርጥበታማ ጊዜያት፤ ጤዛ እና ጭጋግ ኢንፌክሽኑን ያራዝማሉ።",
+      "impact": "10–40% yield loss in susceptible bean varieties.",
+      "impact_am": "በተጋላጭ የባቄላ ዝርያዎች 10–40% የምርት ኪሳራ።",
+      "prevention": [
+        "Plant resistant or tolerant bean varieties",
+        "Rotate beans with cereals (maize, sorghum)",
+        "Remove and bury crop debris after harvest",
+        "Avoid dense planting that traps humidity"
+      ],
+      "prevention_am": [
+        "ተከላካይ የባቄላ ዝርያዎችን ይትከሉ",
+        "ባቄላን ከእህል (በቆሎ፣ ማሽላ) ጋር ይቀያይሩ",
+        "ከመኸር በኋላ የሰብል ቅሪትን አስወግደው ይቅበሩ",
+        "እርጥበት የሚይዝ ጥቅጥቅ ተከላን ያስወግዱ"
+      ],
+      "treatment": [
+        "Spray sulfur or copper-based organic fungicide early",
+        "Remove and burn heavily infected lower leaves",
+        "Intercrop with maize to reduce leaf wetness",
+        "Harvest and dry pods promptly"
+      ],
+      "treatment_am": [
+        "ቀድመው የሰልፈር ወይም የመዳብ ፈንገስ መርጫ ይረጩ",
+        "በጣም የተያዙ የታችኛው ቅጠሎችን አስወግደው ያቃጥሉ",
+        "የቅጠል እርጥበትን ለመቀነስ ከበቆሎ ጋር ይቀላቅሉ",
+        "ፍሬዎችን በፍጥነት ይሰብስቡ እና ያድርቁ"
+      ],
+      "traditional_remedy": "Intercropping beans with maize shades the soil and lowers leaf wetness; early sulfur dust controls rust.",
+      "traditional_remedy_am": "ባቄላን ከበቆሎ ጋር መቀላቀል አፈርን ይከልላል እና የቅጠል እርጥበትን ይቀንሳል፤ ቀደም ብሎ የሰልፈር ዱቄት ዝገትን ይቆጣጠራል።",
+      "svg": "seedling-blight"
+    }
+  ]
+}

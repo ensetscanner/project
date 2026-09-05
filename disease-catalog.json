@@ -1,0 +1,756 @@
+{
+  "version": "3.3.0",
+  "updated": "2026-08-10",
+  "threshold": {
+    "min_confidence": 0.65,
+    "label": "65% Confidence Safeguard"
+  },
+  "classes": [
+    {
+      "class_id": 0,
+      "crop": "Enset",
+      "crop_am": "እንሰት",
+      "name": "Enset Bacterial Wilt",
+      "name_am": "የእንሰት ባክቴሪያ ዊልት",
+      "pathogen": "Xanthomonas vasicola pv. musacearum",
+      "icon": "⚠️",
+      "risk": {
+        "level": "critical",
+        "label": "🔴 Critical Risk",
+        "label_am": "🔴 ከፍተኛ አደጋ",
+        "color": "#c62828"
+      },
+      "local_names": [
+        "Chegino",
+        "Janfa",
+        "Quaqusa"
+      ],
+      "regional_stats": "77% prevalence reported in Cheha district.",
+      "regional_stats_am": "በቸሃ ወረዳ 77% ስርጭት ተመዝግቧል።",
+      "traditional_practices": "Farmer practices: 37.8% sanitation, 31.0% uprooting.",
+      "traditional_practices_am": "የገበሬ ልምዶች፡ 37.8% ንጽህና፣ 31.0% መንቀል።",
+      "visual_pattern": "Central heart-leaf yellowing, petiole drooping, and yellow bacterial fluid evident when the pseudostem is cut.",
+      "visual_pattern_am": "የመሃል ቅጠል መገርጠት፣ የግንድ መደፈር እና ግንዱ ሲቆረጥ ቢጫ የባክቴሪያ ፈሳሽ መታየት።",
+      "advice": [
+        "Uproot and bury the infected plant immediately in a deep pit away from the farm.",
+        "Flame-sterilize or wash slicing knives with a 10% bleach solution after every cut.",
+        "Do not replant Enset in the same hole for 6–12 months; keep the soil exposed to direct sunlight."
+      ],
+      "advice_am": [
+        "የተያዘውን ተክል ወዲያውኑ ቆፍረው ከእርሻ ርቆ በጥልቅ ጉድጓድ ውስጥ ይቅበሩ።",
+        "ከእያንዳንዱ ቁረጥ በኋላ ቢላዎችን በእሳት ወይም በ10% ብሊች ይታጠቡ።",
+        "ለ6–12 ወራት በተመሳሳይ ጉድጓድ እንሰት አይተክሉ፤ አፈሩን ለፀሀይ ያጋልጡ።"
+      ],
+      "landraces": {
+        "resistant": [
+          "Lemat",
+          "Beshute",
+          "Yiregiye"
+        ],
+        "susceptible": [
+          "Ageremremat",
+          "Shertye",
+          "Kibnar"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ለማት",
+          "በሹቴ",
+          "ይረጊዬ"
+        ],
+        "susceptible": [
+          "አገረምረማት",
+          "ሸርጤ",
+          "ክብናር"
+        ]
+      },
+      "food_loss": {
+        "kocho_kg_per_plant": 12,
+        "bulla_kg_per_plant": 4,
+        "note": "Estimated household Kocho and Bulla food reserve loss per infected plant.",
+        "note_am": "በአንድ የተያዘ ተክል የሚጠፋ የኩቾ እና የቡላ የቤት ምግብ ክምችት ግምት።"
+      },
+      "sanitation": {
+        "priority": "Flame-sterilize Macha harvesting knives before and after every cut to prevent farm-to-farm transmission.",
+        "priority_am": "ከእርሻ ወደ እርሻ እንዳይተላለፍ የማቻ መከር ቢላዎችን ከመቁረጥ በፊት እና በኋላ በእሳት ያጸዱ።"
+      },
+      "seasonality": "Rainy season (June–September), when soil moisture is high.",
+      "seasonality_am": "የዝናብ ወቅት (ሰኔ–መስከረም)፣ የአፈር እርጥበት ከፍ ባለበት ጊዜ።",
+      "transmission": "Infected planting material, contaminated cutting tools, and soil movement.",
+      "transmission_am": "የተያዘ የመትከያ ቁሳቁስ፣ የተበከሉ መቁረጫ መሳሪያዎች እና የአፈር እንቅስቃሴ።",
+      "spread_rate": "fast",
+      "spread_rate_am": "ፈጣን",
+      "yield_impact": "Up to 100% plant loss — whole mats can be destroyed.",
+      "yield_impact_am": "እስከ 100% የተክል ኪሳራ — ሙሉ እንሰቶች ሊጠፉ ይችላሉ።",
+      "monitoring_frequency": "Weekly during the wet season.",
+      "monitoring_frequency_am": "በዝናባማ ወቅት በሳምንት አንድ ጊዜ።",
+      "severity_scale": 5,
+      "home_remedies": [
+        "Traditional: sprinkle ash from burnt enset leaves around the base of healthy plants to deter spread.",
+        "Easy: never re-use a cutting knife without passing it through fire first — this is free and stops the disease moving plant to plant."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ ጤናማ ተክሎችን ለመከላከል በእንሰት ስር ከተቃጠለ ቅጠል የተገኘ አመድ ይረጩ።",
+        "ቀላል፡ የመቁረጫ ቢላዋን በእሳት ሳያሳልፉ እንደገና አይጠቀሙ — ይህ ነጻ ነው እና በሽታውን ከተክል ወደ ተክል እንዳይሸጋገር ይከላከላል።"
+      ],
+      "prevention_tips": [
+        "Plant early and space mats widely so tools never touch neighbouring plants.",
+        "Bury infected debris deep and keep the pit open to sunlight."
+      ],
+      "prevention_tips_am": [
+        "ቀድመው ይትከሉ እና እንሰቶችን በስፋት ያርቁ።",
+        "የተያዘውን ቅሪት በጥልቅ ይቅበሩ እና ጉድጓዱን ለፀሀይ ያጋልጡ።"
+      ]
+    },
+    {
+      "class_id": 1,
+      "crop": "Enset",
+      "crop_am": "እንሰት",
+      "name": "Enset Streak Virus",
+      "name_am": "የእንሰት ስትሪክ ቫይረስ",
+      "pathogen": "Enset streak virus (BSV)",
+      "icon": "🟡",
+      "risk": {
+        "level": "moderate",
+        "label": "🟡 Moderate Risk",
+        "label_am": "🟡 መካከለኛ አደጋ",
+        "color": "#f9a825"
+      },
+      "local_names": [
+        "Mosa",
+        "Gurage streak"
+      ],
+      "regional_stats": "Common in highland enset gardens; spread by mealybugs and aphids.",
+      "regional_stats_am": "በደጋማ እንሰት አትክልቶች የተለመደ፤ በሜሊባግ እና አፊድ ይተላለፋል።",
+      "traditional_practices": "Leaf pruning and burning are the most common farmer responses.",
+      "traditional_practices_am": "ቅጠል መቁረጥ እና ማቃጠል የተለመዱ የገበሬ ምላሾች ናቸው።",
+      "visual_pattern": "Continuous yellow mosaic lines and broken streaking running parallel along the leaf veins.",
+      "visual_pattern_am": "በቅጠል ስሮች ላይ ትይዩ የሆኑ ቀጣይ ቢጫ ሞዛይክ መስመሮች እና የተሰበሩ ጅራቶች።",
+      "advice": [
+        "Prune and burn individual heavily streaked leaves to limit viral spread.",
+        "Spray a mild soap-water or neem oil solution on leaf undersides to kill mealybugs and aphids.",
+        "Avoid transferring planting materials from infected mats to new fields."
+      ],
+      "advice_am": [
+        "በጣም የተጠቁትን ቅጠሎች ቆርጠው ያቃጥሉ።",
+        "ሜሊባግ እና አፊድን ለመግደል በቅጠል ስር ሳሙና-ውሃ ወይም የኒም ዘይት ይረጩ።",
+        "ከተያዙ እንሰቶች ወደ አዲስ እርሻ የመትከያ ቁሳቁስ አያስተላልፉ።"
+      ],
+      "landraces": {
+        "resistant": [
+          "Lemat",
+          "Beshute"
+        ],
+        "susceptible": [
+          "Ageremremat",
+          "Kibnar"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ለማት",
+          "በሹቴ"
+        ],
+        "susceptible": [
+          "አገረምረማት",
+          "ክብናር"
+        ]
+      },
+      "seasonality": "Year-round; worst during dry spells when insects are active.",
+      "seasonality_am": "ዓመቱን ሙሉ፤ ነፍሳት በሚንቀሳቀሱበት ደረቅ ወቅት የባሰ ነው።",
+      "transmission": "Mealybugs, aphids, and infected suckers (planting material).",
+      "transmission_am": "ሜሊባግ፣ አፊድ እና የተያዙ ችግኞች (የመትከያ ቁሳቁስ)።",
+      "spread_rate": "moderate",
+      "spread_rate_am": "መካከለኛ",
+      "yield_impact": "10–30% reduced corm yield; slow plant decline.",
+      "yield_impact_am": "ከ10–30% የግንድ ምርት መቀነስ፤ የተክል መዳከም።",
+      "monitoring_frequency": "Every 2 weeks; check leaf undersides for insects.",
+      "monitoring_frequency_am": "በየ2 ሳምንቱ፤ ቅጠሎችን ስር ለነፍሳት ይፈትሹ።",
+      "severity_scale": 3,
+      "home_remedies": [
+        "Traditional: hang neem leaves in the garden — their smell repels aphids and mealybugs.",
+        "Easy: mix a spoon of dish soap in 2L water and spray the underside of leaves once a week."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ በአትክልቱ ውስጥ የኒም ቅጠሎችን ይስቀሉ — ሽታቸው አፊድን እና ሜሊባግን ያባርራል።",
+        "ቀላል፡ አንድ ማንኪያ ሳሙና በ2 ሊትር ውሃ ቀላቅለው በሳምንት አንድ ጊዜ ቅጠሎችን ስር ይረጩ።"
+      ],
+      "prevention_tips": [
+        "Only take suckers from healthy-looking mother plants.",
+        "Keep the garden weed-free to reduce insect hiding places."
+      ],
+      "prevention_tips_am": [
+        "ችግኞችን የሚወስዱት ከጤናማ እናት ተክሎች ብቻ ይሁን።",
+        "ነፍሳት የሚደበቁበትን አረም ለማስወገድ አትክልቱን ንጹህ ያድርጉ።"
+      ]
+    },
+    {
+      "class_id": 2,
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Leaf Rust",
+      "name_am": "የቡና ቅጠል ዝገት",
+      "pathogen": "Hemileia vastatrix",
+      "icon": "🟠",
+      "risk": {
+        "level": "high",
+        "label": "🟠 High Risk",
+        "label_am": "🟠 ከፍተኛ አደጋ",
+        "color": "#ef6c00"
+      },
+      "local_names": [
+        "Ziget",
+        "Coffee rust"
+      ],
+      "regional_stats": "Widespread in humid lowland and midland coffee zones.",
+      "regional_stats_am": "በእርጥበታማ ዝቅተኛ እና መካከለኛ የቡና አካባቢዎች በስፋት ይገኛል።",
+      "traditional_practices": "Shade pruning and copper sprays are the leading farmer controls.",
+      "traditional_practices_am": "የጥላ መቁረጥ እና የመዳብ መርጫ ዋና የገበሬ መቆጣጠሪያዎች ናቸው።",
+      "visual_pattern": "Bright orange or yellow powdery spots on the underside of coffee leaves.",
+      "visual_pattern_am": "በቡና ቅጠል ስር ደማቅ ብርቱካናማ ወይም ቢጫ የዱቄት ነጠብጣቦች።",
+      "advice": [
+        "Prune overlapping canopy shade branches to increase airflow and sunlight exposure.",
+        "Apply an organic copper-based fungicide spray prior to the main rainy season.",
+        "Remove heavily infected lower foliage lying close to the soil surface."
+      ],
+      "advice_am": [
+        "የአየር ዝውውር እና የፀሀይ ብርሀን ለማሳደግ የተደራረቡ የጥላ ቅርንጫፎችን ይቁረጡ።",
+        "ከዋናው የዝናብ ወቅት በፊት ኦርጋኒክ የመዳብ ፈንገስ መርጫ ይረጩ።",
+        "ከአፈር ገጽ አጠገብ ያሉ በጣም የተያዙ የታችኛው ቅጠሎችን ያስወግዱ።"
+      ],
+      "canopy_advisor": "Under enset canopy, prune lower enset leaves and thin shade to reduce humidity and rust pressure on coffee.",
+      "canopy_advisor_am": "በእንሰት ጥላ ስር የታችኛውን የእንሰት ቅጠሎች ቆርጠው ጥላውን በማቅለል እርጥበትን እና የዝገት ጫናን ይቀንሱ።",
+      "seasonality": "Late rainy season to early dry season (August–November).",
+      "seasonality_am": "ከዝናብ መጨረሻ እስከ ደረቅ ወቅት መጀመሪያ (ነሀሴ–ህዳር)።",
+      "transmission": "Wind-borne spores; spread by rain splash between trees.",
+      "transmission_am": "በነፋስ የሚተላለፉ ስፖሮች፤ በዝናብ ከዛፍ ወደ ዛፍ ይተላለፋል።",
+      "spread_rate": "fast",
+      "spread_rate_am": "ፈጣን",
+      "yield_impact": "30–50% berry loss if uncontrolled.",
+      "yield_impact_am": "ካልተቆጣጠሩት 30–50% የፍሬ ኪሳራ።",
+      "monitoring_frequency": "Weekly during the wet season.",
+      "monitoring_frequency_am": "በዝናባማ ወቅት በሳምንት አንድ ጊዜ።",
+      "severity_scale": 4,
+      "home_remedies": [
+        "Traditional: plant a row of maize or banana as a living windbreak around the coffee field.",
+        "Easy: pick off and burn the very first rusted leaves — one early action can stop an outbreak."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ በቡና እርሻ ዙሪያ የበቆሎ ወይም የሙዝ ረድፍ እንደ የነፋስ መከላከያ ይትከሉ።",
+        "ቀላል፡ የመጀመሪያዎቹን የተያዙ ቅጠሎች ቀልጠው ያቃጥሉ — ቀደም ያለ እርምጃ ወረርሽኝን ይከላከላል።"
+      ],
+      "prevention_tips": [
+        "Keep coffee rows airy by spacing trees well.",
+        "Harvest and remove fallen leaves from under the trees."
+      ],
+      "prevention_tips_am": [
+        "የቡና ዛፎችን በስፋት በማስቀመጥ አየር እንዲያገኙ ያድርጉ።",
+        "ከዛፎች ስር የወደቁ ቅጠሎችን ይሰብስቡ እና ያስወግዱ።"
+      ]
+    },
+    {
+      "class_id": 3,
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Brown Eye Spot",
+      "name_am": "የቡና ቡናማ አይን ነጠብጣብ",
+      "pathogen": "Cercospora coffeicola",
+      "icon": "🟡",
+      "risk": {
+        "level": "moderate",
+        "label": "🟡 Moderate Risk",
+        "label_am": "🟡 መካከለኛ አደጋ",
+        "color": "#f9a825"
+      },
+      "local_names": [
+        "Cercospora spot"
+      ],
+      "regional_stats": "More severe in nutrient-poor, sun-exposed nurseries.",
+      "regional_stats_am": "በንጥረ-ምግብ ደካማ እና ለፀሀይ በተጋለጡ የችግኝ ቦታዎች የበለጠ ከባድ ነው።",
+      "traditional_practices": "Mulching and compost application are common farmer responses.",
+      "traditional_practices_am": "መከለል እና ማዳበሪያ መጠቀም የተለመዱ የገበሬ ምላሾች ናቸው።",
+      "visual_pattern": "Small circular brown spots with grayish-white centers surrounded by a bright yellow halo.",
+      "visual_pattern_am": "በደማቅ ቢጫ ቀለበት የተከበቡ ግራጫ-ነጭ መሃል ያላቸው ትናንሽ ክብ ቡናማ ነጠብጣቦች።",
+      "advice": [
+        "Apply compost or potassium-rich organic fertilizer to strengthen nutrient-deficient plants.",
+        "Place dry grass mulch around the root base to keep soil moisture and temperature stable.",
+        "Provide balanced shade in nursery beds to prevent heat stress."
+      ],
+      "advice_am": [
+        "የንጥረ-ምግብ እጥረት ያለባቸውን ተክሎች ለማጠናከር ማዳበሪያ ወይም ፖታስየም የበለጸገ ኦርጋኒክ ማዳበሪያ ይጠቀሙ።",
+        "የአፈር እርጥበት እና ሙቀት እንዲረጋ በስር ደረቅ ሳር ይከልሉ።",
+        "የሙቀት ጫናን ለመከላከል በችግኝ ቦታዎች ሚዛናዊ ጥላ ይስጡ።"
+      ],
+      "canopy_advisor": "Under enset canopy, ensure balanced shade so coffee seedlings are not heat-stressed or over-shaded.",
+      "canopy_advisor_am": "በእንሰት ጥላ ስር የቡና ችግኞች ከሙቀት ጫና እና ከመጠን በላይ ጥላ እንዳይደርስባቸው ሚዛናዊ ጥላ ያረጋግጡ።",
+      "seasonality": "Dry season and sun-exposed nursery beds.",
+      "seasonality_am": "ደረቅ ወቅት እና ለፀሀይ የተጋለጡ የችግኝ ቦታዎች።",
+      "transmission": "Rain splash and contaminated nursery tools.",
+      "transmission_am": "በዝናብ መርጨት እና በተበከሉ የችግኝ መሳሪያዎች።",
+      "spread_rate": "slow",
+      "spread_rate_am": "ቀስቃሽ",
+      "yield_impact": "5–15% loss in severe nursery outbreaks.",
+      "yield_impact_am": "በከባድ የችግኝ ወረርሽኝ 5–15% ኪሳራ።",
+      "monitoring_frequency": "Every 2 weeks in nurseries; monthly in mature fields.",
+      "monitoring_frequency_am": "በችግኝ ቦታዎች በየ2 ሳምንቱ፤ በአዋቂ እርሻ በየወሩ።",
+      "severity_scale": 2,
+      "home_remedies": [
+        "Traditional: water seedlings with diluted compost tea once a month to strengthen young plants.",
+        "Easy: raise nursery beds and thin seedlings so air moves freely between them."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ ችግኞችን ለማጠናከር በየወሩ በተቀላቀለ የማዳበሪያ ሻይ ያጠጡ።",
+        "ቀላል፡ የችግኝ ቦታዎችን ከፍ ያድርጉ እና ችግኞችን አየር እንዲያገኙ ያርቁ።"
+      ],
+      "prevention_tips": [
+        "Use only healthy seeds and keep nursery soil clean.",
+        "Mulch the root base to keep soil moisture and temperature stable."
+      ],
+      "prevention_tips_am": [
+        "ጤናማ ዘሮችን ብቻ ይጠቀሙ እና የችግኝ አፈርን ንጹህ ያድርጉ።",
+        "የአፈር እርጥበት እና ሙቀት እንዲረጋ በስር ይከልሉ።"
+      ]
+    },
+    {
+      "class_id": 4,
+      "crop": "Maize",
+      "crop_am": "በቆሎ",
+      "name": "Northern Corn Leaf Blight",
+      "name_am": "የሰሜን በቆሎ ቅጠል በሽታ",
+      "pathogen": "Exserohilum turcicum",
+      "icon": "🟠",
+      "risk": {
+        "level": "high",
+        "label": "🟠 High Risk",
+        "label_am": "🟠 ከፍተኛ አደጋ",
+        "color": "#ef6c00"
+      },
+      "local_names": [
+        "Turcicum blight"
+      ],
+      "regional_stats": "Severe in cool, humid highland maize fields.",
+      "regional_stats_am": "በቀዝቃዛ እና እርጥበታማ ደጋማ የበቆሎ እርሻዎች ከባድ ነው።",
+      "traditional_practices": "Crop rotation and residue burning are the main farmer controls.",
+      "traditional_practices_am": "የሰብል ሽክርክሪት እና ቅሪት ማቃጠል ዋና የገበሬ መቆጣጠሪያዎች ናቸው።",
+      "visual_pattern": "Large, long, cigar-shaped grayish-tan lesions running parallel along the leaf blade.",
+      "visual_pattern_am": "በቅጠሉ ላይ ትይዩ የሆኑ ትላልቅ ሲጋራ ቅርጽ ያላቸው ግራጫ-ቡናማ ቁስሎች።",
+      "advice": [
+        "Rotate crops next season with leguminous, nitrogen-fixing crops (haricot beans or peas).",
+        "Clear and burn or compost leftover maize stalks and leaf residue after harvest.",
+        "Plant certified disease-resistant hybrid seed varieties recommended by local extension agents."
+      ],
+      "advice_am": [
+        "በሚቀጥለው ወቅት ከጥራጥሬ ሰብሎች (ባቄላ ወይም አተር) ጋር ይቀያይሩ።",
+        "ከመኸር በኋላ የቀሩ የበቆሎ ግንዶችን እና ቅጠሎችን ያጽዱ እና ያቃጥሉ።",
+        "በአካባቢ ባለሙያዎች የሚመከሩ የተረጋገጡ ተከላካይ የድብል ዘሮችን ይትከሉ።"
+      ],
+      "seasonality": "Cool, humid periods (July–September).",
+      "seasonality_am": "ቀዝቃዛና እርጥበታማ ጊዜያት (ሀምሌ–መስከረም)።",
+      "transmission": "Airborne fungus spores; carried over in last season's crop residue.",
+      "transmission_am": "በአየር የሚተላለፉ ፈንገስ ስፖሮች፤ ካለፈው ወቅት ቅሪት ይተላለፋል።",
+      "spread_rate": "moderate",
+      "spread_rate_am": "መካከለኛ",
+      "yield_impact": "20–40% grain loss.",
+      "yield_impact_am": "20–40% የእህል ኪሳራ።",
+      "monitoring_frequency": "Weekly from tasseling onward.",
+      "monitoring_frequency_am": "ከባህላፍ መውጣት ጀምሮ በሳምንት አንድ ጊዜ።",
+      "severity_scale": 4,
+      "home_remedies": [
+        "Traditional: interplant maize with beans — the beans shade the soil and reduce leaf wetness.",
+        "Easy: never plant maize on the same plot two seasons in a row; the rotation is free and effective."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ በቆሎ ከባቄላ ጋር ይቀላቅሉ — ባቄላ አፈርን ይከልላል እና የቅጠል እርጥበትን ይቀንሳል።",
+        "ቀላል፡ በተመሳሳይ መሬት ሁለት ወቅት በተከታታይ በቆሎ አይትከሉ፤ ሽክርክሪቱ ነጻ እና ውጤታማ ነው።"
+      ],
+      "prevention_tips": [
+        "Burn or compost all maize stalks after harvest.",
+        "Plant resistant hybrid seeds recommended locally."
+      ],
+      "prevention_tips_am": [
+        "ከመኸር በኋላ ሁሉንም የበቆሎ ግንዶች ያቃጥሉ ወይም ያበስብሉ።",
+        "በአካባቢ የሚመከሩ ተከላካይ ድብል ዘሮችን ይትከሉ።"
+      ]
+    },
+    {
+      "class_id": 5,
+      "crop": "Maize",
+      "crop_am": "በቆሎ",
+      "name": "Maize Gray Leaf Spot",
+      "name_am": "የበቆሎ ግራጫ ቅጠል ነጠብጣብ",
+      "pathogen": "Cercospora zeae-maydis",
+      "icon": "🟡",
+      "risk": {
+        "level": "moderate",
+        "label": "🟡 Moderate Risk",
+        "label_am": "🟡 መካከለኛ አደጋ",
+        "color": "#f9a825"
+      },
+      "local_names": [
+        "Gray leaf spot"
+      ],
+      "regional_stats": "Common in dense, humid maize plantings.",
+      "regional_stats_am": "በጥቅጥቅ እና እርጥበታማ የበቆሎ ተከላዎች የተለመደ።",
+      "traditional_practices": "Residue clearing and row spacing are the main farmer controls.",
+      "traditional_practices_am": "ቅሪት ማጽዳት እና የረድፍ ክፍተት ዋና የገበሬ መቆጣጠሪያዎች ናቸው።",
+      "visual_pattern": "Strict rectangular, narrow tan/gray lesions bounded tightly by parallel leaf veins.",
+      "visual_pattern_am": "በትይዩ ቅጠል ስሮች የታሰሩ ጥብቅ አራት ማዕዘን ቅርጽ ያላቸው ጠባብ ቡናማ/ግራጫ ቁስሎች።",
+      "advice": [
+        "Clear post-harvest crop residue completely to eliminate overwintering fungal spores.",
+        "Maintain proper row spacing during planting to avoid trapping excess humidity between plants.",
+        "Avoid continuous maize monocropping in the same field plot."
+      ],
+      "advice_am": [
+        "የክረምት ፈንገስ ስፖሮችን ለማስወገድ ከመኸር በኋላ ቅሪትን ሙሉ በሙሉ ያጽዱ።",
+        "በተክሎች መካከል እርጥበት እንዳይታሰር ትክክለኛ የረድፍ ክፍተት ይጠብቁ።",
+        "በተመሳሳይ እርሻ ተከታታይ የበቆሎ ሞኖክሮፕ ያስወግዱ።"
+      ],
+      "seasonality": "Humid, warm months after the canopy closes.",
+      "seasonality_am": "ጥላው ከተዘጋ በኋላ እርጥበታማ እና ሞቃት ወራት።",
+      "transmission": "Crop residue and wind-borne spores.",
+      "transmission_am": "የሰብል ቅሪት እና በነፋስ የሚተላለፉ ስፖሮች።",
+      "spread_rate": "moderate",
+      "spread_rate_am": "መካከለኛ",
+      "yield_impact": "15–35% grain loss.",
+      "yield_impact_am": "15–35% የእህል ኪሳራ።",
+      "monitoring_frequency": "Weekly after the canopy closes.",
+      "monitoring_frequency_am": "ጥላው ከተዘጋ በኋላ በሳምንት አንድ ጊዜ።",
+      "severity_scale": 3,
+      "home_remedies": [
+        "Traditional: leave the plot fallow one season and plant haricot beans instead.",
+        "Easy: thin crowded plants so sunlight reaches every leaf."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ ለአንድ ወቅት መሬቱን አርፍ ያድርጉ እና በምትኩ ባቄላ ይትከሉ።",
+        "ቀላል፡ የተጨናነቁ ተክሎችን በማቅለል ፀሀይ እያንዳንዱን ቅጠል እንዲደርስ ያድርጉ።"
+      ],
+      "prevention_tips": [
+        "Clear all post-harvest residue completely.",
+        "Space rows well to avoid trapping humidity."
+      ],
+      "prevention_tips_am": [
+        "ከመኸር በኋላ ቅሪትን ሙሉ በሙሉ ያጽዱ።",
+        "እርጥበት እንዳይታሰር ረድፎችን በስፋት ያስቀምጡ።"
+      ]
+    },
+    {
+      "class_id": 6,
+      "crop": "All Crops",
+      "crop_am": "ሁሉም ሰብሎች",
+      "name": "Healthy Leaf Tissue",
+      "name_am": "ጤናማ ቅጠል",
+      "pathogen": "None — Baseline Control",
+      "icon": "🟢",
+      "risk": {
+        "level": "normal",
+        "label": "🟢 Normal",
+        "label_am": "🟢 መደበኛ",
+        "color": "#2e7d32"
+      },
+      "local_names": [
+        "Healthy"
+      ],
+      "regional_stats": "Baseline control — no disease symptoms detected.",
+      "regional_stats_am": "መነሻ ቁጥጥር — ምንም የበሽታ ምልክት አልተገኘም።",
+      "traditional_practices": "Standard field sanitation and composting routines.",
+      "traditional_practices_am": "መደበኛ የእርሻ ንጽህና እና የማዳበሪያ ልምዶች።",
+      "visual_pattern": "Uniform green pigmentation across Enset, Coffee, or Maize leaves without spots or streaks.",
+      "visual_pattern_am": "ያለ ነጠብጣብ ወይም ጅራት በእንሰት፣ ቡና ወይም በቆሎ ቅጠሎች ላይ ወጥ የሆነ አረንጓዴ ቀለም።",
+      "advice": [
+        "Maintain standard weeding, mulching, and organic composting routines.",
+        "Inspect fields weekly for early symptoms during high-humidity periods.",
+        "Continue good field sanitation to keep crops vigorous and productive."
+      ],
+      "advice_am": [
+        "መደበኛ አረም ማጽዳት፣ መከለል እና ኦርጋኒክ ማዳበሪያ ልምዶችን ይጠብቁ።",
+        "በከፍተኛ እርጥበት ወቅት ሳምንታዊ የእርሻ ምርመራ ያድርጉ።",
+        "ሰብሎችን ጠንካራ ለማድረግ ጥሩ የእርሻ ንጽህና ይቀጥሉ።"
+      ],
+      "seasonality": "All year — no disease window.",
+      "seasonality_am": "ዓመቱን ሙሉ — ምንም የበሽታ ወቅት የለም።",
+      "transmission": "None.",
+      "transmission_am": "የለም።",
+      "spread_rate": "none",
+      "spread_rate_am": "—",
+      "yield_impact": "0% — crops remain productive.",
+      "yield_impact_am": "0% — ሰብሎች ምርታማ ሆነው ይቀጥላሉ።",
+      "monitoring_frequency": "Weekly general inspection.",
+      "monitoring_frequency_am": "ሳምንታዊ አጠቃላይ ምርመራ።",
+      "severity_scale": 1,
+      "home_remedies": [
+        "Traditional: keep the farm clean with regular weeding and compost.",
+        "Easy: walk the field weekly; early signs are easier to manage than late ones."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ እርሻውን በመደበኛ አረም ማጽዳት እና ማዳበሪያ ንጹህ ያድርጉ።",
+        "ቀላል፡ በሳምንት አንድ ጊዜ እርሻውን ይመርምሩ፤ ቀደም ያለ ምልክት በቀላሉ ይታከማል።"
+      ],
+      "prevention_tips": [
+        "Keep tools clean between fields.",
+        "Compost plant residue away from the growing area."
+      ],
+      "prevention_tips_am": [
+        "መሳሪያዎችን በእርሻዎች መካከል ንጹህ ያድርጉ።",
+        "የተክል ቅሪቶችን ከእርሻው ርቀው ያበስብሉ።"
+      ]
+    },
+    {
+      "class_id": 7,
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Berry Disease",
+      "name_am": "የቡና ፍሬ በሽታ",
+      "pathogen": "Colletotrichum kahawae",
+      "icon": "🟠",
+      "risk": {
+        "level": "high",
+        "label": "🟠 High Risk",
+        "label_am": "🟠 ከፍተኛ አደጋ",
+        "color": "#ef6c00"
+      },
+      "local_names": [
+        "CBD",
+        "Berry rot"
+      ],
+      "regional_stats": "Major threat in highland coffee; causes severe berry loss in wet seasons.",
+      "regional_stats_am": "በደጋማ ቡና ዋና ስጋት፤ በዝናባማ ወቅት ከባድ የፍሬ ኪሳራ ያስከትላል።",
+      "traditional_practices": "Early berry picking and removal of infected berries are common farmer controls.",
+      "traditional_practices_am": "ቀደም ብሎ ፍሬ መልቀም እና የተያዙ ፍሬዎችን ማስወገድ የተለመዱ የገበሬ መቆጣጠሪያዎች ናቸው።",
+      "visual_pattern": "Dark sunken lesions on green berries that turn black and rot; leaf spots may also appear.",
+      "visual_pattern_am": "በአረንጓዴ ፍሬዎች ላይ ጠቆር ያሉ የተጠመቁ ቁስሎች ወደ ጥቁር እና መበስበስ የሚሄዱ፤ የቅጠል ነጠብጣቦችም ሊታዩ ይችላሉ።",
+      "advice": [
+        "Plant resistant accessions such as Gu-18, Gu-1, and Gu-4 where available.",
+        "Remove and destroy infected berries early to reduce inoculum.",
+        "Improve air circulation and avoid dense, humid canopies."
+      ],
+      "advice_am": [
+        "በሚገኝበት ቦታ እንደ Gu-18፣ Gu-1 እና Gu-4 ያሉ ተከላካይ ዝርያዎችን ይትከሉ።",
+        "የበሽታ ስርጭትን ለመቀነስ የተያዙ ፍሬዎችን ቀደም ብለው ያስወግዱ እና ያጥፉ።",
+        "የአየር ዝውውርን ያሻሽሉ እና ጥቅጥቅ ያለ እርጥበታማ ጥላን ያስወግዱ።"
+      ],
+      "resistant_accessions": [
+        "Gu-18",
+        "Gu-1",
+        "Gu-4"
+      ],
+      "canopy_advisor": "Under enset canopy, thin shade and prune lower leaves to keep coffee berries dry and reduce CBD pressure.",
+      "canopy_advisor_am": "በእንሰት ጥላ ስር ጥላውን በማቅለል እና የታችኛውን ቅጠሎች በመቁረጥ የቡና ፍሬዎች ደረቅ ሆነው የCBD ጫናን ይቀንሱ።",
+      "seasonality": "Main rainy season (May–August), when berries are still green.",
+      "seasonality_am": "ዋና የዝናብ ወቅት (ግንቦት–ነሀሴ)፣ ፍሬዎቹ አረንጓዴ ሲሆኑ።",
+      "transmission": "Rain splash from infected berries on the tree.",
+      "transmission_am": "በዛፉ ላይ ካሉ የተያዙ ፍሬዎች በዝናብ መርጨት።",
+      "spread_rate": "fast",
+      "spread_rate_am": "ፈጣን",
+      "yield_impact": "Up to 80% berry loss if unchecked.",
+      "yield_impact_am": "ካልተቆጣጠሩት እስከ 80% የፍሬ ኪሳራ።",
+      "monitoring_frequency": "Weekly from flowering to harvest.",
+      "monitoring_frequency_am": "ከአበባ እስከ መኸር በሳምንት አንድ ጊዜ።",
+      "severity_scale": 5,
+      "home_remedies": [
+        "Traditional: strip and burn all mummified berries during pruning — they carry next season's spores.",
+        "Easy: pick berries early and often; hand removal is the cheapest control."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ በመቁረጥ ወቅት የደረቁ ፍሬዎችን ሁሉ ቀልቀው ያቃጥሉ።",
+        "ቀላል፡ ፍሬዎችን ቀድመው እና በተደጋጋሚ ይልቀሙ፤ በእጅ ማስወገድ በጣም ርካሹ መቆጣጠሪያ ነው።"
+      ],
+      "prevention_tips": [
+        "Prune for good airflow and keep branches off the ground.",
+        "Use resistant accessions Gu-18, Gu-1, or Gu-4."
+      ],
+      "prevention_tips_am": [
+        "ለጥሩ የአየር ዝውውር ይቁረጡ እና ቅርንጫፎችን ከመሬት ያርቁ።",
+        "ተከላካይ ዝርያዎችን Gu-18፣ Gu-1 ወይም Gu-4 ይጠቀሙ።"
+      ]
+    },
+    {
+      "class_id": 8,
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Wilt Disease",
+      "name_am": "የቡና ዊልት በሽታ",
+      "pathogen": "Gibberella xylarioides",
+      "icon": "🔴",
+      "risk": {
+        "level": "critical",
+        "label": "🔴 Critical Risk",
+        "label_am": "🔴 ከፍተኛ አደጋ",
+        "color": "#c62828"
+      },
+      "local_names": [
+        "CLD",
+        "Coffee wilt"
+      ],
+      "regional_stats": "Destructive in lowland coffee; spreads through infected planting material and tools.",
+      "regional_stats_am": "በዝቅተኛ ቡና አካባቢዎች አውዳሚ፤ በተያዙ የመትከያ ቁሳቁስ እና መሳሪያዎች ይተላለፋል።",
+      "traditional_practices": "Uprooting and burning infected trees is the primary farmer response.",
+      "traditional_practices_am": "የተያዙ ዛፎችን መንቀል እና ማቃጠል ዋና የገበሬ ምላሽ ነው።",
+      "visual_pattern": "Sudden wilting and yellowing of branches; dark blue-black streaks in the wood; plant death.",
+      "visual_pattern_am": "ድንገተኛ መደረቅ እና የቅርንጫፎች መገርጠት፤ በእንጨቱ ውስጥ ጥቁር ሰማያዊ ጅራቶች፤ የተክሉ ሞት።",
+      "advice": [
+        "Uproot and burn infected trees immediately to prevent spread.",
+        "Sterilize pruning tools between trees with flame or bleach.",
+        "Use certified disease-free seedlings for replanting."
+      ],
+      "advice_am": [
+        "ስርጭትን ለመከላከል የተያዙ ዛፎችን ወዲያውኑ ቆፍረው ያቃጥሉ።",
+        "በዛፎች መካከል የመቁረጫ መሳሪያዎችን በእሳት ወይም ብሊች ያጸዱ።",
+        "ለመትከል የተረጋገጡ ከበሽታ ነጻ ችግኞችን ይጠቀሙ።"
+      ],
+      "canopy_advisor": "Under enset canopy, remove wilted coffee stems promptly and avoid wounding trunks during shade work.",
+      "canopy_advisor_am": "በእንሰት ጥላ ስር የደረቁ የቡና ግንዶችን በፍጥነት ያስወግዱ እና በጥላ ስራ ወቅት ግንዱን ከመቁሰል ይቆጠቡ።",
+      "seasonality": "Year-round; peaks after heavy rain or drought stress.",
+      "seasonality_am": "ዓመቱን ሙሉ፤ ከከባድ ዝናብ ወይም ድርቅ ጫና በኋላ ይባሳል።",
+      "transmission": "Infected seedlings, contaminated pruning tools, and soil.",
+      "transmission_am": "የተያዙ ችግኞች፣ የተበከሉ የመቁረጫ መሳሪያዎች እና አፈር።",
+      "spread_rate": "fast",
+      "spread_rate_am": "ፈጣን",
+      "yield_impact": "Plant death within months; whole farms can be affected.",
+      "yield_impact_am": "በወራት ውስጥ የተክል ሞት፤ ሙሉ እርሻዎች ሊጠቁ ይችላሉ።",
+      "monitoring_frequency": "Monthly, plus after every pruning.",
+      "monitoring_frequency_am": "በየወሩ፣ ከእያንዳንዱ መቁረጥ በኋላም።",
+      "severity_scale": 5,
+      "home_remedies": [
+        "Traditional: burn wilted stumps and leave the hole open to sunlight for the whole dry season.",
+        "Easy: dip your machete in fire or bleach between every single tree — it costs nothing but discipline."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ የደረቁ ጉቶዎችን ያቃጥሉ እና ጉድጓዱን ለደረቅ ወቅት ሙሉ ለፀሀይ ይክፈቱ።",
+        "ቀላል፡ በእያንዳንዱ ዛፍ መካከል መቁረጫዎን በእሳት ወይም ብሊች ይንከሩ — ነጻ ነው ነገር ግን ቅድሚያ ይጠይቃል።"
+      ],
+      "prevention_tips": [
+        "Use only certified disease-free seedlings.",
+        "Avoid wounding trunks during weeding or shade work."
+      ],
+      "prevention_tips_am": [
+        "የተረጋገጡ ከበሽታ ነጻ ችግኞችን ብቻ ይጠቀሙ።",
+        "በአረም ማጽዳት ወይም በጥላ ስራ ወቅት ግንዶችን ከመቁሰል ይቆጠቡ።"
+      ]
+    },
+    {
+      "class_id": 9,
+      "crop": "Maize",
+      "crop_am": "በቆሎ",
+      "name": "Maize Lethal Necrosis",
+      "name_am": "የበቆሎ ገዳይ ኔክሮሲስ",
+      "pathogen": "Maize chlorotic mottle virus (MCMV) complex",
+      "icon": "🔴",
+      "risk": {
+        "level": "critical",
+        "label": "🔴 Critical Risk",
+        "label_am": "🔴 ከፍተኛ አደጋ",
+        "color": "#c62828"
+      },
+      "local_names": [
+        "MLN",
+        "Lethal necrosis"
+      ],
+      "regional_stats": "Emerging threat in East Africa; causes severe yield loss and plant death.",
+      "regional_stats_am": "በምስራቅ አፍሪካ እየተስፋፋ ያለ ስጋት፤ ከባድ የምርት ኪሳራ እና የተክል ሞት ያስከትላል።",
+      "traditional_practices": "Roguing infected plants and controlling insect vectors are key farmer responses.",
+      "traditional_practices_am": "የተያዙ ተክሎችን መንቀል እና የነፍሳት ተሸካሚዎችን መቆጣጠር ቁልፍ የገበሬ ምላሾች ናቸው።",
+      "visual_pattern": "Yellowing and necrosis of leaves with severe stunting; dead heart; plant death.",
+      "visual_pattern_am": "የቅጠሎች መገርጠት እና ኔክሮሲስ ከከባድ ድውየት ጋር፤ የልብ መሞት፤ የተክል ሞት።",
+      "advice": [
+        "Rogue and destroy infected plants immediately to reduce virus spread.",
+        "Control insect vectors (thrips, aphids, beetles) that transmit the virus.",
+        "Rotate with non-cereal crops and use certified seed."
+      ],
+      "advice_am": [
+        "የቫይረስ ስርጭትን ለመቀነስ የተያዙ ተክሎችን ወዲያውኑ ቆፍረው ያጥፉ።",
+        "ቫይረሱን የሚያስተላልፉ ነፍሳትን (ትሪፕስ፣ አፊድ፣ ጥንዚዛ) ይቆጣጠሩ።",
+        "ከእህል ሰብሎች ጋር ይቀያይሩ እና የተረጋገጠ ዘር ይጠቀሙ።"
+      ],
+      "seasonality": "Warm season; spreads rapidly with insect vectors.",
+      "seasonality_am": "ሞቃት ወቅት፤ ከነፍሳት ተሸካሚዎች ጋር በፍጥነት ይተላለፋል።",
+      "transmission": "Thrips, aphids, beetles, and infected seed.",
+      "transmission_am": "ትሪፕስ፣ አፊድ፣ ጥንዚዛ እና የተያዘ ዘር።",
+      "spread_rate": "fast",
+      "spread_rate_am": "ፈጣን",
+      "yield_impact": "50–100% loss; plants may die before harvest.",
+      "yield_impact_am": "50–100% ኪሳራ፤ ተክሎች ከመኸር በፊት ሊሞቱ ይችላሉ።",
+      "monitoring_frequency": "Weekly; act on the first yellowing leaf.",
+      "monitoring_frequency_am": "በሳምንት አንድ ጊዜ፤ በመጀመሪያው ቢጫ ቅጠል እርምጃ ይውሰዱ።",
+      "severity_scale": 5,
+      "home_remedies": [
+        "Traditional: plant maize early so the crop matures before insect pressure peaks.",
+        "Easy: pull out and destroy any sick plant the moment you see it — one plant saved is the whole field."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ ሰብሉ ከነፍሳት ጫና በፊት እንዲበስል በቆሎን ቀድመው ይትከሉ።",
+        "ቀላል፡ የታመመ ተክል ሲያዩ ወዲያውኑ ቆፍረው ያጥፉ — አንድ የተከለለ ተክል ሙሉ እርሻን ያድናል።"
+      ],
+      "prevention_tips": [
+        "Rotate with beans and use certified seed.",
+        "Control weeds that host the insect vectors."
+      ],
+      "prevention_tips_am": [
+        "ከባቄላ ጋር ይቀያይሩ እና የተረጋገጠ ዘር ይጠቀሙ።",
+        "ነፍሳትን የሚያስተናግዱ አረሞችን ይቆጣጠሩ።"
+      ]
+    },
+    {
+      "class_id": 10,
+      "crop": "Enset",
+      "crop_am": "እንሰት",
+      "name": "Enset Mealybug",
+      "name_am": "የእንሰት ሜሊባግ",
+      "pathogen": "Cataenococcus ensete",
+      "icon": "🐛",
+      "risk": {
+        "level": "moderate",
+        "label": "🟡 Moderate Risk",
+        "label_am": "🟡 መካከለኛ አደጋ",
+        "color": "#f9a825"
+      },
+      "local_names": [
+        "Mealybug",
+        "Tefetef"
+      ],
+      "regional_stats": "Extremely widespread in Gurage; often acts in tandem with root nematodes.",
+      "regional_stats_am": "በጉራጌ እጅግ በስፋት ይገኛል፤ ብዙ ጊዜ ከስር ኔማቶድ ጋር አብሮ ይሰራል።",
+      "traditional_practices": "Wood ash application around the corm base is the most common farmer control.",
+      "traditional_practices_am": "በግንዱ ስር የእንጨት አመድ መርጨት የተለመደ የገበሬ መቆጣጠሪያ ነው።",
+      "seasonality": "Year-round; worse in dry spells when plants are stressed.",
+      "seasonality_am": "ዓመቱን ሙሉ፤ ተክሎች በሚጨነቁበት ደረቅ ወቅት የባሰ ነው።",
+      "transmission": "Infested planting material, soil movement, and ants that farm the mealybugs.",
+      "transmission_am": "የተያዘ የመትከያ ቁሳቁስ፣ የአፈር እንቅስቃሴ እና ሜሊባግን የሚያሳድጉ ጉንዳኖች።",
+      "spread_rate": "moderate",
+      "spread_rate_am": "መካከለኛ",
+      "yield_impact": "Stunted growth and drying of young plants; reduced corm yield.",
+      "yield_impact_am": "የወጣት ተክሎች ድውየት እና መድረቅ፤ የግንድ ምርት መቀነስ።",
+      "monitoring_frequency": "Monthly; check the corm base and root zone for white waxy insects.",
+      "monitoring_frequency_am": "በየወሩ፤ በግንዱ ስር እና በስር አካባቢ ነጭ ሰም ያላቸው ነፍሳትን ይፈትሹ።",
+      "severity_scale": 3,
+      "visual_pattern": "Leaf yellowing and stunting; white waxy mealybug clusters at the corm base and roots.",
+      "visual_pattern_am": "የቅጠል መገርጠት እና ድውየት፤ በግንዱ ስር እና በስሮች ላይ ነጭ ሰም ያላቸው የሜሊባግ ስብስቦች።",
+      "advice": [
+        "Uncover the upper corm/root area and apply a generous layer of fresh, dry wood ash directly around the base.",
+        "Remove and destroy heavily infested plants to stop spread to healthy mats.",
+        "Avoid moving soil or planting material from infested gardens to clean fields."
+      ],
+      "advice_am": [
+        "የላይኛውን ግንድ/ስር አካባቢ ከፍተው ትኩስ ደረቅ የእንጨት አመድ በቀጥታ በስሩ ይረጩ።",
+        "ወደ ጤናማ እንሰቶች እንዳይስፋፋ በጣም የተያዙ ተክሎችን አስወግደው ያጥፉ።",
+        "ከተያዙ አትክልቶች ወደ ንጹህ እርሻ አፈር ወይም የመትከያ ቁሳቁስ ከማንቀሳቀስ ይቆጠቡ።"
+      ],
+      "home_remedies": [
+        "Traditional: dust fine wood ash over the corm base — it dries out and kills the soft-bodied mealybugs.",
+        "Easy: spray a garlic + hot pepper + soap water mix on the base to repel young mealybugs."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ በግንዱ ስር የእንጨት አመድ ይረጩ — ሜሊባግን ያደርቃል እና ይገድላል።",
+        "ቀላል፡ የነጭ ሽንኩርት + በርበሬ + ሳሙና ውሃ በስሩ ይረጩ።"
+      ],
+      "prevention_tips": [
+        "Only take suckers from clean, healthy mother plants.",
+        "Keep the base free of weeds and debris where ants can nest."
+      ],
+      "prevention_tips_am": [
+        "ችግኞችን ከንጹህ ጤናማ እናት ተክሎች ብቻ ይውሰዱ።",
+        "ጉንዳኖች የሚኖሩበትን አረም እና ቅሪት ከስሩ ያጽዱ።"
+      ]
+    }
+  ]
+}

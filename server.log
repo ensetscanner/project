@@ -1,0 +1,11 @@
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:07] "GET / HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:07] "GET /app.js HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:07] "GET /style.css HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:07] "GET /data/national-dashboard.json HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:54] "GET / HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:54] "GET /style.css HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:54] "GET /app.js HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:55] "GET /data/disease-catalog.json HTTP/1.1" 304 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:55] "GET /data/national-dashboard.json HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:55] "GET /manifest.webmanifest HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [11/Aug/2026 09:35:55] "GET /model/model.json HTTP/1.1" 304 -
