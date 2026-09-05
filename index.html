@@ -160,14 +160,10 @@
           </section>
         </section>
 
-        <!-- ============ DASHBOARD VIEW ============ -->
+        <!-- ============ DASHBOARD VIEW (single disease-list view) ============ -->
+        <!-- FIX (unified dashboard): tabs removed — only the crop filter + disease cards remain. -->
         <section class="view" id="view-dashboard" hidden>
-          <div class="dash-tabs" role="tablist">
-            <button class="dash-tab active" data-tab="threats" type="button"><svg class="icon icon-sm"><use href="#i-warning"/></svg> Threats</button>
-            <button class="dash-tab" data-tab="remedies" type="button"><svg class="icon icon-sm"><use href="#i-remedy"/></svg> Remedies</button>
-            <button class="dash-tab" data-tab="seasons" type="button"><svg class="icon icon-sm"><use href="#i-seasonality"/></svg> Seasons</button>
-            <button class="dash-tab" data-tab="varieties" type="button"><svg class="icon icon-sm"><use href="#i-plant"/></svg> Varieties</button>
-          </div>
+          <div class="crop-filter" id="cropFilter" role="group" aria-label="Crop filter"></div>
           <div class="dash-body" id="dashBody"></div>
         </section>
 
@@ -213,7 +209,9 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+  <script src="heuristic.js"></script>
   <script src="icons.js"></script>
   <script src="app.js"></script>
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 </body>
 </html>

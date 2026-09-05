@@ -3,13 +3,15 @@
    Cache-first offline strategy for the ~4.0 MB app shell.
    ============================================================ */
 
-const CACHE_NAME = 'ensetscan-vision-v8';
+const CACHE_NAME = 'ensetscan-vision-v10';
 
+// Same-origin app shell — REQUIRED for offline mode. Precached atomically.
 const PRECACHE_URLS = [
   './',
   './index.html',
   './style.css',
   './app.js',
+  './heuristic.js',
   './icons.js',
   './worker.js',
   './manifest.webmanifest',
@@ -21,15 +23,31 @@ const PRECACHE_URLS = [
   './national-dashboard.json',
   './model.json',
   './group1-shard1of1.bin',
-  // Noto Sans Ethiopic CSS + TensorFlow.js — runtime-cached on first fetch
+];
+
+// Cross-origin CDN assets (Noto Sans Ethiopic CSS + font files + TensorFlow.js)
+// — best-effort precache. A failed font fetch must NEVER abort the install and
+// disable offline mode for the whole app (audit fix). These are also runtime-
+// cached on first use by the CDN branch of the fetch handler.
+const CDN_PRECACHE_URLS = [
   'https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;600;700&display=swap',
+  // Verified font file URLs served by Google Fonts (the CSS references these;
+  // browsers requesting .woff2 variants get them via the runtime cache rule).
+  'https://fonts.gstatic.com/s/notosansethiopic/v50/7cHPv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIvyBoMSzUMacb-T35OK6Dj.ttf',
+  'https://fonts.gstatic.com/s/notosansethiopic/v50/7cHPv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIvyBoMSzUMacb-T36QLKDj.ttf',
+  'https://fonts.gstatic.com/s/notosansethiopic/v50/7cHPv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIvyBoMSzUMacb-T36pLKDj.ttf',
 ];
 
 // ---------- Install: pre-cache the app shell ----------
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(PRECACHE_URLS))
+      .then((cache) =>
+        // App shell: atomic addAll (all same-origin, must succeed).
+        cache.addAll(PRECACHE_URLS)
+          // CDN assets: best-effort — tolerate individual failures (audit fix).
+          .then(() => Promise.allSettled(CDN_PRECACHE_URLS.map((u) => cache.add(u))))
+      )
       .then(() => self.skipWaiting())
   );
 });
@@ -70,7 +88,12 @@ self.addEventListener('fetch', (event) => {
             }
             return response;
           })
-          .catch(() => caches.match(event.request))
+          .catch(() =>
+            caches.match(event.request).then((m) => m || new Response(
+              '{"offline":true}',
+              { status: 503, headers: { 'Content-Type': 'application/json' } }
+            ))
+          )
       );
       return;
     }
@@ -115,7 +138,7 @@ self.addEventListener('fetch', (event) => {
             }
             return response;
           })
-          .catch(() => cached);
+          .catch(() => cached || new Response('', { status: 504, statusText: 'Offline' }));
         return cached || networkFetch;
       })
     );

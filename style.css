@@ -85,6 +85,81 @@
 }
 
 /* ============================================================
+   TOAST NOTIFICATIONS (bugs #3, #12)
+   ============================================================ */
+.toast-container {
+  position: fixed;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: min(92vw, 420px);
+  pointer-events: none;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--slate-900, #0f172a);
+  color: var(--white, #ffffff);
+  border-radius: var(--radius-lg, 0.75rem);
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow-xl, 0 20px 40px -5px rgba(0, 0, 0, 0.3));
+  pointer-events: auto;
+  animation: toast-in 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.toast-msg {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.toast-btn {
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: var(--white, #ffffff);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-full, 9999px);
+  cursor: pointer;
+  transition: background var(--transition-fast, 150ms);
+}
+
+.toast-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.toast-close {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.toast-close:hover {
+  color: var(--white, #ffffff);
+}
+
+/* ============================================================
    BASE & RESET
    ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1190,6 +1265,8 @@ body.lang-am {
 .dyn-block.info-block ol {
   margin: 0;
   font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   color: var(--color-text-light);
   line-height: 1.7;
 }
@@ -1201,6 +1278,8 @@ body.lang-am {
 
 .dyn-block.info-block li {
   margin-bottom: 0.3rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .info-foodloss {
@@ -1513,6 +1592,8 @@ body.lang-am {
 .h-conf {
   font-size: 1rem;
   font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
   color: var(--color-primary);
   white-space: nowrap;
 }
@@ -1960,4 +2041,203 @@ html {
   .nav-label {
     font-size: 0.6rem;
   }
+}
+/* ============================================================
+   VERY SMALL SCREENS (audit fix: 360px and below)
+   ============================================================ */
+@media (max-width: 360px) {
+  .header-actions {
+    flex-wrap: wrap;
+  }
+
+  .dash-detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .history-item {
+    flex-wrap: wrap;
+  }
+
+  .h-conf {
+    width: auto;
+    text-align: left;
+  }
+
+  .btn-lang {
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* ============================================================
+   DASHBOARD � CROP FILTER + ACCORDION + FADE (17-class redesign)
+   ============================================================ */
+.crop-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.crop-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid var(--color-border, #e2e8f0);
+  background: var(--white, #fff);
+  color: var(--color-text-light, #64748b);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast, 150ms);
+}
+
+.crop-chip:hover {
+  background: var(--green-50, #f0fdf4);
+  border-color: var(--green-400, #4ade80);
+  color: var(--color-primary, #15803d);
+}
+
+.crop-chip.active {
+  background: var(--color-primary-gradient, linear-gradient(135deg, #15803d, #0d9488));
+  border-color: transparent;
+  color: var(--white, #fff);
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
+}
+
+/* Accordion card */
+.dash-acc {
+  overflow: hidden;
+}
+
+.dash-acc-head {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  color: var(--color-text, #0f172a);
+  transition: background var(--transition-fast, 150ms);
+}
+
+.dash-acc-head:hover, .dash-acc-head:focus-visible {
+  background: var(--green-50, #f0fdf4);
+}
+
+.acc-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.acc-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.acc-title {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.acc-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.acc-arrow {
+  font-size: 1.1rem;
+  color: var(--color-text-muted, #94a3b8);
+  transition: transform var(--transition-base, 250ms);
+  flex-shrink: 0;
+}
+
+.dash-acc.open .acc-arrow {
+  transform: rotate(90deg);
+}
+
+.dash-acc-body {
+  display: none;
+  padding: 0 1.25rem 1rem;
+}
+
+.dash-acc.open .dash-acc-body {
+  display: block;
+}
+
+/* Sub-section toggles (Symptoms / Prevention / Treatment / Remedies) */
+.dash-sub {
+  border-top: 1px solid var(--color-border, #e2e8f0);
+}
+
+.dash-sub-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 0.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text, #0f172a);
+  transition: color var(--transition-fast, 150ms);
+}
+
+.dash-sub-toggle:hover, .dash-sub-toggle:focus-visible {
+  color: var(--color-primary, #15803d);
+}
+
+.sub-arrow {
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #94a3b8);
+  transition: transform var(--transition-base, 250ms);
+}
+
+.dash-sub.open .sub-arrow {
+  transform: rotate(180deg);
+}
+
+.dash-sub-body {
+  display: none;
+}
+
+.dash-sub.open .dash-sub-body {
+  display: block;
+}
+
+.dash-sub-body ul {
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.dash-sub-body li {
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+/* Fade-in on filter/tab change */
+.dash-fade-in {
+  animation: dashFadeIn 300ms ease;
+}
+
+@keyframes dashFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }

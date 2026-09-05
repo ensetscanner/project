@@ -1,6 +1,6 @@
 {
   "version": "3.3.0",
-  "updated": "2026-08-10",
+  "updated": "2026-09-05",
   "threshold": {
     "min_confidence": 0.65,
     "label": "65% Confidence Safeguard"
@@ -247,7 +247,29 @@
       "prevention_tips_am": [
         "የቡና ዛፎችን በስፋት በማስቀመጥ አየር እንዲያገኙ ያድርጉ።",
         "ከዛፎች ስር የወደቁ ቅጠሎችን ይሰብስቡ እና ያስወግዱ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [
+          "Gu-18",
+          "Gu-1",
+          "Gu-4"
+        ],
+        "susceptible": [
+          "Geisha",
+          "Caturra"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ጉ-18",
+          "ጉ-1",
+          "ጉ-4"
+        ],
+        "susceptible": [
+          "ጌሻ",
+          "ካቱራ"
+        ]
+      }
     },
     {
       "class_id": 3,
@@ -310,7 +332,25 @@
       "prevention_tips_am": [
         "ጤናማ ዘሮችን ብቻ ይጠቀሙ እና የችግኝ አፈርን ንጹህ ያድርጉ።",
         "የአፈር እርጥበት እና ሙቀት እንዲረጋ በስር ይከልሉ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [
+          "No known resistant varieties"
+        ],
+        "susceptible": [
+          "Catuai",
+          "Typica"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "የታወቀ ተከላካይ ዝርያ የለም"
+        ],
+        "susceptible": [
+          "ካቱዋይ",
+          "ቲፒካ"
+        ]
+      }
     },
     {
       "class_id": 4,
@@ -371,7 +411,25 @@
       "prevention_tips_am": [
         "ከመኸር በኋላ ሁሉንም የበቆሎ ግንዶች ያቃጥሉ ወይም ያበስብሉ።",
         "በአካባቢ የሚመከሩ ተከላካይ ድብል ዘሮችን ይትከሉ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [
+          "BH-660",
+          "BH-540"
+        ],
+        "susceptible": [
+          "Local unimproved"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ቢ-ኤች-660",
+          "ቢ-ኤች-540"
+        ],
+        "susceptible": [
+          "አካባቢው ያልተሻሻለ"
+        ]
+      }
     },
     {
       "class_id": 5,
@@ -432,7 +490,23 @@
       "prevention_tips_am": [
         "ከመኸር በኋላ ቅሪትን ሙሉ በሙሉ ያጽዱ።",
         "እርጥበት እንዳይታሰር ረድፎችን በስፋት ያስቀምጡ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [
+          "Resistant hybrids (check local extension)"
+        ],
+        "susceptible": [
+          "Local open-pollinated"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ተከላካይ ድብልዎች (የአካባቢ ባለሙያን ይጠይቁ)"
+        ],
+        "susceptible": [
+          "የአካባቢ ክፍት-የአበባ ዝርያ"
+        ]
+      }
     },
     {
       "class_id": 6,
@@ -493,7 +567,15 @@
       "prevention_tips_am": [
         "መሳሪያዎችን በእርሻዎች መካከል ንጹህ ያድርጉ።",
         "የተክል ቅሪቶችን ከእርሻው ርቀው ያበስብሉ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [],
+        "susceptible": []
+      },
+      "landraces_am": {
+        "resistant": [],
+        "susceptible": []
+      }
     },
     {
       "class_id": 7,
@@ -562,7 +644,27 @@
       "prevention_tips_am": [
         "ለጥሩ የአየር ዝውውር ይቁረጡ እና ቅርንጫፎችን ከመሬት ያርቁ።",
         "ተከላካይ ዝርያዎችን Gu-18፣ Gu-1 ወይም Gu-4 ይጠቀሙ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [
+          "Gu-18",
+          "Gu-1",
+          "Gu-4"
+        ],
+        "susceptible": [
+          "Geisha"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ጉ-18",
+          "ጉ-1",
+          "ጉ-4"
+        ],
+        "susceptible": [
+          "ጌሻ"
+        ]
+      }
     },
     {
       "class_id": 8,
@@ -626,7 +728,25 @@
       "prevention_tips_am": [
         "የተረጋገጡ ከበሽታ ነጻ ችግኞችን ብቻ ይጠቀሙ።",
         "በአረም ማጽዳት ወይም በጥላ ስራ ወቅት ግንዶችን ከመቁሰል ይቆጠቡ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [
+          "No known resistant varieties"
+        ],
+        "susceptible": [
+          "Geisha",
+          "F-59"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "የታወቀ ተከላካይ ዝርያ የለም"
+        ],
+        "susceptible": [
+          "ጌሻ",
+          "ኤፍ-59"
+        ]
+      }
     },
     {
       "class_id": 9,
@@ -688,7 +808,23 @@
       "prevention_tips_am": [
         "ከባቄላ ጋር ይቀያይሩ እና የተረጋገጠ ዘር ይጠቀሙ።",
         "ነፍሳትን የሚያስተናግዱ አረሞችን ይቆጣጠሩ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [
+          "Resistant hybrids (check local extension)"
+        ],
+        "susceptible": [
+          "Susceptible local maize"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ተከላካይ ድብልዎች (የአካባቢ ባለሙያን ይጠይቁ)"
+        ],
+        "susceptible": [
+          "የአካባቢ ስሱ በቆሎ"
+        ]
+      }
     },
     {
       "class_id": 10,
@@ -750,7 +886,441 @@
       "prevention_tips_am": [
         "ችግኞችን ከንጹህ ጤናማ እናት ተክሎች ብቻ ይውሰዱ።",
         "ጉንዳኖች የሚኖሩበትን አረም እና ቅሪት ከስሩ ያጽዱ።"
-      ]
+      ],
+      "landraces": {
+        "resistant": [
+          "No known resistant varieties"
+        ],
+        "susceptible": [
+          "Local susceptible"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "የታወቀ ተከላካይ ዝርያ የለም"
+        ],
+        "susceptible": [
+          "የአካባቢ ስሱ"
+        ]
+      }
+    },
+    {
+      "class_id": 11,
+      "crop": "Enset",
+      "crop_am": "እንሰት",
+      "name": "Enset Black Leaf Spot",
+      "name_am": "የእንሰት ጥቁር ቅጠል ነጠብጣብ",
+      "pathogen": "Pseudocercospora spp.",
+      "icon": "⚫",
+      "risk": {
+        "level": "moderate",
+        "label": "🟡 Moderate Risk",
+        "label_am": "🟡 መካከለኛ አደጋ",
+        "color": "#f9a825"
+      },
+      "visual_pattern": "Dark brown to black soot-like spots scattered across the leaf surface; affected leaves dry prematurely.",
+      "visual_pattern_am": "በቅጠል ላይ የሚታዩ ጥቁር እንደ ሻጋታ ነጠብጣቦች፤ የተጠቁ ቅጠሎች በእጅጉ ድርቅ።",
+      "advice": [
+        "Remove and destroy heavily spotted leaves to reduce spore spread.",
+        "Improve airflow by removing weeds and overcrowded plants.",
+        "Where available, apply a registered fungicide at the first sign of spots."
+      ],
+      "advice_am": [
+        "በእጅጉ የተጠቁ ቅጠሎችን ይቁረጡና ያስወግዱ።",
+        "የአየር ፍሰትን በማሻሻል ሽፋንን ይቀንሱ።",
+        "ካለ የተፈቀደ ፈንገስ መንከር በመጀመሪያው ምልክት ላይ ይጠቀሙ።"
+      ],
+      "home_remedies": [
+        "Traditional: sprinkle wood ash around the base of plants to suppress spore spread.",
+        "Easy: pick off and burn the most-spotted leaves by hand — free and immediate."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ የእንጨት አመድ ዙሪያቸውን ይረጩ።",
+        "ቀላል፡ በእጅ የተጠቁ ቅጠሎችን ቆርጠው ያቃጥሉ።"
+      ],
+      "prevention_tips": [
+        "Space plants widely and keep the field weed-free for good airflow.",
+        "Avoid working among wet leaves, which spreads spores."
+      ],
+      "prevention_tips_am": [
+        "ተክሎችን በስፋት ያርቁ እና ጥሩ የአየር ፍሰት ይጠብቁ።",
+        "ቅጠሎች ሲኖሩ በርቷቸው ላይ አይሰሩ።"
+      ],
+      "seasonality": "Humid periods and dense canopy; worst in the main rainy season.",
+      "seasonality_am": "በእርጥበት ወቅት እና ጥቅጥቅ ያለ ሽፋን፤ በዋናው የዝናብ ወቅት ከባድ።",
+      "transmission": "Fungal spores spread by rain splash, wind, and wet tools/hands.",
+      "transmission_am": "በዝናብ ውርጭ፣ በነፋስ እና በእርጥብ መሳሪያዎች ይተላለፋል።",
+      "spread_rate": "moderate",
+      "spread_rate_am": "መካከለኛ",
+      "yield_impact": "Premature leaf drying reduces kocho yield modestly if unmanaged.",
+      "yield_impact_am": "ካልተቆጣጠረ የኩቾ ምርትን በመጠን ይቀንሳል።",
+      "monitoring_frequency": "Every two weeks during humid periods.",
+      "monitoring_frequency_am": "በእርጥበት ወቅት በሁለት ሳምንት አንድ ጊዜ።",
+      "severity_scale": 3,
+      "landraces": {
+        "resistant": [
+          "Lemat",
+          "Beshute"
+        ],
+        "susceptible": [
+          "Ageremremat"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ለማት",
+          "በሹቴ"
+        ],
+        "susceptible": [
+          "አገረምረማት"
+        ]
+      }
+    },
+    {
+      "class_id": 12,
+      "crop": "Enset",
+      "crop_am": "እንሰት",
+      "name": "Enset Leaf Tip Dieback",
+      "name_am": "የእንሰት ቅጠል ጫፍ መድረቅ",
+      "pathogen": "Nutritional / water stress (abiotic)",
+      "icon": "🟤",
+      "risk": {
+        "level": "low",
+        "label": "🟢 Low Risk",
+        "label_am": "🟢 ዝቅተኛ አደጋ",
+        "color": "#16a34a"
+      },
+      "visual_pattern": "Yellowing, browning, and drying that starts at leaf tips and margins and moves inward; no bacterial ooze.",
+      "visual_pattern_am": "ከቅጠል ጫፍ እና ጠርዝ ጀምሮ የሚታይ ቢጫነት፣ ቡናማነት እና ድርቅ፤ የባክቴሪያ ፈሳሽ የለም።",
+      "advice": [
+        "Water deeply during dry spells and mulch around the base to hold moisture.",
+        "Apply well-rotted manure or compost to correct nutrient shortfall.",
+        "Rule out bacterial wilt: check a cut pseudostem for yellow ooze before treating as stress."
+      ],
+      "advice_am": [
+        "በድርቅ ወቅት ውሃ ይጠጡ እና ዙሪያቸውን በማቆያ እርጥበት ይጠብቁ።",
+        "የተበሰበሰ ሌምም ወይም ኮማፖስት በመጨመር የአፈር ንጥረ ነገር ያስተካክሉ።",
+        "የባክቴሪያ ዊልትን ያስወግዱ፡ ግንዱን ቆርጠው ቢጫ ፈሳሽ መኖሩን ያረጋግጡ።"
+      ],
+      "home_remedies": [
+        "Traditional: work burnt ash and manure into the soil around affected mats.",
+        "Easy: grass mulch around the base keeps roots cool and moist — costs nothing."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ አመድ እና ሌምም በአፈሩ ውስጥ ይቀላቅሉ።",
+        "ቀላል፡ ሣር በስሩ ማሰራጨት ሙቀትንና እርጥበትን ይጠብቃል።"
+      ],
+      "prevention_tips": [
+        "Mulch and irrigate before the dry season begins.",
+        "Keep enset plots fertile — stressed plants show worse dieback."
+      ],
+      "prevention_tips_am": [
+        "ከደረቅ ወቅት መጀመሪያ በፊት ማቆያ ይጣሉ እና ያጠጡ።",
+        "የእንሰት እርሻዎችን ለም ይጠብቁ።"
+      ],
+      "seasonality": "Most visible in the dry season (December–February) and on poor soils.",
+      "seasonality_am": "በደረቅ ወቅት (ታኅሣሥ–የካቲት) እና በድህን አፈር ላይ ከባድ።",
+      "transmission": "Not transmissible — caused by water or nutrient stress.",
+      "transmission_am": "አይተላለፍም — በውሃ ወይም በንጥረ ነገር ጥለት ይከሰታል።",
+      "spread_rate": "none",
+      "spread_rate_am": "የለም",
+      "yield_impact": "Minor if corrected early; prolonged stress reduces kocho quality.",
+      "yield_impact_am": "በጊዜው ከተስተካከለ ትንሽ፤ ረዘሞ ጥለት የኩቾ ጥራት ይቀንሳል።",
+      "monitoring_frequency": "Monthly; increase in the dry season.",
+      "monitoring_frequency_am": "በወር አንድ ጊዜ፤ በደረቅ ወቅት ብዙ።",
+      "severity_scale": 1,
+      "landraces": {
+        "resistant": [],
+        "susceptible": []
+      },
+      "landraces_am": {
+        "resistant": [],
+        "susceptible": []
+      }
+    },
+    {
+      "class_id": 13,
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Leaf Miner",
+      "name_am": "የቡና ቅጠል ቆፋሪ",
+      "pathogen": "Leucoptera coffeella (moth larva, pest)",
+      "icon": "🐛",
+      "risk": {
+        "level": "moderate",
+        "label": "🟡 Moderate Risk",
+        "label_am": "🟡 መካከለኛ አደጋ",
+        "color": "#f9a825"
+      },
+      "visual_pattern": "Dry, whitish winding tunnels and papery window-like patches inside leaves; early leaf drop in heavy attacks.",
+      "visual_pattern_am": "በቅጠል ውስጥ ነጭ ጠማማ መቆፈሪያ መስመሮች እና እንደ መስኮት ነጠብጣቦች፤ በእጅጉ ሲያዝ ቅጠል መንቀል።",
+      "advice": [
+        "Collect and destroy severely mined leaves along with the larvae inside.",
+        "Encourage natural enemies by avoiding broad-spectrum insecticide sprays.",
+        "In heavy outbreaks, apply a registered, targeted insecticide following the label."
+      ],
+      "advice_am": [
+        "በእጅጉ የተጠቁ ቅጠሎችን ከእንሰሳው ጋር ይሰብስቡና ያጠፉ።",
+        "የተፈጥሯዊ ጠላቶቻቸውን ለመጠበቅ ሰፊ የመንከር መርዝ አይጠቀሙ።",
+        "በእጅጉ ሲያዝ የተፈቀደ ንክክል መንከር በመመሪያው መሠረት ይጠቀሙ።"
+      ],
+      "home_remedies": [
+        "Traditional: hand-pick mined leaves early in the morning when larvae sit near the surface.",
+        "Easy: a neem leaf or seed soak sprayed weekly deters egg-laying moths."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ ጠዋት ጠዋት የተቆፈሩ ቅጠሎችን በእጅ ይንቀሉ።",
+        "ቀላል፡ የኦዲንጂ ቅጠል መርጫ በሳምንት አንድ ጊዜ ይርጩ።"
+      ],
+      "prevention_tips": [
+        "Maintain balanced shade to discourage moth population booms.",
+        "Remove fallen mined leaves from around the trees."
+      ],
+      "prevention_tips_am": [
+        "መጠነኛ ጥላ ይጠብቁ።",
+        "የወደቁ የተጠቁ ቅጠሎችን ከዛፎቹ ዙሪያ ያስወግዱ።"
+      ],
+      "seasonality": "Warm, dry periods between rainy seasons.",
+      "seasonality_am": "በዝናብ ዘመናት መካከል ባሉ ሞቅ ያሉ ደረቅ ጊዜያት።",
+      "transmission": "Adult moths fly between trees; larvae spread within leaves.",
+      "transmission_am": "ብርቱካንማ ቢንባቦች በበረራ በዛፎች መካከል ይተላለፋሉ።",
+      "spread_rate": "moderate",
+      "spread_rate_am": "መካከለኛ",
+      "yield_impact": "Early leaf drop can reduce cherry yield by 10–30% in severe years.",
+      "yield_impact_am": "በከባድ ዓመታት የፍሬ ምርትን 10-30% ይቀንሳል።",
+      "monitoring_frequency": "Weekly during warm dry spells.",
+      "monitoring_frequency_am": "በደረቅ ጊዜ በሳምንት አንድ ጊዜ።",
+      "severity_scale": 2,
+      "landraces": {
+        "resistant": [
+          "No known resistant varieties"
+        ],
+        "susceptible": [
+          "Geisha",
+          "Caturra"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "የታወቀ ተከላካይ ዝርያ የለም"
+        ],
+        "susceptible": [
+          "ጌሻ",
+          "ካቱራ"
+        ]
+      }
+    },
+    {
+      "class_id": 14,
+      "crop": "Coffee",
+      "crop_am": "ቡና",
+      "name": "Coffee Sooty Mold",
+      "name_am": "የቡና ጥቁር ሻጋታ",
+      "pathogen": "Capnodium spp.",
+      "icon": "🖤",
+      "risk": {
+        "level": "moderate",
+        "label": "🟡 Moderate Risk",
+        "label_am": "🟡 መካከለኛ አደጋ",
+        "color": "#f9a825"
+      },
+      "visual_pattern": "Black, charcoal-like powdery coating smothering the leaf surface; rubs off easily and often follows sap-sucking insects.",
+      "visual_pattern_am": "የቅጠል ላይን የሚሸፍን ጥቁር እንደ ከሰል ዱቄት፤ በቀላሉ ይሰርዛል።",
+      "advice": [
+        "Control the sap-sucking insects (scale, mealybug, aphids) whose honeydew feeds the mold.",
+        "Wash or brush off light mold coatings; leaves recover once the source is gone.",
+        "Prune dense branches to improve light and airflow."
+      ],
+      "advice_am": [
+        "ሻጋታውን የሚመግቡ እንስሳትን ይቆጣጠሩ።",
+        "ቀላል ሻጋታ በማጠብ ወይም በመሸራበት ያስወግዱ።",
+        "ቅርንጫፎችን በመከርከም ብርሃንና የአየር ፍሰት ያሳድጉ።"
+      ],
+      "home_remedies": [
+        "Traditional: soapy water from local bar soap sprayed on coated leaves loosens the mold.",
+        "Easy: wipe coated leaves with a damp cloth on young trees — immediate relief."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ የሳሙና ውሃ በመርጨት ሻጋታውን ያላቅቁ።",
+        "ቀላል፡ በእርጥብ ጨርቅ ይሸርብሸሩ።"
+      ],
+      "prevention_tips": [
+        "Monitor for scale insects and mealybugs — controlling them prevents the mold.",
+        "Avoid excessive shade; keep trees vigorous."
+      ],
+      "prevention_tips_am": [
+        "የመጠቀሻ እንስሳትን ይቆጣጠሩ።",
+        "ብዙ ጥላ ያስወግዱ፤ ዛፎችን ጤናማ ያድርጉ።"
+      ],
+      "seasonality": "Follows honeydew-producing insects; peaks in warm, still weather.",
+      "seasonality_am": "የንብ ማምረቻ እንስሳትን ተከትሎ፤ በሙቅ አየር ከፍ ይላል።",
+      "transmission": "Mold spores settle on honeydew; the insects that produce honeydew spread it.",
+      "transmission_am": "የሻጋታ ስፖሮች በንብ ጥለት ላይ ይወድቃሉ።",
+      "spread_rate": "moderate",
+      "spread_rate_am": "መካከለኛ",
+      "yield_impact": "Blocks sunlight and reduces photosynthesis; loss tracks the insect outbreak.",
+      "yield_impact_am": "ብርሃንን ይዘጋል፤ ኪሳራው ከእንስሳው አደጋ ጋር ይሄዳል።",
+      "monitoring_frequency": "Weekly wherever honeydew insects appear.",
+      "monitoring_frequency_am": "እንስሳት ሲታዩ በሳምንት አንድ ጊዜ።",
+      "severity_scale": 2,
+      "landraces": {
+        "resistant": [
+          "No known resistant varieties"
+        ],
+        "susceptible": [
+          "Geisha"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "የታወቀ ተከላካይ ዝርያ የለም"
+        ],
+        "susceptible": [
+          "ጌሻ"
+        ]
+      }
+    },
+    {
+      "class_id": 15,
+      "crop": "Maize",
+      "crop_am": "በቆሎ",
+      "name": "Common Corn Rust",
+      "name_am": "የበቆሎ ጉፍፊ አበሳ / ዝገት",
+      "pathogen": "Puccinia sorghi",
+      "icon": "🟠",
+      "risk": {
+        "level": "moderate",
+        "label": "🟡 Moderate Risk",
+        "label_am": "🟡 መካከለኛ አደጋ",
+        "color": "#f9a825"
+      },
+      "visual_pattern": "Small, circular orange to cinnamon-brown powdery pustules scattered on both leaf surfaces; leaves a powdery residue on fingers.",
+      "visual_pattern_am": "ትንንሽ ክብ ብርቱካንማ-ቡናማ ዱቄታማ እብጥቦች በሁለቱም የቅጠል ገጽ።",
+      "advice": [
+        "Scout weekly; if pustules cover the upper leaves before grain fill, apply a registered fungicide.",
+        "Bury or compost maize residue after harvest to break the disease cycle.",
+        "Plant tolerant hybrids next season in affected fields."
+      ],
+      "advice_am": [
+        "በሳምንት አንድ ጊዜ ይመርምሩ፤ ስርጭት ሲሰፋ ፈንገስ መንከር ይጠቀሙ።",
+        "ከመከር በኋላ የበቆሎ ቅሪትን ቆፍረው ይቅበሩ።",
+        "በሚቀጥለው ወቅት የመከላከያ ዝርያዎችን ይዝሩ።"
+      ],
+      "home_remedies": [
+        "Traditional: rotate maize plots away from last season's field — rust spores die without a host.",
+        "Easy: remove and burn the first few rusted plants you find to slow the spread."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ የበቆሎ እርሻን ከወቅቱ መስክ ያርቁ።",
+        "ቀላል፡ የመጀመሪያዎቹን የተጠቁ ተክሎች ቆርጠው ያቃጥሉ።"
+      ],
+      "prevention_tips": [
+        "Plant early so grain fill finishes before cool, humid rust weather.",
+        "Avoid very dense sowing, which keeps leaves wet."
+      ],
+      "prevention_tips_am": [
+        "ቀድመው ይዝሩ።",
+        "በጣም ጥቅጥቅ ያለ መዝራት ያስወግዱ።"
+      ],
+      "seasonality": "Cool nights with dew and moderate humidity — typically mid to late season.",
+      "seasonality_am": "ቀዝቃዛ ሌሊቶች እና ጠዋት እርጥበት — በወቅቱ መሃል እና መጨረሻ።",
+      "transmission": "Rust spores travel long distances on the wind.",
+      "transmission_am": "የዝገት ስፖሮች በነፋስ ርቀት ይተላለፋሉ።",
+      "spread_rate": "fast",
+      "spread_rate_am": "ፈጣን",
+      "yield_impact": "Heavy rust on upper leaves can cut grain fill by 10–25%.",
+      "yield_impact_am": "ከባድ ዝገት የእህል ምርትን 10-25% ይቀንሳል።",
+      "monitoring_frequency": "Weekly from mid-season onward.",
+      "monitoring_frequency_am": "ከወቅቱ መሃል ጀምሮ በሳምንት አንድ ጊዜ።",
+      "severity_scale": 3,
+      "landraces": {
+        "resistant": [
+          "Resistant hybrids (check local extension)"
+        ],
+        "susceptible": [
+          "Local open-pollinated"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ተከላካይ ድብልዎች (የአካባቢ ባለሙያን ይጠይቁ)"
+        ],
+        "susceptible": [
+          "የአካባቢ ክፍት-የአበባ ዝርያ"
+        ]
+      }
+    },
+    {
+      "class_id": 16,
+      "crop": "Maize",
+      "crop_am": "በቆሎ",
+      "name": "Maize Streak Virus (MSV)",
+      "name_am": "የበቆሎ ስትሪክ ቫይረስ",
+      "pathogen": "Maize streak virus (leafhopper-transmitted)",
+      "icon": "🟡",
+      "risk": {
+        "level": "high",
+        "label": "🟠 High Risk",
+        "label_am": "🟠 ከፍተኛ አደጋ",
+        "color": "#ea580c"
+      },
+      "visual_pattern": "Long, narrow white to yellow streaks running parallel along the veins; severe stunting and small cobs in young plants.",
+      "visual_pattern_am": "ከቅጠል ዙሪያ ጋር በተመሳሳይ አቅጣጫ የሚሮጡ ረጅም ነጭ-ቢጫ መስመሮች፤ ከባድ እድገት ማቆም።",
+      "advice": [
+        "Uproot and destroy severely streaked young plants — they never recover.",
+        "Control leafhopper vectors: clear grass weeds in and around the field.",
+        "Plant resistant/tolerant varieties in areas with known MSV history."
+      ],
+      "advice_am": [
+        "በእጅጉ የተጠቁ ወጣት ተክሎችን ቆፍረው ያስወግዱ — እነሱ አይታከሙም።",
+        "የተቀናጁ ተባዮችን ይቆጣጠሩ፡ በእርሻው ውስጥና ዙሪያ ሣር ያስወግዱ።",
+        "በታሪክ በሚታወቁ አካባቢዎች የመከላከያ ዝርያዎችን ይዝሩ።"
+      ],
+      "home_remedies": [
+        "Traditional: early removal of streaked plants protects the rest of the stand.",
+        "Easy: keep field edges clear of tall grass where leafhoppers breed."
+      ],
+      "home_remedies_am": [
+        "ባህላዊ፡ የተጠቁ ተክሎችን በጊዜው ማስወገድ ቀሪውን ይጠብቃል።",
+        "ቀላል፡ የመስክ ጠርዞችን ከሣር ንጹህ ያድርጉ።"
+      ],
+      "prevention_tips": [
+        "Plant at the start of the rains so seedlings grow quickly past the vulnerable stage.",
+        "Remove volunteer maize and grass weeds that harbour leafhoppers.",
+        "Use certified seed of tolerant varieties."
+      ],
+      "prevention_tips_am": [
+        "በዝናብ መጀመሪያ ላይ ይዝሩ።",
+        "የተረፉ ተክሎችንና ሣር ያስወግዱ።",
+        "የመከላከያ ዝርያዎችን ይጠቀሙ።"
+      ],
+      "seasonality": "Early season, when leafhoppers move from grasses to young maize.",
+      "seasonality_am": "የመጀመሪያው ወቅት፣ ተቀናጆች ከሣር ወደ ወጣት በቆሎ ሲቀየሩ።",
+      "transmission": "Leafhoppers (Cicadulina spp.) carry the virus from grass weeds to maize.",
+      "transmission_am": "ተቀናጆች ቫይረሱን ከሣር ወደ በቆሎ ይተላለፉ።",
+      "spread_rate": "fast",
+      "spread_rate_am": "ፈጣን",
+      "yield_impact": "Early infection can cause 30–100% grain loss on affected plants.",
+      "yield_impact_am": "በወጣት ተክሎች 30-100% የእህል ኪሳራ።",
+      "monitoring_frequency": "Twice weekly for the first month after emergence.",
+      "monitoring_frequency_am": "ከመቅለት በኋላ በመጀመሪያው ወር በሳምንት ሁለት ጊዜ።",
+      "severity_scale": 4,
+      "landraces": {
+        "resistant": [
+          "Resistant hybrids (check local extension)"
+        ],
+        "susceptible": [
+          "Local susceptible"
+        ]
+      },
+      "landraces_am": {
+        "resistant": [
+          "ተከላካይ ድብልዎች (የአካባቢ ባለሙያን ይጠይቁ)"
+        ],
+        "susceptible": [
+          "የአካባቢ ስሱ"
+        ]
+      }
     }
   ]
 }

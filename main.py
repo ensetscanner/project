@@ -104,8 +104,18 @@ def application(environ, start_response):
     full_path = _resolve_path(path)
 
     if full_path is None:
-        # If no static file matched, fall back to index.html for SPA routes.
-        # But only for paths that look like HTML navigation, not missing assets.
+        # Only fall back to index.html for extension-less (navigation) paths.
+        # A missing asset must return a real 404 — serving HTML with 200 here
+        # would let the service worker cache HTML under a JS/CSS URL (audit fix).
+        last_segment = path.rstrip('/').rsplit('/', 1)[-1]
+        if '.' in last_segment:
+            start_response('404 Not Found', [
+                ('Content-Type', 'text/plain'),
+                ('Content-Length', '9'),
+                ('Cache-Control', 'no-store'),
+                ('X-Content-Type-Options', 'nosniff'),
+            ])
+            return [b'Not Found']
         full_path = os.path.join(BASE_DIR, INDEX_FILE)
 
     try:
@@ -124,6 +134,7 @@ def application(environ, start_response):
         ('Content-Type', _get_mime(full_path) if full_path else 'text/plain'),
         ('Content-Length', str(len(body))),
         ('Cache-Control', 'no-cache'),
+        ('X-Content-Type-Options', 'nosniff'),
     ]
 
     # Service worker must be allowed at scope root and never cached
@@ -167,6 +178,7 @@ if __name__ == '__main__':
             self.send_header('Content-Type', _get_mime(full))
             self.send_header('Content-Length', str(len(data)))
             self.send_header('Cache-Control', 'no-cache')
+            self.send_header('X-Content-Type-Options', 'nosniff')
             if full.endswith('sw.js'):
                 self.send_header('Service-Worker-Allowed', '/')
             self.end_headers()
