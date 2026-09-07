@@ -167,6 +167,31 @@
           <div class="dash-body" id="dashBody"></div>
         </section>
 
+        <!-- ============ DISEASE DETAIL VIEW ============ -->
+        <section class="view" id="view-detail" hidden>
+          <div class="detail-view">
+            <div class="detail-topbar">
+              <button type="button" id="detailBackBtn" class="detail-back" aria-label="Back"><span aria-hidden="true">←</span> <span id="detailBackText">Back</span></button>
+            </div>
+            <div class="detail-hero">
+              <img id="detailPhoto" class="detail-photo" src="" alt="" loading="lazy" onerror="this.onerror=null;this.src='default-disease.svg';" />
+              <div class="detail-hero-overlay">
+                <h2 id="detailName" class="detail-name"></h2>
+                <p id="detailCrop" class="detail-crop"></p>
+                <span id="detailRisk" class="detail-risk"></span>
+              </div>
+            </div>
+            <div class="detail-scanmeta" id="detailScanMeta" hidden>
+              <p id="detailScanDate"></p>
+              <p id="detailScanConfidence"></p>
+              <p id="detailScanResult"></p>
+            </div>
+            <div class="detail-sections" id="detailSections">
+              <!-- 6 collapsible sections rendered by JS -->
+            </div>
+          </div>
+        </section>
+
         <!-- ============ HISTORY VIEW ============ -->
         <section class="view" id="view-history" hidden>
           <div class="history-toolbar">

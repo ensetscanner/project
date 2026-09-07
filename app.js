@@ -98,6 +98,10 @@ let dashData = null;                // national dashboard knowledge base
 let dashCropFilter = 'All';         // dashboard crop filter: 'All' | 'Enset' | 'Coffee' | 'Maize' (new)
 let dashDataLoading = false;        // dedupe concurrent loadDashData() calls (FIX)
 let dashDataWarned = false;         // guard a single offline toast, not duplicates (FIX)
+// FIX (disease detail): view-stack + detail-view state (kept so back returns correctly)
+let viewStack = [];                 // array of 'home' | 'dashboard' | 'history' you can return to
+let currentDetail = null;           // { classId, fromHistory, historyRecord } for re-render on lang switch
+let currentDetailScroll = 0;        // remember scroll when leaving dashboard/history
 let cameraStream = null;            // active getUserMedia stream
 let cameraActive = false;           // whether the viewfinder is live
 let cameraStable = false;           // stability detector state
@@ -169,7 +173,19 @@ const engineBadgeText = el('engineBadgeText');
 const dashBody = el('dashBody');
 const viewHome = el('view-home');
 const viewDashboard = el('view-dashboard');
+const viewDetail = el('view-detail');
 const viewHistory = el('view-history');
+const detailBackBtn = el('detailBackBtn');
+const detailBackText = el('detailBackText');
+const detailPhoto = el('detailPhoto');
+const detailName = el('detailName');
+const detailCrop = el('detailCrop');
+const detailRisk = el('detailRisk');
+const detailSections = el('detailSections');
+const detailScanMeta = el('detailScanMeta');
+const detailScanDate = el('detailScanDate');
+const detailScanConfidence = el('detailScanConfidence');
+const detailScanResult = el('detailScanResult');
 const viewTitle = el('viewTitle');
 
 /* ---------------- UI Translation Strings ---------------- */
@@ -268,6 +284,10 @@ const I18N = {
     none: 'None',
     no_known_varieties: 'No known resistant varieties',
     diseases_title: 'Disease Dashboard',
+    detail_back: 'Back',
+    detail_scanned_on: 'Scanned on',
+    detail_confidence: 'Confidence',
+    detail_result: 'Result',
     start_scan_title: 'Ready to diagnose?',
     start_scan_body: 'Take a photo or pick one from your gallery to get started.',
     start_scan_btn: 'Start Scan'
@@ -366,6 +386,10 @@ const I18N = {
     none: 'የለም',
     no_known_varieties: 'የታወቀ ተከላካይ ዝርያ የለም',
     diseases_title: 'የበሽታ ዳሽቦርድ',
+    detail_back: 'ተመለስ',
+    detail_scanned_on: 'የተመረመረበት',
+    detail_confidence: 'እርግጠኝነት',
+    detail_result: 'ውጤት',
     start_scan_title: 'ለመመርመር ዝግጁ ነዎት?',
     start_scan_body: 'ፎቶ ያንሱ ወይም ከጋለሪዎ ይምረጡ ለመጀመር።',
     start_scan_btn: 'ምርመራ ይጀምሩ'
@@ -412,14 +436,9 @@ function bindEvents() {
     const btn = e.target.closest('[data-action]');
     if (!btn) return;
     const action = btn.getAttribute('data-action');
-    if (action === 'toggle-sub') {
-      const sub = btn.closest('.dash-sub');
-      sub.classList.toggle('open');
-      btn.setAttribute('aria-expanded', sub.classList.contains('open') ? 'true' : 'false');
-    } else if (action === 'toggle-card') {
-      const card = btn.closest('.dash-acc');
-      card.classList.toggle('open');
-      btn.setAttribute('aria-expanded', card.classList.contains('open') ? 'true' : 'false');
+    if (action === 'open-detail') {
+      const classId = parseInt(btn.getAttribute('data-key'), 10);
+      if (!isNaN(classId)) openDiseaseDetail(classId, false, null);
     }
   });
 
@@ -698,12 +717,16 @@ function applyLang() {
     }
   }
 
-  // Language sync for the dashboard (FIX): when switching language while the
-  // Dashboard is visible, rebuild the crop-filter chips and re-render the single
-  // disease-list view instantly so all text updates without a tab switch.
+  // Language sync (FIX): when switching language, instantly re-render whatever
+  // view is visible — dashboard, history, or the disease detail view.
   if (viewDashboard && !viewDashboard.hidden) {
     buildCropFilter();
     renderDashboard();
+  } else if (viewHistory && !viewHistory.hidden) {
+    openHistory();
+  } else if (viewDetail && !viewDetail.hidden && currentDetail) {
+    detailBackText.textContent = t.detail_back;
+    renderDiseaseDetail(currentDetail.classId, currentDetail.fromHistory, currentDetail.historyRecord);
   }
 }
 
@@ -1832,21 +1855,24 @@ async function loadDashData() {
 
 /* ---------------- View Navigation ---------------- */
 function switchView(view) {
-  // Toggle nav active state
+  // FIX (disease detail): detail is a stacked view — keep nav highlighting based
+  // on the underlying section (home/dashboard/history), not 'detail'.
+  const navKey = view === 'detail' ? (viewStack.length ? viewStack[viewStack.length - 1] : 'home') : view;
   document.querySelectorAll('.nav-item').forEach((item) => {
-    item.classList.toggle('active', item.dataset.view === view);
+    item.classList.toggle('active', item.dataset.view === navKey);
   });
 
   // Update header title
-  if (viewTitle) {
+  if (viewTitle && view !== 'detail') {
     const titleKey = 'view_' + view;
     viewTitle.textContent = I18N[lang][titleKey] || 'EnsetScan';
   }
 
-  // Show/hide the three main views
+  // Show/hide the main views (detail included)
   viewHome.hidden = view !== 'home';
   viewDashboard.hidden = view !== 'dashboard';
   viewHistory.hidden = view !== 'history';
+  if (viewDetail) viewDetail.hidden = view !== 'detail';
 
   // When returning to Home, reset to the welcome screen if no scan is in progress
   if (view === 'home' && !currentImage && !lastResult) {
@@ -1859,9 +1885,6 @@ function switchView(view) {
   }
 
   // Render content on demand; lazy-load dashboard data if not yet available.
-  // Render the single disease-list view whether or not the load succeeded —
-  // it derives from the catalog (primary source), so an offline dashboard still
-  // shows disease content rather than a blank screen.
   if (view === 'dashboard') {
     buildCropFilter();
     if (dashData) {
@@ -1871,11 +1894,126 @@ function switchView(view) {
     }
   } else if (view === 'history') {
     openHistory();
+  } else if (view === 'detail' && currentDetail) {
+    // Re-render detail content (e.g. after a language switch) without clearing state
+    renderDiseaseDetail(currentDetail.classId, currentDetail.fromHistory, currentDetail.historyRecord);
   }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // FIX (disease detail): scroll behavior — scroll to top on open, restore on back
+  if (view === 'home' || view === 'dashboard' || view === 'history') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else if (view === 'detail') {
+    window.scrollTo({ top: 0 });
+  }
 }
 
-/* ---------------- National Dashboard ---------------- */
+/* ---------------- Disease Detail View ---------------- */
+
+/** Open the detail view for a disease, tracking the previous view for back. */
+function openDiseaseDetail(classId, fromHistory, historyRecord) {
+  if (!catalog || !catalog.classes[classId]) return;
+
+  // Remember which view we came from
+  currentDetail = { classId, fromHistory: !!fromHistory, historyRecord: historyRecord || null };
+  viewStack.push(fromHistory ? 'history' : 'dashboard');
+
+  // Switch to the detail view (renders content via switchView's detail branch)
+  switchView('detail');
+}
+
+/** Render (or re-render, e.g. on language switch) the detail view content. */
+function renderDiseaseDetail(classId, fromHistory, historyRecord) {
+  if (!catalog || !catalog.classes[classId] || !viewDetail) return;
+  const cls = catalog.classes[classId];
+  const t = I18N[lang];
+  const risk = cls.risk || {};
+
+  // Name / crop / risk badge
+  const name = (lang === 'am' && cls.name_am) ? cls.name_am : cls.name;
+  const crop = (lang === 'am' && cls.crop_am) ? cls.crop_am : cls.crop;
+  if (detailName) detailName.textContent = name;
+  if (detailCrop) detailCrop.textContent = crop + ' · ' + (cls.pathogen || '');
+
+  // Risk badge (colored)
+  if (detailRisk) {
+    const lvl = risk.level || 'normal';
+    detailRisk.className = 'detail-risk risk-' + lvl;
+    detailRisk.textContent = (lang === 'am' ? risk.label_am : risk.label) || '';
+  }
+
+  // Photo / fallback
+  const img = cls.image || 'default-disease.svg';
+  if (detailPhoto) {
+    detailPhoto.src = img;
+    detailPhoto.alt = name;
+  }
+
+  // Scan metadata (only from history)
+  if (detailScanMeta) {
+    if (historyRecord) {
+      detailScanMeta.hidden = false;
+      if (detailScanDate) detailScanDate.textContent = '📅 ' + (t.detail_scanned_on || 'Scanned on') + ': ' + new Date(historyRecord.timestamp).toLocaleString();
+      if (detailScanConfidence) detailScanConfidence.textContent = '📊 ' + (t.detail_confidence || 'Confidence') + ': ' + historyRecord.confidencePct.toFixed(1) + '%';
+      if (detailScanResult) detailScanResult.textContent = '🏷️ ' + (t.detail_result || 'Result') + ': ' + name;
+    } else {
+      detailScanMeta.hidden = true;
+    }
+  }
+
+  // 6 collapsible sections (expanded by default)
+  const sections = [
+    { key: 'symptoms', icon: '🔍', label: t.sub_symptoms, items: cls.visual_pattern ? [lang === 'am' ? cls.visual_pattern_am : cls.visual_pattern] : [] },
+    { key: 'prevention', icon: '🛡️', label: t.sub_prevention, items: (lang === 'am' ? cls.prevention_tips_am : cls.prevention_tips) || [] },
+    { key: 'treatment', icon: '💊', label: t.sub_treatment, items: (lang === 'am' ? cls.advice_am : cls.advice) || [] },
+    { key: 'remedies', icon: '🏠', label: t.sub_remedies, items: (lang === 'am' ? cls.home_remedies_am : cls.home_remedies) || [] },
+    { key: 'season', icon: '📅', label: t.sub_season, items: (lang === 'am' ? cls.seasonality_am : cls.seasonality) ? [lang === 'am' ? cls.seasonality_am : cls.seasonality] : [] },
+    { key: 'varieties', icon: '🌿', label: t.sub_varieties, items: (() => {
+        const lr = (lang === 'am' ? cls.landraces_am : cls.landraces) || null;
+        return lr && lr.resistant && lr.resistant.length ? lr.resistant : [];
+      })()
+    }
+  ];
+  if (detailSections) {
+    detailSections.innerHTML = sections.map((s, i) => {
+      const list = s.items.length ? s.items.map((x) => '<li>' + esc(x) + '</li>').join('') : '<li>' + esc(t.none) + '</li>';
+      return '<div class="detail-section open">' +
+        '<button type="button" class="detail-sec-head" data-action="toggle-detail-sec" aria-expanded="true">' +
+        '<span>' + s.icon + ' ' + esc(s.label) + '</span><span class="sec-arrow" aria-hidden="true">▼</span></button>' +
+        '<div class="detail-sec-body"><ul>' + list + '</ul></div></div>';
+    }).join('');
+  }
+}
+
+/** Back button handler — returns to the previous view (dashboard or history). */
+function detailBack() {
+  if (!viewStack.length) {
+    switchView('dashboard');
+    return;
+  }
+  const prev = viewStack.pop();
+  currentDetail = null;
+  switchView(prev);
+}
+
+// FIX (disease detail): delegated click handler for detail section toggles + back button
+if (viewDetail) {
+  viewDetail.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-action]');
+    if (btn) {
+      if (btn.getAttribute('data-action') === 'toggle-detail-sec') {
+        const sec = btn.closest('.detail-section');
+        const open = sec.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        const arrow = btn.querySelector('.sec-arrow');
+        if (arrow) arrow.textContent = open ? '▼' : '▶';
+      }
+      return;
+    }
+    if (e.target.closest('#detailBackBtn') || (detailBackBtn && detailBackBtn.contains(e.target))) {
+      detailBack();
+    }
+  });
+}
 function openDashboard() {
   switchView('dashboard');
 }
@@ -1981,70 +2119,32 @@ function renderDashboard() {
   let html = '<h3 class="dash-section-title">' + esc(t.diseases_title) + ' (' + filtered.length +
     '/' + classes.length + ')</h3>';
 
-  // Build one sub-section block with its own independent toggle.
-  // FIX: each section takes its own translated empty-fallback text so a truly
-  // empty field shows "None"/"የለም" (or "No known resistant varieties" for
-  // varieties) instead of the same string used for every section.
-  const sub = (key, icon, label, items, emptyText) => {
-    const list = (items && items.length) ? items.map((s) => '<li>' + esc(s) + '</li>').join('') : '';
-    const fallback = emptyText || t.none;
-    return '<div class="dash-sub">' +
-      '<button type="button" class="dash-sub-toggle" data-action="toggle-sub" data-key="' + esc(key) + '" aria-expanded="false">' +
-      '<span class="sub-label">' + icon + ' ' + esc(label) + '</span>' +
-      '<span class="sub-arrow" aria-hidden="true">▾</span></button>' +
-      '<div class="dash-sub-body">' + (list ? '<ul>' + list + '</ul>' : '<p class="dash-empty">' + esc(fallback) + '</p>') + '</div>' +
-      '</div>';
+  // FIX (disease detail): dashboard is a list of tappable cards (NO accordion).
+  // Each card has a thumbnail, name, crop, risk badge, and a chevron ›.
+  const riskBadge = (risk) => {
+    if (!risk) return '';
+    const lvl = risk.level || 'normal';
+    const label = (lang === 'am' ? risk.label_am : risk.label) || '';
+    return '<span class="risk-badge risk-' + esc(lvl) + '">' + esc(label) + '</span>';
+  };
+  const img = (cls) => {
+    const src = cls.image || 'default-disease.svg';
+    return '<img class="dash-thumb" src="' + esc(src) + '" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'default-disease.svg\';">';
   };
 
   filtered.forEach((cls) => {
-    const risk = cls.risk || {};
     const name = (lang === 'am' && cls.name_am) ? cls.name_am : cls.name;
     const crop = (lang === 'am' && cls.crop_am) ? cls.crop_am : cls.crop;
-    const d = byId[DASH_ID_BY_CLASS[cls.class_id]] || null;
-    const mine = d ? alerts.filter((a) => a.disease_id === d.id) : [];
-    const lr = (lang === 'am' ? cls.landraces_am : cls.landraces) || null;
-
-    // 6 sub-sections (independent toggles)
-    // FIX: read each field via loc() with the CORRECT catalog keys, and feed
-    // arrays / single strings through lenient array handling; pass a dedicated
-    // empty-fallback for Resistant Varieties.
-    const prep = loc(cls, 'prevention_tips', 'prevention_tips_am');
-    const season = loc(cls, 'seasonality', 'seasonality_am');
-    const remedies = loc(cls, 'home_remedies', 'home_remedies_am');
-    const varieties = lr && lr.resistant && lr.resistant.length ? lr.resistant : [];
-    const symptoms = loc(cls, 'visual_pattern', 'visual_pattern_am');
-    const sections =
-      sub('symptoms', '🔍', t.sub_symptoms,
-        symptoms ? [symptoms] : []) +
-      sub('prevention', '🛡️', t.sub_prevention,
-        (prep && prep.length) ? prep : []) +
-      sub('treatment', '💊', t.sub_treatment,
-        (loc(cls, 'advice', 'advice_am') || [])) +
-      sub('remedies', '🏠', t.sub_remedies,
-        (remedies && remedies.length) ? remedies : []) +
-      sub('season', '📅', t.sub_season,
-        season ? [season] : []) +
-      sub('varieties', '🌿', t.sub_varieties,
-        varieties, t.no_known_varieties);
-
-    // Regional alerts sub-section (only when this disease has alerts)
-    const alertsBlock = mine.length
-      ? sub('alerts', '📍', lang === 'am' ? 'ክልላዊ ማንቂያዎች' : 'Regional Alerts',
-          mine.map((a) => a.zone_name + ' — ' + a.threat_level + ' · ' + a.active_clusters + ' · ' + a.last_reported))
-      : '';
-
-    html += '<div class="dash-card dash-acc">' +
-      '<button type="button" class="dash-acc-head" data-action="toggle-card" data-key="' + esc(cls.class_id) + '" aria-expanded="false">' +
-      '<span class="acc-dot" style="background:' + esc(risk.color || '#475569') + '" aria-hidden="true"></span>' +
-      '<span class="acc-icon" aria-hidden="true">' + esc(cls.icon || '') + '</span>' +
-      '<span class="acc-title"><span class="acc-name">' + esc(name) + '</span>' +
-      '<span class="dash-sub">' + esc(crop) + ' · <em>' + esc(cls.pathogen || '') + '</em>' +
-      (riskLabel(risk) ? ' · ' + esc(riskLabel(risk)) : '') +
-      (d ? ' · ' + (lang === 'am' ? 'ክብደት' : 'Severity') + ' ' + d.severity_index + '/5' : '') +
-      '</span></span>' +
-      '<span class="acc-arrow" aria-hidden="true">▸</span></button>' +
-      '<div class="dash-acc-body">' + sections + alertsBlock + '</div>' +
-      '</div>';
+    const risk = cls.risk || {};
+    html += '<button type="button" class="dash-card dash-clickable" data-action="open-detail" data-key="' + esc(cls.class_id) + '">' +
+      img(cls) +
+      '<span class="dash-card-body">' +
+        '<span class="dash-card-name">' + esc(name) + '</span>' +
+        '<span class="dash-card-sub">' + esc(crop) + ' · <em>' + esc(cls.pathogen || '') + '</em></span>' +
+        riskBadge(risk) +
+      '</span>' +
+      '<span class="dash-card-arrow" aria-hidden="true">›</span>' +
+    '</button>';
   });
 
   // Fragmentation / fade-in for filter/language changes
@@ -2069,7 +2169,19 @@ async function openHistory() {
       .reverse()
       .forEach((s) => {
         const li = document.createElement('li');
-        li.className = 'history-item';
+        li.className = 'history-item history-clickable';
+        // FIX (disease detail): a history record is a tappable card that opens the
+        // same detail view with scan metadata.
+        li.addEventListener('click', () => {
+          if (s.inconclusive) return; // inconclusive scans have no disease to open
+          openDiseaseDetail(s.classId, true, s);
+        });
+
+        // Add a trailing arrow to signal tappability (unless inconclusive)
+        const arrow = document.createElement('span');
+        arrow.className = 'history-arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = s.inconclusive ? '' : '›';
 
         const icon = document.createElement('span');
         icon.className = 'h-icon';
@@ -2111,6 +2223,7 @@ async function openHistory() {
         conf.className = 'h-conf';
         conf.textContent = s.confidencePct.toFixed(1) + '%';
         li.appendChild(conf);
+        li.appendChild(arrow);
 
         historyList.appendChild(li);
       });

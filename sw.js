@@ -3,7 +3,7 @@
    Cache-first offline strategy for the ~4.0 MB app shell.
    ============================================================ */
 
-const CACHE_NAME = 'ensetscan-vision-v11';
+const CACHE_NAME = 'ensetscan-vision-v12';
 
 // Same-origin app shell — REQUIRED for offline mode. Precached atomically.
 const PRECACHE_URLS = [
@@ -22,6 +22,25 @@ const PRECACHE_URLS = [
   './icon-512-maskable.png',
   './disease-catalog.json',
   './national-dashboard.json',
+  './logo.svg',
+  './default-disease.svg',
+  './enset-bacterial-wilt.svg',
+  './enset-streak-virus.svg',
+  './coffee-leaf-rust.svg',
+  './coffee-brown-eye-spot.svg',
+  './northern-corn-blight.svg',
+  './maize-gray-leaf-spot.svg',
+  './healthy-leaf.svg',
+  './coffee-berry-disease.svg',
+  './coffee-wilt-disease.svg',
+  './maize-lethal-necrosis.svg',
+  './enset-mealybug.svg',
+  './enset-black-leaf-spot.svg',
+  './enset-leaf-tip-dieback.svg',
+  './coffee-leaf-miner.svg',
+  './coffee-sooty-mold.svg',
+  './common-corn-rust.svg',
+  './maize-streak-virus.svg',
   './model.json',
   './group1-shard1of1.bin',
 ];
@@ -81,6 +100,23 @@ self.addEventListener('fetch', (event) => {
 
   // Cache-first for same-origin app assets
   if (url.origin === self.location.origin) {
+    // Runtime cache for SVG images (disease placeholders, logo) — cache-first.
+    if (url.pathname.endsWith('.svg')) {
+      event.respondWith(
+        caches.match(event.request).then((cached) => {
+          if (cached) return cached;
+          return fetch(event.request).then((response) => {
+            if (response && response.status === 200) {
+              const copy = response.clone();
+              caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+            }
+            return response;
+          }).catch(() => new Response('', { status: 404, statusText: 'Not Found' }));
+        })
+      );
+      return;
+    }
+
     // Network-first for data files so we always get fresh content when online
     // (Files are flat at the root after restructuring)
     if (url.pathname.endsWith('.json') && !url.pathname.endsWith('manifest.webmanifest')) {

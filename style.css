@@ -2250,3 +2250,80 @@ html {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================================================
+   DISEASE DETAIL VIEW
+   ============================================================ */
+.detail-view { max-width: 780px; margin: 0 auto; }
+.detail-topbar { display: flex; align-items: center; padding: 0.5rem 0; margin-bottom: 0.75rem; }
+.detail-back {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  border: none; background: transparent; color: var(--color-primary, #15803d);
+  font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  padding: 0.5rem 0.8rem; border-radius: var(--radius-full, 9999px);
+  transition: background var(--transition-fast, 150ms);
+}
+.detail-back:hover, .detail-back:focus-visible { background: var(--green-50, #f0fdf4); }
+.detail-hero {
+  position: relative; width: 100%; height: clamp(180px, 34vh, 300px);
+  border-radius: var(--radius-xl, 1rem); overflow: hidden; background: var(--green-900, #14532d);
+}
+.detail-hero .detail-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.detail-hero-overlay {
+  position: absolute; inset: auto 0 0 0; padding: 0.75rem 1rem;
+  background: linear-gradient(transparent, rgba(15, 23, 42, 0.85)); color: #fff;
+}
+.detail-name { font-size: 1.35rem; font-weight: 700; margin: 0; }
+.detail-crop { font-size: 0.85rem; margin: 0.15rem 0 0; opacity: 0.9; }
+.detail-risk { display: inline-block; margin-top: 0.35rem; padding: 0.2rem 0.7rem; border-radius: var(--radius-full, 9999px); font-size: 0.8rem; font-weight: 700; }
+.risk-critical { background: #dc2626; color: #fff; }
+.risk-high { background: #ea580c; color: #fff; }
+.risk-moderate { background: #f59e0b; color: #1f2937; }
+.risk-normal, .risk-low { background: #16a34a; color: #fff; }
+.detail-scanmeta { margin: 0.9rem 0; padding: 0.8rem 1rem; background: var(--green-50, #f0fdf4); border-radius: var(--radius-lg, 0.75rem); border: 1px solid var(--green-100, #dcfce7); }
+.detail-scanmeta p { margin: 0.2rem 0; font-size: 0.9rem; font-weight: 500; }
+.detail-sections { margin-top: 0.75rem; }
+.detail-section { border: 1px solid var(--color-border, #e2e8f0); border-radius: var(--radius-lg, 0.75rem); margin-bottom: 0.6rem; background: var(--white, #fff); overflow: hidden; }
+.detail-sec-head { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; border: none; background: transparent; cursor: pointer; padding: 0.8rem 1rem; font-family: inherit; font-size: 0.95rem; font-weight: 700; color: var(--color-text, #0f172a); }
+.detail-sec-head:hover, .detail-sec-head:focus-visible { background: var(--green-50, #f0fdf4); }
+.sec-arrow { font-size: 0.7rem; color: var(--color-text-muted, #94a3b8); transition: transform var(--transition-base, 250ms); }
+.detail-section.open .sec-arrow { transform: rotate(0deg); }
+.detail-sec-body { display: none; padding: 0 1rem 0.8rem; }
+.detail-section.open .detail-sec-body { display: block; }
+.detail-sec-body ul { margin: 0; padding-left: 1.2rem; }
+.detail-sec-body li { margin-bottom: 0.4rem; font-size: 0.92rem; line-height: 1.45; }
+
+/* ---- TAPPABLE DASHBOARD CARDS (no accordion) ---- */
+.dash-body { display: grid; gap: 0.9rem; grid-template-columns: 1fr; }
+@media (min-width: 480px) and (max-width: 900px) { .dash-body { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 901px) { .dash-body { grid-template-columns: repeat(3, 1fr); } }
+.dash-card.dash-clickable { display: flex; align-items: center; gap: 0.9rem; width: 100%; text-align: left; border: 1px solid var(--color-border, #e2e8f0); border-radius: var(--radius-lg, 0.75rem); background: var(--white, #fff); padding: 0.75rem 0.9rem; cursor: pointer; font-family: inherit; color: var(--color-text, #0f172a); transition: box-shadow var(--transition-fast, 150ms), transform var(--transition-fast, 150ms), border-color var(--transition-fast, 150ms); }
+.dash-card.dash-clickable:hover, .dash-card.dash-clickable:focus-visible { border-color: var(--green-400, #4ade80); box-shadow: 0 4px 12px rgba(22, 163, 74, 0.18); transform: translateY(-2px); }
+.dash-thumb { width: 56px; min-width: 56px; height: 56px; border-radius: var(--radius-md, 0.5rem); object-fit: cover; background: var(--green-50, #f0fdf4); }
+.dash-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.dash-card-name { font-weight: 700; font-size: 0.98rem; }
+.dash-card-sub { font-size: 0.8rem; color: var(--color-text-light, #64748b); }
+.risk-badge { display: inline-block; align-self: flex-start; margin-top: 0.2rem; padding: 0.15rem 0.6rem; border-radius: var(--radius-full, 9999px); font-size: 0.72rem; font-weight: 700; }
+.dash-card-arrow { font-size: 1.4rem; color: var(--green-600, #16a34a); flex-shrink: 0; font-weight: 700; }
+
+/* ---- TAPPABLE HISTORY ITEMS ---- */
+.history-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
+.history-item.history-clickable { display: flex; align-items: center; gap: 0.9rem; min-height: 56px; padding: 0.8rem 0.9rem; border: 1px solid var(--color-border, #e2e8f0); border-radius: var(--radius-lg, 0.75rem); background: var(--white, #fff); cursor: pointer; transition: box-shadow var(--transition-fast, 150ms), border-color var(--transition-fast, 150ms); }
+.history-item.history-clickable:hover, .history-item.history-clickable:focus-visible { border-color: var(--green-400, #4ade80); box-shadow: 0 4px 10px rgba(22, 163, 74, 0.14); }
+.history-arrow { font-size: 1.5rem; font-weight: 700; color: var(--green-600, #16a34a); flex-shrink: 0; }
+.history-item .h-icon { width: 44px; min-width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--green-50, #f0fdf4); border-radius: var(--radius-md, 0.5rem); }
+.history-item .h-info { flex: 1; min-width: 0; }
+.history-item .h-conf { font-weight: 700; color: var(--color-primary, #15803d); white-space: nowrap; }
+
+@keyframes detailFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.detail-view { animation: detailFadeIn 280ms ease; }
+
+@media (max-width: 480px) {
+  .dash-body { grid-template-columns: 1fr; }
+  .dash-thumb { width: 64px; min-width: 64px; height: 64px; }
+  .history-item.history-clickable { min-height: 64px; }
+}
+

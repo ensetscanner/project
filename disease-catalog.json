@@ -101,7 +101,8 @@
       "prevention_tips_am": [
         "ቀድመው ይትከሉ እና እንሰቶችን በስፋት ያርቁ።",
         "የተያዘውን ቅሪት በጥልቅ ይቅበሩ እና ጉድጓዱን ለፀሀይ ያጋልጡ።"
-      ]
+      ],
+      "image": "enset-bacterial-wilt.svg"
     },
     {
       "class_id": 1,
@@ -183,7 +184,8 @@
       "prevention_tips_am": [
         "ችግኞችን የሚወስዱት ከጤናማ እናት ተክሎች ብቻ ይሁን።",
         "ነፍሳት የሚደበቁበትን አረም ለማስወገድ አትክልቱን ንጹህ ያድርጉ።"
-      ]
+      ],
+      "image": "enset-streak-virus.svg"
     },
     {
       "class_id": 2,
@@ -269,7 +271,8 @@
           "ጌሻ",
           "ካቱራ"
         ]
-      }
+      },
+      "image": "coffee-leaf-rust.svg"
     },
     {
       "class_id": 3,
@@ -350,7 +353,8 @@
           "ካቱዋይ",
           "ቲፒካ"
         ]
-      }
+      },
+      "image": "coffee-brown-eye-spot.svg"
     },
     {
       "class_id": 4,
@@ -429,7 +433,8 @@
         "susceptible": [
           "አካባቢው ያልተሻሻለ"
         ]
-      }
+      },
+      "image": "northern-corn-blight.svg"
     },
     {
       "class_id": 5,
@@ -506,7 +511,8 @@
         "susceptible": [
           "የአካባቢ ክፍት-የአበባ ዝርያ"
         ]
-      }
+      },
+      "image": "maize-gray-leaf-spot.svg"
     },
     {
       "class_id": 6,
@@ -575,7 +581,8 @@
       "landraces_am": {
         "resistant": [],
         "susceptible": []
-      }
+      },
+      "image": "healthy-leaf.svg"
     },
     {
       "class_id": 7,
@@ -664,7 +671,8 @@
         "susceptible": [
           "ጌሻ"
         ]
-      }
+      },
+      "image": "coffee-berry-disease.svg"
     },
     {
       "class_id": 8,
@@ -746,7 +754,8 @@
           "ጌሻ",
           "ኤፍ-59"
         ]
-      }
+      },
+      "image": "coffee-wilt-disease.svg"
     },
     {
       "class_id": 9,
@@ -824,7 +833,8 @@
         "susceptible": [
           "የአካባቢ ስሱ በቆሎ"
         ]
-      }
+      },
+      "image": "maize-lethal-necrosis.svg"
     },
     {
       "class_id": 10,
@@ -902,7 +912,8 @@
         "susceptible": [
           "የአካባቢ ስሱ"
         ]
-      }
+      },
+      "image": "enset-mealybug.svg"
     },
     {
       "class_id": 11,
@@ -974,7 +985,8 @@
         "susceptible": [
           "አገረምረማት"
         ]
-      }
+      },
+      "image": "enset-black-leaf-spot.svg"
     },
     {
       "class_id": 12,
@@ -1036,7 +1048,8 @@
       "landraces_am": {
         "resistant": [],
         "susceptible": []
-      }
+      },
+      "image": "enset-leaf-tip-dieback.svg"
     },
     {
       "class_id": 13,
@@ -1108,7 +1121,8 @@
           "ጌሻ",
           "ካቱራ"
         ]
-      }
+      },
+      "image": "coffee-leaf-miner.svg"
     },
     {
       "class_id": 14,
@@ -1178,7 +1192,8 @@
         "susceptible": [
           "ጌሻ"
         ]
-      }
+      },
+      "image": "coffee-sooty-mold.svg"
     },
     {
       "class_id": 15,
@@ -1248,7 +1263,8 @@
         "susceptible": [
           "የአካባቢ ክፍት-የአበባ ዝርያ"
         ]
-      }
+      },
+      "image": "common-corn-rust.svg"
     },
     {
       "class_id": 16,
@@ -1320,7 +1336,8 @@
         "susceptible": [
           "የአካባቢ ስሱ"
         ]
-      }
+      },
+      "image": "maize-streak-virus.svg"
     }
   ]
 }
