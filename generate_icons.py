@@ -1,136 +1,118 @@
-"""Generate simple PNG icons for the PWA without PIL."""
+"""Generate simple PNG icons for the PWA without PIL.
+
+FIX: draws a clearly-visible tapered leaf (light green on deep green) with a
+midrib vein and stem, plus TRUE transparency for the non-maskable icons'
+rounded corners. The old icons were a solid-looking green square because the
+leaf and background shades were nearly identical and corners were white.
+"""
 import struct
 import zlib
 
-def make_png(width, height, pixels):
-    """Create a PNG from raw RGB pixel data."""
+def make_png(width, height, pixels_rgba):
+    """Create an 8-bit RGBA PNG from raw RGBA pixel data."""
     def chunk(chunk_type, data):
-        c = struct.pack(">I", len(data))
-        c += chunk_type
-        c += data
+        c = struct.pack(">I", len(data)) + chunk_type + data
         c += struct.pack(">I", zlib.crc32(chunk_type + data) & 0xffffffff)
         return c
 
-    # PNG signature
     sig = b'\x89PNG\r\n\x1a\n'
+    ihdr = struct.pack(">IIBBBBB", width, height, 8, 6, 0, 0, 0)  # 6 = RGBA
 
-    # IHDR
-    ihdr = struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0)
-
-    # IDAT - raw image data with filter byte 0 per row
-    raw = b''
+    raw = bytearray()
     for y in range(height):
-        raw += b'\x00'  # filter type 0 (None)
-        raw += bytes(pixels[y * width * 3:(y + 1) * width * 3])
+        raw.append(0)  # filter type 0 (None)
+        raw += pixels_rgba[y * width * 4:(y + 1) * width * 4]
 
-    idat = zlib.compress(raw)
-
-    # IEND
-    iend = b''
-
-    return sig + chunk(b'IHDR', ihdr) + chunk(b'IDAT', idat) + chunk(b'IEND', iend)
+    idat = zlib.compress(bytes(raw))
+    return sig + chunk(b'IHDR', ihdr) + chunk(b'IDAT', idat) + chunk(b'IEND', b'')
 
 
-def draw_leaf_icon(size):
-    """Draw a green rounded-square with a simple leaf shape."""
-    pixels = bytearray(size * size * 3)
-    # Background: dark green (#1b5e20)
-    bg = (27, 94, 32)
-    # Leaf color: lighter green (#2e7d32)
-    leaf = (46, 125, 50)
-    # Rounded corner radius
-    radius = size // 8
+def draw_leaf_icon(size, maskable):
+    """Draw a deep-green rounded square with a light tapered leaf + vein.
 
+    - Non-maskable: rounded corners are TRANSPARENT.
+    - Maskable: full-bleed background, leaf kept within the ~80% safe zone.
+    """
+    bg = (20, 83, 45)          # #14532d deep green
+    leaf = (74, 222, 128)      # #4ade80 light green (strong contrast)
+    vein = (22, 101, 52)       # #166534 darker midrib
+    stem = (200, 240, 210)     # pale stem
+
+    radius = size // 6
+    cx = size * 0.5
+    cy = size * 0.5
+    lrx = size * (0.34 if not maskable else 0.30)
+    lry = size * (0.13 if not maskable else 0.11)
+    ang = 0.7853981634  # 45 deg
+    cos_a, sin_a = 0.70710678, 0.70710678
+
+    vein_hw = lry * 0.18    # half-width of midrib
+    stem_len = size * 0.14
+    stem_w = size * 0.022
+
+    pixels = bytearray()
     for y in range(size):
         for x in range(size):
-            idx = (y * size + x) * 3
-            # Check if inside rounded rect
-            # Corner detection
-            in_corner = False
-            if x < radius and y < radius:
-                in_corner = (x - radius) ** 2 + (y - radius) ** 2 > radius ** 2
-            elif x >= size - radius and y < radius:
-                in_corner = (x - (size - radius)) ** 2 + (y - radius) ** 2 > radius ** 2
-            elif x < radius and y >= size - radius:
-                in_corner = (x - radius) ** 2 + (y - (size - radius)) ** 2 > radius ** 2
-            elif x >= size - radius and y >= size - radius:
-                in_corner = (x - (size - radius)) ** 2 + (y - (size - radius)) ** 2 > radius ** 2
-
-            if in_corner:
-                # Transparent corner (use white for simplicity)
-                pixels[idx] = 255
-                pixels[idx + 1] = 255
-                pixels[idx + 2] = 255
+            # --- background alpha (transparent rounded corners) ---
+            if maskable:
+                in_bg = True
             else:
-                # Background
-                pixels[idx] = bg[0]
-                pixels[idx + 1] = bg[1]
-                pixels[idx + 2] = bg[2]
+                if x < radius and y < radius:
+                    in_bg = (x - radius) ** 2 + (y - radius) ** 2 <= radius ** 2
+                elif x >= size - radius and y < radius:
+                    in_bg = (x - (size - radius)) ** 2 + (y - radius) ** 2 <= radius ** 2
+                elif x < radius and y >= size - radius:
+                    in_bg = (x - radius) ** 2 + (y - (size - radius)) ** 2 <= radius ** 2
+                elif x >= size - radius and y >= size - radius:
+                    in_bg = (x - (size - radius)) ** 2 + (y - (size - radius)) ** 2 <= radius ** 2
+                else:
+                    in_bg = True
+            if not in_bg:
+                pixels += bytes((0, 0, 0, 0))
+                continue
 
-                # Draw a simple leaf shape (ellipse rotated)
-                # Center of leaf
-                cx = size * 0.5
-                cy = size * 0.5
-                # Leaf dimensions
-                rx = size * 0.32
-                ry = size * 0.18
-                # Check if point is in ellipse
-                dx = (x - cx) / rx
-                dy = (y - cy) / ry
-                if dx * dx + dy * dy <= 1.0:
-                    pixels[idx] = leaf[0]
-                    pixels[idx + 1] = leaf[1]
-                    pixels[idx + 2] = leaf[2]
+            # --- rotate to leaf coordinates (long axis along +u) ---
+            dx, dy = x - cx, y - cy
+            u = dx * cos_a + dy * sin_a
+            v = -dx * sin_a + dy * cos_a
 
-    return make_png(size, size, bytes(pixels))
+            # tapered leaf: narrows to a point at its far end (u > 0)
+            nr = (u / lrx) ** 2 + (v / lry) ** 2
+            taper = 1.0 - 0.55 * max(0.0, u / lrx)
+            in_leaf = nr <= 1.0 and abs(v) <= lry * taper
 
+            # stem: short diagonal from leaf base toward bottom-left
+            s0x, s0y = cx - lrx * 0.55 * cos_a, cy - lrx * 0.55 * sin_a
+            s1x, s1y = s0x - stem_len * cos_a, s0y + stem_len * sin_a
+            # point-to-segment distance
+            sx, sy = x - s0x, y - s0y
+            ex, ey = s1x - s0x, s1y - s0y
+            seg = (ex * ex + ey * ey) or 1.0
+            t = max(0.0, min(1.0, (sx * ex + sy * ey) / seg))
+            px, py = s0x + t * ex, s0y + t * ey
+            in_stem = ((x - px) ** 2 + (y - py) ** 2) <= stem_w * stem_w
 
-# Generate 192x192 icon
-icon_192 = draw_leaf_icon(192)
-with open('icon-192.png', 'wb') as f:
-    f.write(icon_192)
-print('Created icon-192.png')
-
-# Generate 512x512 icon
-icon_512 = draw_leaf_icon(512)
-with open('icon-512.png', 'wb') as f:
-    f.write(icon_512)
-print('Created icon-512.png')
-
-# Generate maskable icons (with more padding for safe zone)
-def draw_maskable_icon(size):
-    """Draw a maskable icon with extra padding."""
-    pixels = bytearray(size * size * 3)
-    bg = (27, 94, 32)
-    leaf = (46, 125, 50)
-
-    for y in range(size):
-        for x in range(size):
-            idx = (y * size + x) * 3
-            pixels[idx] = bg[0]
-            pixels[idx + 1] = bg[1]
-            pixels[idx + 2] = bg[2]
-
-            # Smaller leaf for maskable (80% of icon)
-            cx = size * 0.5
-            cy = size * 0.5
-            rx = size * 0.25
-            ry = size * 0.14
-            dx = (x - cx) / rx
-            dy = (y - cy) / ry
-            if dx * dx + dy * dy <= 1.0:
-                pixels[idx] = leaf[0]
-                pixels[idx + 1] = leaf[1]
-                pixels[idx + 2] = leaf[2]
+            if in_stem:
+                pixels += bytes(stem + (255,))
+            elif in_leaf:
+                if abs(v) <= vein_hw and u <= lrx * 0.72:
+                    pixels += bytes(vein + (255,))
+                else:
+                    pixels += bytes(leaf + (255,))
+            else:
+                pixels += bytes(bg + (255,))
 
     return make_png(size, size, bytes(pixels))
 
-icon_192_mask = draw_maskable_icon(192)
-with open('icon-192-maskable.png', 'wb') as f:
-    f.write(icon_192_mask)
-print('Created icon-192-maskable.png')
 
-icon_512_mask = draw_maskable_icon(512)
-with open('icon-512-maskable.png', 'wb') as f:
-    f.write(icon_512_mask)
-print('Created icon-512-maskable.png')
+# --- Generate icons ---
+specs = [
+    ('icon-192.png', 192, False),
+    ('icon-512.png', 512, False),
+    ('icon-192-maskable.png', 192, True),
+    ('icon-512-maskable.png', 512, True),
+]
+for name, size, maskable in specs:
+    with open(name, 'wb') as f:
+        f.write(draw_leaf_icon(size, maskable))
+    print('Created', name)

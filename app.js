@@ -521,6 +521,16 @@ async function loadCatalog() {
    INITIALIZATION
    ============================================================ */
 document.addEventListener('DOMContentLoaded', async () => {
+  // FIX (offline): register the service worker FIRST, before any awaits -
+  // the catalog fetch has a 10 s timeout and would otherwise delay or
+  // entirely skip SW registration on slow/offline first loads, which is
+  // the main cause of "app doesn't work offline".
+  registerServiceWorker();
+
+  // FIX (install button): when opened already-installed (standalone), never
+  // show the install UI even if a stale beforeinstallprompt fires later.
+  if (isStandalone()) hideInstallUI();
+
   catalog = await loadCatalog();
 
   // Load saved language preference
@@ -535,7 +545,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   await initDatabase();
   bindEvents();
-  registerServiceWorker();
   initMLWorker(); // offload heuristic inference to a worker when available
   initModel(); // fire-and-forget; heuristic engages if model unavailable
   updateAppStats();
@@ -729,6 +738,20 @@ function handleHashRoute() {
 }
 
 /* ---------------- PWA Install & Hash Routes ---------------- */
+
+/** True when the app is running installed/standalone (home-screen or browser). */
+function isStandalone() {
+  if (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) return true;
+  if (navigator && navigator.standalone === true) return true; // iOS Safari
+  return false;
+}
+
+/** Hide the install header button and banner (used after install / dismissal). */
+function hideInstallUI() {
+  installBtn.hidden = true;
+  if (installBanner) installBanner.hidden = true;
+}
+
 function installApp() {
   if (!deferredInstallPrompt) {
     // No install prompt available (e.g. already installed or unsupported).
@@ -737,33 +760,40 @@ function installApp() {
     return;
   }
   deferredInstallPrompt.prompt();
+  // FIX (install button): hide the UI immediately on click — before the
+  // prompt resolves — so the button never lingers after the user installs.
+  hideInstallUI();
   deferredInstallPrompt.userChoice.then(() => {
+    // Hide regardless of outcome (accepted or dismissed), per spec.
     deferredInstallPrompt = null;
-    installBtn.hidden = true;
-    if (installBanner) installBanner.hidden = true;
+    hideInstallUI();
   });
 }
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredInstallPrompt = e;
-  installBtn.hidden = false;
-  if (installBanner) installBanner.hidden = false;
+  // FIX (install button): only show when NOT already installed/standalone.
+  if (isStandalone()) {
+    hideInstallUI();
+  } else {
+    installBtn.hidden = false;
+    if (installBanner) installBanner.hidden = false;
+  }
 });
 
 window.addEventListener('appinstalled', () => {
   deferredInstallPrompt = null;
-  installBtn.hidden = true;
-  if (installBanner) installBanner.hidden = true;
+  hideInstallUI();
 });
 
-/* ---------------- Service Worker ---------------- */
+/** Service worker registration — called as early as possible (the very first
+ *  line of DOMContentLoaded) so the cache install runs immediately, making the
+ *  app usable offline on the very next visit. (FIX: offline mode) */
 function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js').catch((err) => {
-        console.warn('Service worker registration failed:', err);
-      });
+    navigator.serviceWorker.register('sw.js').catch((err) => {
+      console.warn('Service worker registration failed:', err);
     });
   }
 }

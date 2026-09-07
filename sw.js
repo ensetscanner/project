@@ -3,7 +3,7 @@
    Cache-first offline strategy for the ~4.0 MB app shell.
    ============================================================ */
 
-const CACHE_NAME = 'ensetscan-vision-v10';
+const CACHE_NAME = 'ensetscan-vision-v11';
 
 // Same-origin app shell — REQUIRED for offline mode. Precached atomically.
 const PRECACHE_URLS = [
@@ -36,6 +36,10 @@ const CDN_PRECACHE_URLS = [
   'https://fonts.gstatic.com/s/notosansethiopic/v50/7cHPv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIvyBoMSzUMacb-T35OK6Dj.ttf',
   'https://fonts.gstatic.com/s/notosansethiopic/v50/7cHPv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIvyBoMSzUMacb-T36QLKDj.ttf',
   'https://fonts.gstatic.com/s/notosansethiopic/v50/7cHPv50vjIepfJVOZZgcpQ5B9FBTH9KGNfhSTgtoow1KVnIvyBoMSzUMacb-T36pLKDj.ttf',
+  // TensorFlow.js — best-effort precache so the neural/model path (if a real
+  // model is ever shipped) also works offline. jsdelivr sends CORS headers, so
+  // add() can cache it.
+  'https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js',
 ];
 
 // ---------- Install: pre-cache the app shell ----------
