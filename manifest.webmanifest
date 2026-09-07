@@ -2,7 +2,7 @@
   "id": "ensetscan-vision",
   "name": "EnsetScan Vision",
   "short_name": "EnsetScan",
-  "description": "Offline-first plant disease diagnosis for Enset, Coffee, and Maize. Runs entirely in your browser with zero data cost.",
+  "description": "Offline plant disease diagnosis for Enset, Coffee, and Maize",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
